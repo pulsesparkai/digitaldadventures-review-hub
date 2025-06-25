@@ -31,14 +31,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16 lg:h-18">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center py-2 px-1">
+          <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png" 
               alt="DigitalDadVentures logo featuring a family icon and modern text – trusted product reviews for families and parents"
               title="Logo of DigitalDadVentures – Honest Reviews for Smart Families"
-              className="navbar-logo w-auto object-contain"
+              className="h-10 w-auto"
             />
           </Link>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`hover:text-orange-600 transition-colors text-sm font-medium ${
+                className={`hover:text-orange-600 transition-colors ${
                   location.pathname === item.path ? 'text-orange-600' : 'text-gray-700'
                 }`}
               >
@@ -58,7 +58,7 @@ const Navbar = () => {
             
             {/* Categories Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors text-sm font-medium">
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
                 <span>Categories</span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -78,7 +78,7 @@ const Navbar = () => {
 
             <Button 
               asChild 
-              className="bg-orange-600 hover:bg-orange-700 ml-4"
+              className="bg-orange-600 hover:bg-orange-700"
             >
               <Link to="/submit-product">Submit a Product</Link>
             </Button>
@@ -86,7 +86,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
