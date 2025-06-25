@@ -1,0 +1,238 @@
+
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Mail, MessageSquare, Send } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    category: '',
+    message: ''
+  });
+
+  const categories = [
+    'General Inquiry',
+    'Product Review Request',
+    'Editorial Question',
+    'AI Content Inquiry',
+    'Partnership/Collaboration',
+    'Technical Issue',
+    'Other'
+  ];
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    console.log('Contact form submission:', formData);
+    
+    toast({
+      title: "Message Sent!",
+      description: "Thanks for reaching out. We'll get back to you within 24-48 hours.",
+    });
+
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      category: '',
+      message: ''
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <div className="p-4 bg-blue-100 rounded-full">
+              <Mail className="h-12 w-12 text-blue-600" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Have questions about our reviews, editorial process, or want to discuss a potential collaboration? 
+            We'd love to hear from you.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <MessageSquare className="h-5 w-5 mr-2" />
+                    Send us a Message
+                  </CardTitle>
+                  <CardDescription>
+                    Fill out the form below and we'll get back to you as soon as possible.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name">Name *</Label>
+                        <Input
+                          id="name"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          placeholder="Your name"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email">Email Address *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          placeholder="your@email.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="category">Category</Label>
+                        <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select category" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {categories.map((category) => (
+                              <SelectItem key={category} value={category}>{category}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div>
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input
+                          id="subject"
+                          value={formData.subject}
+                          onChange={(e) => handleInputChange('subject', e.target.value)}
+                          placeholder="Brief subject line"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        placeholder="Tell us how we can help you..."
+                        rows={6}
+                        required
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
+                      <Send className="h-4 w-4 mr-2" />
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contact Information</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-1">Email</h4>
+                      <p className="text-gray-600">hello@digitaldadventures.com</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Response Time</h4>
+                      <p className="text-gray-600">Within 24-48 hours</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">Business Hours</h4>
+                      <p className="text-gray-600">Monday - Friday, 9AM - 5PM EST</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Quick Links</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <a href="/work-with-us" className="block text-orange-600 hover:text-orange-700">
+                      → Work With Us
+                    </a>
+                    <a href="/submit-product" className="block text-orange-600 hover:text-orange-700">
+                      → Submit a Product
+                    </a>
+                    <a href="/about" className="block text-orange-600 hover:text-orange-700">
+                      → About Our Process
+                    </a>
+                    <a href="/ai-content-policy" className="block text-orange-600 hover:text-orange-700">
+                      → AI Content Policy
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-green-200 bg-green-50">
+                <CardContent className="p-4">
+                  <p className="text-sm text-green-800">
+                    <strong>Media Inquiries:</strong> For press and media requests, 
+                    please use the category "Partnership/Collaboration" above.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;

@@ -1,0 +1,195 @@
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Star, Search, Filter } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+const Reviews = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech'];
+
+  const reviews = [
+    {
+      title: 'Dash Mini Bundt Cake Maker Review',
+      excerpt: 'Perfect for small batches and quick treats - our hands-on test reveals all',
+      category: 'Kitchen',
+      rating: 4.5,
+      image: '/placeholder.svg',
+      isAI: false,
+      slug: 'dash-mini-bundt-cake-maker',
+      date: '2024-01-15'
+    },
+    {
+      title: 'OPOVE Massage Gun Analysis',
+      excerpt: 'AI-powered analysis of specs, reviews, and market positioning',
+      category: 'Fitness',
+      rating: 4.2,
+      image: '/placeholder.svg',
+      isAI: true,
+      slug: 'opove-massage-gun',
+      date: '2024-01-12'
+    },
+    {
+      title: 'Stanley Cup: Worth the Hype?',
+      excerpt: 'Real-world testing of the viral tumbler everyone is talking about',
+      category: 'Family Tech',
+      rating: 4.0,
+      image: '/placeholder.svg',
+      isAI: false,
+      slug: 'stanley-cup-review',
+      date: '2024-01-10'
+    },
+    {
+      title: 'Cuisinart Mini Food Processor',
+      excerpt: 'Compact powerhouse for small kitchen tasks and meal prep',
+      category: 'Kitchen',
+      rating: 4.4,
+      image: '/placeholder.svg',
+      isAI: false,
+      slug: 'cuisinart-mini-food-processor',
+      date: '2024-01-08'
+    },
+    {
+      title: 'LifePro Sonic Massage Gun',
+      excerpt: 'Professional-grade recovery tool tested by our fitness team',
+      category: 'Fitness',
+      rating: 4.6,
+      image: '/placeholder.svg',
+      isAI: false,
+      slug: 'lifepro-sonic-massage-gun',
+      date: '2024-01-05'
+    },
+    {
+      title: 'Uplift Desk Converter',
+      excerpt: 'Transform any desk into a standing workstation - full review',
+      category: 'Desk Gear',
+      rating: 4.3,
+      image: '/placeholder.svg',
+      isAI: false,
+      slug: 'uplift-desk-converter',
+      date: '2024-01-03'
+    }
+  ];
+
+  const filteredReviews = reviews.filter(review => {
+    const matchesSearch = review.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         review.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'all' || review.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Product Reviews</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Honest, in-depth reviews based on hands-on testing, research, and AI analysis. 
+            Find the best products for your family and lifestyle.
+          </p>
+        </div>
+
+        {/* Search and Filter */}
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input
+                placeholder="Search reviews..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <div className="flex gap-2">
+              <Filter className="h-5 w-5 text-gray-400 mt-2.5" />
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className={selectedCategory === category ? "bg-orange-600 hover:bg-orange-700" : ""}
+                  >
+                    {category === 'all' ? 'All Categories' : category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Reviews Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredReviews.map((review) => (
+            <Link key={review.slug} to={`/review/${review.slug}`}>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <div className="aspect-video bg-gray-200 rounded-t-lg"></div>
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <Badge variant="secondary">{review.category}</Badge>
+                    {review.isAI && (
+                      <Badge variant="outline" className="text-xs">
+                        AI Analysis
+                      </Badge>
+                    )}
+                  </div>
+                  <CardTitle className="hover:text-orange-600 transition-colors">
+                    {review.title}
+                  </CardTitle>
+                  <CardDescription>{review.excerpt}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < Math.floor(review.rating)
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
+                    </div>
+                    <span className="text-sm text-gray-500">
+                      {new Date(review.date).toLocaleDateString()}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+
+        {filteredReviews.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-600 text-lg mb-4">No reviews found matching your criteria.</p>
+            <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }}>
+              Clear Filters
+            </Button>
+          </div>
+        )}
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Reviews;
