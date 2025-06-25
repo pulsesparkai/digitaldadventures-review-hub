@@ -14,6 +14,10 @@ import WorkWithUs from "./pages/WorkWithUs";
 import SubmitProduct from "./pages/SubmitProduct";
 import Category from "./pages/Category";
 import Newsletter from "./pages/Newsletter";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import CookiePolicy from "./pages/CookiePolicy";
+import AIContentPolicy from "./pages/AIContentPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +39,10 @@ const App = () => (
           <Route path="/submit-product" element={<SubmitProduct />} />
           <Route path="/category/:category" element={<Category />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/ai-content-policy" element={<AIContentPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
