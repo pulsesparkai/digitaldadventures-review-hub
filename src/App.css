@@ -44,11 +44,11 @@
 
 /* Custom logo sizing for navbar */
 .navbar-logo {
-  height: 20px;
+  height: 32px;
 }
 
 @media (min-width: 1024px) {
   .navbar-logo {
-    height: 24px;
+    height: 40px;
   }
 }
