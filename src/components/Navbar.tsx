@@ -31,14 +31,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20 lg:h-24">
+        <div className="flex justify-between items-center h-24 lg:h-28">
           {/* Logo */}
-          <Link to="/" className="flex items-center py-3">
+          <Link to="/" className="flex items-center py-4 px-4">
             <img 
               src="/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png" 
               alt="DigitalDadVentures logo featuring a family icon and modern text – trusted product reviews for families and parents"
               title="Logo of DigitalDadVentures – Honest Reviews for Smart Families"
-              className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
+              className="navbar-logo w-auto object-contain"
             />
           </Link>
 
