@@ -28,7 +28,7 @@ const WorkWithUs = () => {
             retailers, and content creators.
           </p>
           <Badge variant="secondary" className="text-lg px-4 py-2">
-            Trusted by 50K+ Families Monthly
+            Join our growing community of families and parents seeking smarter product recommendations
           </Badge>
         </div>
 
@@ -124,8 +124,8 @@ const WorkWithUs = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Engaged Family Audience</h3>
                       <p className="text-gray-600 text-sm">
-                        Our readers are active parents and families with purchasing power, 
-                        looking for honest recommendations they can trust.
+                        Our readers are active parents and families looking for honest, AI-assisted 
+                        and expert-backed recommendations.
                       </p>
                     </div>
                   </div>
@@ -141,8 +141,8 @@ const WorkWithUs = () => {
                     <div>
                       <h3 className="font-semibold mb-2">SEO & Performance Focus</h3>
                       <p className="text-gray-600 text-sm">
-                        All content is optimized for search engines and social sharing, 
-                        maximizing your brand's visibility and reach.
+                        Every piece is crafted for top performance in Google, Bing, and AI-driven 
+                        search engines—maximizing your brand's visibility and reach.
                       </p>
                     </div>
                   </div>
@@ -158,8 +158,8 @@ const WorkWithUs = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Transparent AI Integration</h3>
                       <p className="text-gray-600 text-sm">
-                        Our unique approach combines human expertise with AI analysis, 
-                        clearly disclosed to maintain trust with our audience.
+                        We combine human expertise with advanced AI analysis, always clearly disclosed 
+                        to maintain your brand's trust and ours.
                       </p>
                     </div>
                   </div>
@@ -175,8 +175,8 @@ const WorkWithUs = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Editorial Independence</h3>
                       <p className="text-gray-600 text-sm">
-                        We maintain editorial independence in all reviews, 
-                        ensuring honest assessments that our readers trust.
+                        All reviews and recommendations are based on research, trend analysis, and 
+                        data-driven insights—no paid placements or guarantees.
                       </p>
                     </div>
                   </div>
@@ -186,38 +186,47 @@ const WorkWithUs = () => {
           </div>
         </section>
 
-        {/* Our Numbers */}
+        {/* Our Reach */}
         <section className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Our Reach</h2>
-            <p className="text-gray-600">Real metrics from real engaged families</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              DigitalDadVentures is a fast-growing platform—real engagement stats are always 
+              available to brand partners upon request.
+            </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-orange-600 mb-2">50K+</div>
-                <div className="text-sm text-gray-600">Monthly Visitors</div>
+                <div className="text-3xl font-bold text-orange-600 mb-2">Growing</div>
+                <div className="text-sm text-gray-600">Community</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">15K+</div>
-                <div className="text-sm text-gray-600">Newsletter Subscribers</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">Engaged</div>
+                <div className="text-sm text-gray-600">Audience</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">85%</div>
-                <div className="text-sm text-gray-600">Family Audience</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">Family</div>
+                <div className="text-sm text-gray-600">Focused</div>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-purple-600 mb-2">4.5min</div>
-                <div className="text-sm text-gray-600">Avg. Session Time</div>
+                <div className="text-3xl font-bold text-purple-600 mb-2">High</div>
+                <div className="text-sm text-gray-600">Quality Content</div>
               </CardContent>
             </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-500">
+              All current engagement data is available to partners on request.
+            </p>
           </div>
         </section>
 
