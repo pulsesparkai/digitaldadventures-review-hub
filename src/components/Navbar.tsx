@@ -34,9 +34,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-blue-900">
-              Digital<span className="text-orange-600">Dad</span>Ventures
-            </div>
+            <img 
+              src="/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png" 
+              alt="DigitalDadVentures logo featuring a family icon and modern text – trusted product reviews for families and parents"
+              title="Logo of DigitalDadVentures – Honest Reviews for Smart Families"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
