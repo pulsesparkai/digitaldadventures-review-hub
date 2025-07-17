@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +9,6 @@ import { Mail, MessageSquare, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,41 +17,27 @@ const Contact = () => {
     category: '',
     message: ''
   });
-
-  const categories = [
-    'General Inquiry',
-    'Product Review Request',
-    'Editorial Question',
-    'AI Content Inquiry',
-    'Partnership/Collaboration',
-    'Technical Issue',
-    'Other'
-  ];
-
+  const categories = ['General Inquiry', 'Product Review Request', 'Editorial Question', 'AI Content Inquiry', 'Partnership/Collaboration', 'Technical Issue', 'Other'];
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
         description: "Please fill in all required fields",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     console.log('Contact form submission:', formData);
-    
     toast({
       title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you within 24-48 hours.",
+      description: "Thanks for reaching out. We'll get back to you within 24-48 hours."
     });
 
     // Reset form
@@ -65,9 +49,7 @@ const Contact = () => {
       message: ''
     });
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
@@ -104,62 +86,35 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Name *</Label>
-                        <Input
-                          id="name"
-                          value={formData.name}
-                          onChange={(e) => handleInputChange('name', e.target.value)}
-                          placeholder="Your name"
-                          required
-                        />
+                        <Input id="name" value={formData.name} onChange={e => handleInputChange('name', e.target.value)} placeholder="Your name" required />
                       </div>
                       <div>
                         <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          placeholder="your@email.com"
-                          required
-                        />
+                        <Input id="email" type="email" value={formData.email} onChange={e => handleInputChange('email', e.target.value)} placeholder="your@email.com" required />
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="category">Category</Label>
-                        <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>
+                        <Select value={formData.category} onValueChange={value => handleInputChange('category', value)}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select category" />
                           </SelectTrigger>
                           <SelectContent>
-                            {categories.map((category) => (
-                              <SelectItem key={category} value={category}>{category}</SelectItem>
-                            ))}
+                            {categories.map(category => <SelectItem key={category} value={category}>{category}</SelectItem>)}
                           </SelectContent>
                         </Select>
                       </div>
                       <div>
                         <Label htmlFor="subject">Subject</Label>
-                        <Input
-                          id="subject"
-                          value={formData.subject}
-                          onChange={(e) => handleInputChange('subject', e.target.value)}
-                          placeholder="Brief subject line"
-                        />
+                        <Input id="subject" value={formData.subject} onChange={e => handleInputChange('subject', e.target.value)} placeholder="Brief subject line" />
                       </div>
                     </div>
 
                     <div>
                       <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange('message', e.target.value)}
-                        placeholder="Tell us how we can help you..."
-                        rows={6}
-                        required
-                      />
+                      <Textarea id="message" value={formData.message} onChange={e => handleInputChange('message', e.target.value)} placeholder="Tell us how we can help you..." rows={6} required />
                     </div>
 
                     <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
@@ -173,27 +128,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-gray-600">hello@digitaldadventures.com</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Response Time</h4>
-                      <p className="text-gray-600">Within 24-48 hours</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Business Hours</h4>
-                      <p className="text-gray-600">Monday - Friday, 9AM - 5PM EST</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              
 
               <Card>
                 <CardHeader>
@@ -231,8 +166,6 @@ const Contact = () => {
       </div>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
