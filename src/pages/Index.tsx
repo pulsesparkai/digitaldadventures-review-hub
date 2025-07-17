@@ -19,35 +19,7 @@ const Index = () => {
     { name: 'Family Tech', icon: '📱', count: 14, color: 'bg-purple-100 text-purple-800' },
   ];
 
-  const featuredReviews = [
-    {
-      title: 'Dash Mini Bundt Cake Maker Review',
-      excerpt: 'Perfect for small batches and quick treats - our hands-on test reveals all',
-      category: 'Kitchen',
-      rating: 4.5,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'dash-mini-bundt-cake-maker'
-    },
-    {
-      title: 'OPOVE Massage Gun Analysis',
-      excerpt: 'AI-powered analysis of specs, reviews, and market positioning',
-      category: 'Fitness',
-      rating: 4.2,
-      image: '/placeholder.svg',
-      isAI: true,
-      slug: 'opove-massage-gun'
-    },
-    {
-      title: 'Stanley Cup: Worth the Hype?',
-      excerpt: 'Real-world testing of the viral tumbler everyone is talking about',
-      category: 'Family Tech',
-      rating: 4.0,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'stanley-cup-review'
-    }
-  ];
+  const featuredReviews = [];
 
   return (
     <div className="min-h-screen bg-white">

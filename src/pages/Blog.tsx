@@ -8,38 +8,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      title: 'The Rise of Smart Kitchen Gadgets: Are They Worth It?',
-      excerpt: 'AI analysis of the latest smart kitchen trends and whether they actually make cooking easier for busy families.',
-      category: 'Trends',
-      author: 'AI Analysis',
-      date: '2024-01-20',
-      readTime: '5 min read',
-      isAI: true,
-      slug: 'smart-kitchen-gadgets-worth-it'
-    },
-    {
-      title: '2024 Family Tech Predictions: What to Expect',
-      excerpt: 'Our predictions for the biggest family technology trends this year, from AI-powered toys to smart home integration.',
-      category: 'Tech Trends',
-      author: 'Editorial Team',
-      date: '2024-01-18',
-      readTime: '7 min read',
-      isAI: true,
-      slug: 'family-tech-predictions-2024'
-    },
-    {
-      title: 'Budget vs Premium: When to Splurge on Gadgets',
-      excerpt: 'Personal insights on making smart purchasing decisions and knowing when to invest in quality over savings.',
-      category: 'Buying Guide',
-      author: 'Dad Perspective',
-      date: '2024-01-15',
-      readTime: '6 min read',
-      isAI: false,
-      slug: 'budget-vs-premium-gadgets'
-    }
-  ];
+  const blogPosts = [];
 
   return (
     <div className="min-h-screen bg-white">
