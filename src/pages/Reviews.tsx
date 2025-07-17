@@ -15,68 +15,7 @@ const Reviews = () => {
 
   const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech'];
 
-  const reviews = [
-    {
-      title: 'Dash Mini Bundt Cake Maker Review',
-      excerpt: 'Perfect for small batches and quick treats - our hands-on test reveals all',
-      category: 'Kitchen',
-      rating: 4.5,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'dash-mini-bundt-cake-maker',
-      date: '2024-01-15'
-    },
-    {
-      title: 'OPOVE Massage Gun Analysis',
-      excerpt: 'AI-powered analysis of specs, reviews, and market positioning',
-      category: 'Fitness',
-      rating: 4.2,
-      image: '/placeholder.svg',
-      isAI: true,
-      slug: 'opove-massage-gun',
-      date: '2024-01-12'
-    },
-    {
-      title: 'Stanley Cup: Worth the Hype?',
-      excerpt: 'Real-world testing of the viral tumbler everyone is talking about',
-      category: 'Family Tech',
-      rating: 4.0,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'stanley-cup-review',
-      date: '2024-01-10'
-    },
-    {
-      title: 'Cuisinart Mini Food Processor',
-      excerpt: 'Compact powerhouse for small kitchen tasks and meal prep',
-      category: 'Kitchen',
-      rating: 4.4,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'cuisinart-mini-food-processor',
-      date: '2024-01-08'
-    },
-    {
-      title: 'LifePro Sonic Massage Gun',
-      excerpt: 'Professional-grade recovery tool tested by our fitness team',
-      category: 'Fitness',
-      rating: 4.6,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'lifepro-sonic-massage-gun',
-      date: '2024-01-05'
-    },
-    {
-      title: 'Uplift Desk Converter',
-      excerpt: 'Transform any desk into a standing workstation - full review',
-      category: 'Desk Gear',
-      rating: 4.3,
-      image: '/placeholder.svg',
-      isAI: false,
-      slug: 'uplift-desk-converter',
-      date: '2024-01-03'
-    }
-  ];
+  const reviews = [];
 
   const filteredReviews = reviews.filter(review => {
     const matchesSearch = review.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
