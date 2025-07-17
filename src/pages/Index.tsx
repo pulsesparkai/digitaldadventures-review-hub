@@ -11,12 +11,12 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 
 const Index = () => {
   const categories = [
-    { name: 'Kitchen', icon: '🍳', count: 15, color: 'bg-orange-100 text-orange-800' },
-    { name: 'Fitness', icon: '💪', count: 12, color: 'bg-green-100 text-green-800' },
-    { name: 'Desk Gear', icon: '💻', count: 18, color: 'bg-blue-100 text-blue-800' },
-    { name: 'Outdoor', icon: '🏕️', count: 10, color: 'bg-emerald-100 text-emerald-800' },
-    { name: 'Tools', icon: '🔧', count: 8, color: 'bg-gray-100 text-gray-800' },
-    { name: 'Family Tech', icon: '📱', count: 14, color: 'bg-purple-100 text-purple-800' },
+    { name: 'Kitchen', icon: '🍳', color: 'bg-orange-100 text-orange-800' },
+    { name: 'Fitness', icon: '💪', color: 'bg-green-100 text-green-800' },
+    { name: 'Desk Gear', icon: '💻', color: 'bg-blue-100 text-blue-800' },
+    { name: 'Outdoor', icon: '🏕️', color: 'bg-emerald-100 text-emerald-800' },
+    { name: 'Tools', icon: '🔧', color: 'bg-gray-100 text-gray-800' },
+    { name: 'Family Tech', icon: '📱', color: 'bg-purple-100 text-purple-800' },
   ];
 
   const featuredReviews = [];
@@ -71,7 +71,7 @@ const Index = () => {
                   <CardContent className="p-6 text-center">
                     <div className="text-4xl mb-4">{category.icon}</div>
                     <h3 className="font-semibold mb-2">{category.name}</h3>
-                    <Badge className={category.color}>{category.count} reviews</Badge>
+                    
                   </CardContent>
                 </Card>
               </Link>
