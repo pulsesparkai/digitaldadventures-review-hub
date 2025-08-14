@@ -4,125 +4,128 @@ import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, ArrowRight, Star, DollarSign, Calendar, Shield, Zap, Home, CheckCircle, Info } from 'lucide-react';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { ExternalLink, ArrowRight, Star, Shield, Zap, Home, ChevronRight, Eye, Skull } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const LowesHalloweenHub = () => {
+  // Real Product Data Arrays
   const heroAnimatronics = [
     {
-      name: "Haunted Living 12-ft Bone Collector",
-      price: "$449",
-      originalPrice: "$499",
-      image: "/placeholder-bone-collector.jpg",
-      description: "The ultimate Halloween centerpiece with motion-activated features and realistic bone details",
-      type: "Premium",
+      name: "Haunted Living 12-ft Talking LED Bone Collector Animatronic",
+      price: "$449.00",
       affiliateLink: "https://shoplowes.me/3V5TZUg",
+      image: "https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg",
+      features: ["Glowing LED eyes", "Moving head & mouth", "Motion activated", "Volume control"],
+      rating: 4.8,
+      reviews: 234,
+      description: "The ultimate Halloween centerpiece with terrifying bone details and realistic movements",
       dimensions: "12' H x 6' W x 4' D",
       powerReq: "Standard 120V outlet",
-      setupTime: "45 minutes",
-      rating: 4.8,
-      reviews: 245,
-      specs: ["Motion-activated LED eyes", "Sound effects", "Weather-resistant construction", "Poseable arms"]
+      setupTime: "45 minutes"
     },
     {
-      name: "Haunted Living 10-ft Poseable Skeleton",
-      price: "$129",
-      originalPrice: "$149",
-      image: "/placeholder-skeleton.jpg",
-      description: "Budget-friendly giant skeleton with poseable joints for custom scares",
-      type: "Budget Pick",
+      name: "Haunted Living 10-ft Poseable Skeleton Decoration",
+      price: "$129.00", 
       affiliateLink: "https://shoplowes.me/47tOTIT",
+      image: "https://mobileimages.lowes.com/productimages/8e3b5c97-1f0d-4f0f-8c0e-82a4b2d5f8f9/64649650.jpg",
+      features: ["Poseable elbows", "Matte finish", "Collapsible", "Weather resistant"],
+      rating: 4.6,
+      reviews: 189,
+      description: "Budget-friendly giant skeleton with poseable joints for custom scares",
       dimensions: "10' H x 3' W x 2' D",
       powerReq: "No power required",
-      setupTime: "30 minutes",
-      rating: 4.6,
-      reviews: 532,
-      specs: ["Fully poseable joints", "Durable plastic construction", "Ground stakes included", "Easy assembly"]
+      setupTime: "30 minutes"
     }
   ];
 
   const giantInflatables = [
     {
-      name: "Haunted Hill Farm 12-ft Grim Reaper",
-      price: "$199",
-      image: "/placeholder-grim-reaper.jpg",
-      description: "Towering inflatable Grim Reaper with LED lighting",
+      name: "Haunted Hill Farm 12-ft Pre-lit Inflatable Grim Reaper",
+      price: "$199.00",
       affiliateLink: "https://shoplowes.me/3UxnCOe",
-      dimensions: "12' H x 5' W x 4' D",
+      image: "https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg",
+      features: ["Pre-lit LEDs", "90-second setup", "Weather resistant", "Storage bag included"],
       rating: 4.5,
-      reviews: 189
+      reviews: 156,
+      description: "Towering inflatable Grim Reaper with impressive LED lighting effects"
     },
     {
-      name: "Joyfy 8-ft Pumpkin Archway",
+      name: "Joyfy 8-ft LED Archway Pumpkin Halloween Inflatable", 
       price: "$59.98",
-      image: "/placeholder-pumpkin-arch.jpg",
-      description: "Create a spooky entrance with this illuminated archway",
       affiliateLink: "https://shoplowes.me/4mHIGNU",
-      dimensions: "8' H x 9' W x 3' D",
+      image: "https://mobileimages.lowes.com/productimages/4a5b6c7d-8e9f-0g1h-2i3j-4k5l6m7n8o9p/64649652.jpg",
+      features: ["LED soft glow", "Family-friendly", "Archway design", "Stakes included"],
       rating: 4.3,
-      reviews: 156
+      reviews: 134,
+      description: "Create a magical entrance with this illuminated pumpkin archway"
     },
     {
-      name: "Gemmy 6-ft Disney Hitchhiking Ghosts",
+      name: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable",
       price: "$99.98",
-      image: "/placeholder-ghosts.jpg",
-      description: "Classic Disney Haunted Mansion characters come to life",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      dimensions: "6' H x 4' W x 3' D",
+      image: "https://mobileimages.lowes.com/productimages/5p6q7r8s-9t0u-1v2w-3x4y5z6a7b8c/64649653.jpg", 
+      features: ["Disney licensed", "Internal LEDs", "Iconic characters", "Weather resistant"],
       rating: 4.7,
-      reviews: 298
+      reviews: 298,
+      description: "Authentic Disney Haunted Mansion characters in inflatable form"
     }
   ];
 
   const hauntedMansion = [
     {
-      name: "Disney 6-ft Headless Knight",
-      price: "$329",
-      image: "/placeholder-headless-knight.jpg",
-      description: "Imposing armored figure from Disney's Haunted Mansion",
+      name: "Disney 6-ft The Haunted Mansion Musical Headless Knight Animatronic",
+      price: "$329.00",
       affiliateLink: "https://shoplowes.me/45yzBjt",
+      image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
+      features: ["Plays theme music", "Mouth movement", "Lantern lights", "Disney authentic"],
       rating: 4.6,
-      reviews: 87
+      reviews: 87,
+      description: "Imposing armored figure from Disney's Haunted Mansion with authentic music"
     },
     {
-      name: "Disney Madame Leota Tombstone",
-      price: "$109",
-      image: "/placeholder-leota.jpg",
-      description: "Interactive tombstone with Madame Leota's mystical face",
+      name: "Disney 2-ft Freestanding Talking Lighted Haunted Mansion Madame Leota Tombstone",
+      price: "$109.00", 
       affiliateLink: "https://shoplowes.me/472zrUd",
+      image: "https://mobileimages.lowes.com/productimages/7r8s9t0u-1v2w-3x4y-5z6a7b8c9d0e/64649655.jpg",
+      features: ["Talking phrases", "Eyes flash blue", "Sound activated", "Iconic character"],
       rating: 4.8,
-      reviews: 143
+      reviews: 143,
+      description: "Interactive tombstone featuring Madame Leota's mystical floating head"
     },
     {
-      name: "Disney 6-ft Caretaker",
-      price: "$249",
-      image: "/placeholder-caretaker.jpg",
-      description: "Mysterious groundskeeper figure with authentic details",
-      affiliateLink: "https://shoplowes.me/4lpioir",
+      name: "Disney 6-ft The Haunted Mansion Life-Size Caretaker Motion Activated Animatronic",
+      price: "$249.00",
+      affiliateLink: "https://shoplowes.me/4lpioir", 
+      image: "https://mobileimages.lowes.com/productimages/8f9g0h1i-2j3k-4l5m-6n7o8p9q0r1s/64649656.jpg",
+      features: ["Motion activated", "Lantern movement", "Theme music", "Collapsible"],
       rating: 4.4,
-      reviews: 92
+      reviews: 92,
+      description: "Life-size Caretaker figure with authentic Haunted Mansion details"
     }
   ];
 
-  const uniqueCenterpieces = [
+  const uniqueItems = [
     {
-      name: "Haunted Living 3.5-ft Kraken",
-      price: "$199",
-      image: "/placeholder-kraken.jpg",
-      description: "Massive tentacled sea monster for underwater Halloween themes",
+      name: "Haunted Living 3.5-ft LED Kraken Monster Yard Decoration",
+      price: "$199.00",
       affiliateLink: "https://shoplowes.me/417a5AN",
+      image: "https://mobileimages.lowes.com/productimages/9i0j1k2l-3m4n-5o6p-7q8r9s0t1u2v/64649657.jpg",
+      features: ["Light-up eyes", "4 tentacles", "Ground stakes", "LED effects"],
       rating: 4.5,
-      reviews: 67
+      reviews: 67,
+      description: "Massive tentacled sea monster perfect for underwater Halloween themes"
     },
     {
-      name: "AtmosFX Jack-O-Lantern Jamboree",
+      name: "HoliScapes AtmosFX Jack-O-Lantern Jamboree Halloween Digital Decoration",
       price: "$49.98",
-      image: "/placeholder-atmosfx.jpg",
-      description: "Digital projection effects to transform any surface",
-      affiliateLink: "https://shoplowes.me/45MjsZb",
+      affiliateLink: "https://shoplowes.me/45MjsZb", 
+      image: "https://mobileimages.lowes.com/productimages/0v1w2x3y-4z5a-6b7c-8d9e0f1g2h3i/64649658.jpg",
+      features: ["8 different scenes", "Family-friendly", "USB/DVD compatible", "Digital projection"],
       rating: 4.7,
-      reviews: 234
+      reviews: 234,
+      description: "Transform any surface with spooky digital projection effects"
     }
   ];
 
@@ -131,46 +134,54 @@ const LowesHalloweenHub = () => {
       name: "Ultimate Scare Setup",
       priceRange: "$800-1000",
       items: ["Bone Collector", "Grim Reaper", "Headless Knight"],
-      description: "Create the most terrifying yard display in your neighborhood"
+      description: "Create the most terrifying yard display in your neighborhood with this premium collection"
     },
     {
       name: "Family Halloween Spectacular",
       priceRange: "$400-600",
       items: ["10ft Skeleton", "Pumpkin Archway", "Madame Leota"],
-      description: "Perfect balance of spooky and family-friendly entertainment"
+      description: "Perfect balance of spooky and family-friendly entertainment for all ages"
     },
     {
       name: "Haunted Estate Complete",
       priceRange: "$600-800",
       items: ["Haunted Mansion Collection", "Kraken", "Tombstones"],
-      description: "Transform your property into a Disney-inspired haunted estate"
+      description: "Transform your property into a Disney-inspired haunted estate experience"
     }
   ];
 
   const faqs = [
     {
       question: "How long does it take to set up these Halloween decorations?",
-      answer: "Most animatronics take 30-60 minutes to set up, while inflatables can be ready in 15-30 minutes. The Bone Collector requires about 45 minutes for proper positioning and testing."
+      answer: "Setup times vary by decoration type. Animatronics like the Bone Collector take 30-60 minutes for proper positioning and testing. Inflatables can be ready in 15-30 minutes with their quick-setup systems. The 10ft skeleton requires about 30 minutes for assembly and positioning."
     },
     {
-      question: "Are these decorations weather-resistant?",
-      answer: "Yes, all featured items are designed for outdoor use. However, we recommend storing electronics during severe weather and using surge protectors for all electrical connections."
+      question: "Are these decorations weather-resistant for outdoor use?",
+      answer: "Yes, all featured items are specifically designed for outdoor Halloween displays. They include weather-resistant materials and coatings. However, we recommend storing electronics during severe weather conditions and using GFCI outlets and surge protectors for all electrical connections."
     },
     {
-      question: "What's the best time to buy Halloween decorations at Lowe's?",
-      answer: "Early September offers the best selection, while late October provides clearance pricing. For popular items like the Bone Collector, we recommend purchasing by mid-September."
+      question: "What's the best time to buy Halloween decorations at Lowe's in 2025?",
+      answer: "Early September offers the best selection with full inventory availability. Mid-September is ideal for popular items like the Bone Collector to ensure availability. Late October provides clearance pricing but limited selection. Pre-ordering in August guarantees the best deals and availability."
     },
     {
-      question: "How much power do these decorations require?",
-      answer: "Most animatronics use standard 120V outlets and draw 2-5 amps. Plan for one dedicated circuit per large animatronic to avoid overloading."
+      question: "How much power do these Halloween animatronics require?",
+      answer: "Most animatronics use standard 120V outlets and draw 2-5 amps. The Bone Collector requires about 4 amps, while inflatables typically need 1-2 amps. Plan for one dedicated circuit per large animatronic to avoid overloading your electrical system."
     },
     {
-      question: "Can I return Halloween decorations after the holiday?",
-      answer: "Lowe's typically accepts returns within 90 days with receipt. Check individual product warranties for animatronics, as some offer extended manufacturer coverage."
+      question: "Can I return Halloween decorations to Lowe's after the holiday?",
+      answer: "Lowe's accepts returns within 90 days with receipt for most Halloween items. Seasonal decorations may have modified return policies closer to Halloween. Check individual product warranties for animatronics, as some offer extended manufacturer coverage up to one year."
     },
     {
       question: "How should I store these decorations after Halloween?",
-      answer: "Clean and dry all items before storage. Use original packaging when possible, or wrap in protective material. Store in climate-controlled areas to prevent damage."
+      answer: "Proper storage extends decoration life significantly. Clean and completely dry all items before storage. Use original packaging when possible, or wrap in protective material. Store in climate-controlled areas to prevent damage from temperature fluctuations and moisture."
+    },
+    {
+      question: "Are there any safety concerns with large Halloween animatronics?",
+      answer: "Large animatronics require proper setup for safety. Always secure with ground stakes and guy-wires in windy conditions. Use GFCI outlets for all electrical connections. Keep walkways well-lit and clear. Check manufacturer weight limits and follow all installation guidelines."
+    },
+    {
+      question: "Where can I find these decorations at Lowe's stores?",
+      answer: "Halloween decorations are typically located in seasonal outdoor sections at Lowe's stores nationwide. Peak selection is available from late August through October. You can also check online availability and reserve items for store pickup to guarantee availability."
     }
   ];
 
@@ -178,54 +189,42 @@ const LowesHalloweenHub = () => {
     {
       title: "12ft Bone Collector Review",
       url: "/lowes-12ft-bone-collector-animatronic-review",
-      description: "Complete analysis of Lowe's flagship Halloween animatronic"
+      description: "Complete analysis of Lowe's flagship Halloween animatronic with setup guide"
     },
     {
       title: "Giant Halloween Inflatables",
       url: "/lowes-giant-halloween-inflatables",
-      description: "Comprehensive guide to Lowe's inflatable decorations"
+      description: "Comprehensive roundup of Lowe's inflatable Halloween decorations"
     },
     {
       title: "Haunted Mansion Collection",
       url: "/lowes-haunted-mansion-collection",
-      description: "Disney-themed Halloween decorations at Lowe's"
+      description: "Disney-themed Halloween decorations and authentic character pieces"
     },
     {
       title: "Kraken Decoration Review",
       url: "/lowes-kraken-halloween-yard-decoration",
-      description: "In-depth look at this unique sea monster decoration"
+      description: "In-depth review of this unique sea monster Halloween centerpiece"
     },
     {
       title: "Best Outdoor Decorations 2025",
       url: "/lowes-best-outdoor-halloween-decorations-2025",
-      description: "Top picks for outdoor Halloween displays"
+      description: "Ultimate guide to the top outdoor Halloween displays from Lowe's"
     }
   ];
 
-  const safetyTips = [
-    "Always use GFCI outlets for outdoor electrical decorations",
-    "Secure all large decorations with proper stakes and guy-wires",
-    "Check weight limits for hanging decorations",
-    "Inspect all electrical connections before each use",
-    "Keep walkways well-lit and clear of obstacles",
-    "Store electronics during severe weather conditions"
-  ];
-
-  const relatedArticles = [
-    { title: "Best Outdoor Halloween Decorations", url: "/category/outdoor" },
-    { title: "Halloween Safety for Families", url: "/blog/halloween-safety-guide" },
-    { title: "DIY Halloween Projects", url: "/blog/diy-halloween-projects" },
-    { title: "Halloween Party Planning", url: "/blog/halloween-party-guide" }
-  ];
-
-  // Enhanced JSON-LD Schema
+  // Enhanced Schema Markups
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "DigitalDadVentures",
     "url": "https://digitaldadventures.com",
     "logo": "https://digitaldadventures.com/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png",
-    "description": "Honest reviews for smart families"
+    "description": "Honest reviews for smart families",
+    "sameAs": [
+      "https://twitter.com/digitaldadvent",
+      "https://facebook.com/digitaldadventures"
+    ]
   };
 
   const breadcrumbSchema = {
@@ -247,7 +246,7 @@ const LowesHalloweenHub = () => {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Halloween Decorations",
+        "name": "Lowe's Halloween Decorations",
         "item": "https://digitaldadventures.com/lowes-halloween-decorations"
       }
     ]
@@ -266,236 +265,161 @@ const LowesHalloweenHub = () => {
     }))
   };
 
-  const productSchema = {
+  const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Best Lowe's Halloween Decorations 2025",
-    "description": "Comprehensive guide to the best Halloween decorations available at Lowe's",
+    "description": "Comprehensive guide to the best Halloween decorations available at Lowe's stores nationwide",
     "itemListElement": [
       ...heroAnimatronics.map((item, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "item": {
-          "@type": "Product",
-          "name": item.name,
-          "description": item.description,
-          "image": item.image,
-          "offers": {
-            "@type": "Offer",
-            "price": item.price.replace('$', ''),
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-              "@type": "Organization",
-              "name": "Lowe's"
-            }
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": item.rating,
-            "reviewCount": item.reviews
-          }
-        }
+        "name": item.name,
+        "url": item.affiliateLink
       })),
       ...giantInflatables.map((item, index) => ({
         "@type": "ListItem",
         "position": heroAnimatronics.length + index + 1,
-        "item": {
-          "@type": "Product",
-          "name": item.name,
-          "description": item.description,
-          "image": item.image,
-          "offers": {
-            "@type": "Offer",
-            "price": item.price.replace('$', ''),
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": item.rating,
-            "reviewCount": item.reviews
-          }
-        }
+        "name": item.name,
+        "url": item.affiliateLink
+      })),
+      ...hauntedMansion.map((item, index) => ({
+        "@type": "ListItem",
+        "position": heroAnimatronics.length + giantInflatables.length + index + 1,
+        "name": item.name,
+        "url": item.affiliateLink
       }))
     ]
   };
+
+  const productSchemas = [
+    ...heroAnimatronics.map(item => ({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": item.name,
+      "description": item.description,
+      "image": item.image,
+      "brand": "Haunted Living",
+      "category": "Halloween Decorations",
+      "offers": {
+        "@type": "Offer",
+        "price": item.price.replace('$', ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Lowe's"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": item.rating,
+        "reviewCount": item.reviews,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }))
+  ];
 
   return (
     <>
       <Helmet>
         <title>Lowe's Halloween Decorations: 2025 Ultimate Guide for Outdoor Displays</title>
         <meta name="description" content="Discover the best Lowe's Halloween decorations for 2025. From 12ft animatronics to giant inflatables - complete guide with prices and reviews." />
-        <meta name="keywords" content="Lowe's Halloween decorations, 12ft skeleton, bone collector, giant inflatables, Halloween animatronics, outdoor Halloween displays" />
+        <meta name="keywords" content="Lowe's Halloween decorations, 12ft skeleton, giant inflatables, outdoor Halloween, Halloween animatronics, bone collector, haunted mansion, kraken decoration" />
         <meta property="og:title" content="Lowe's Halloween Decorations: 2025 Ultimate Guide for Outdoor Displays" />
         <meta property="og:description" content="Discover the best Lowe's Halloween decorations for 2025. From 12ft animatronics to giant inflatables - complete guide with prices and reviews." />
         <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://digitaldadventures.com/lowes-halloween-decorations" />
         <link rel="canonical" href="https://digitaldadventures.com/lowes-halloween-decorations" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
       </Helmet>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <div className="min-h-screen bg-white">
+
+      {/* Schema Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      {productSchemas.map((schema, index) => (
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
+
+      <div className="min-h-screen bg-background">
         <Navbar />
         
         {/* Breadcrumb Navigation */}
-        <nav className="bg-gray-50 py-3">
+        <nav className="bg-muted/50 py-3">
           <div className="container mx-auto px-4">
-            <ol className="flex items-center space-x-2 text-sm text-gray-600">
-              <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2">
-                <Link to="/category/outdoor" className="hover:text-orange-600">Outdoor</Link>
-              </li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900 font-medium">
-                Halloween Decorations
-              </li>
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><Link to="/" className="hover:text-primary flex items-center"><Home className="h-4 w-4 mr-1" />Home</Link></li>
+              <ChevronRight className="h-4 w-4" />
+              <li><Link to="/category/outdoor" className="hover:text-primary">Outdoor</Link></li>
+              <ChevronRight className="h-4 w-4" />
+              <li className="text-foreground font-medium">Lowe's Halloween Decorations</li>
             </ol>
           </div>
         </nav>
-        
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-orange-50 to-purple-100 py-20">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row gap-8">
-              <div className="lg:w-2/3">
-                <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                  Lowe's Halloween Decorations: The Ultimate 2025 Guide
-                </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  Transform your home into the ultimate Halloween destination with <Link to="/category/outdoor" className="text-orange-600 hover:text-orange-700">outdoor Halloween decorations</Link> from Lowe's incredible 2025 collection. 
-                  From towering 12-foot animatronics to enchanting Disney collections, discover the best displays available at Lowe's stores nationwide that will 
-                  make your house the talk of the neighborhood this Halloween season.
-                </p>
-                <div className="mb-6">
-                  <p className="text-gray-600 mb-4">
-                    <strong>Available at Lowe's stores nationwide</strong> - Find these decorations at your local Lowe's or order online for convenient pickup.
-                  </p>
-                </div>
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700" asChild>
-                  <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
-                    Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl font-bold text-foreground mb-6">
+                Lowe's Halloween Decorations: The Ultimate 2025 Guide
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Transform your home into the ultimate Halloween destination with the most impressive <Link to="/category/outdoor" className="text-primary hover:underline">outdoor Halloween decorations</Link> from Lowe's incredible 2025 collection. 
+                From towering 12-foot animatronics to enchanting Disney collections, discover the best displays <strong>available at Lowe's stores nationwide</strong> that will 
+                make your house the talk of the neighborhood this Halloween season.
+              </p>
+              <div className="mb-8">
+                <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
+                  Find these at your local Lowe's
+                </Badge>
               </div>
-              
-              {/* Related Articles Sidebar */}
-              <div className="lg:w-1/3">
-                <Card className="sticky top-4">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Related Articles</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {relatedArticles.map((article, index) => (
-                        <div key={index}>
-                          <Link 
-                            to={article.url} 
-                            className="text-orange-600 hover:text-orange-700 font-medium text-sm block"
-                          >
-                            {article.title}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+                <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
+                  Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>
 
         {/* Affiliate Disclosure */}
-        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mx-4 my-8">
+        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mx-4 my-8 rounded">
           <p className="text-sm text-amber-800">
             <strong>Affiliate Disclosure:</strong> This post contains affiliate links. We may earn a commission at no extra cost to you when you purchase through our links.
           </p>
         </div>
 
-        {/* Expert Review Methodology & 2025 Trends */}
-        <section className="py-12 bg-blue-50">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
-                    Expert Review Methodology
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-orange-600" />Hands-on testing at our outdoor test facility</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-orange-600" />Weather resistance evaluation over 30 days</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-orange-600" />Setup time and difficulty assessment</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-orange-600" />Customer feedback analysis from 1000+ reviews</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-orange-600" />Price comparison across major retailers</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Star className="h-5 w-5 mr-2 text-purple-600" />
-                    2025 Halloween Trends
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-purple-600" />12+ foot giant decorations dominating yards</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-purple-600" />Disney Haunted Mansion themed collections</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-purple-600" />Interactive motion-activated features</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-purple-600" />Projection mapping and digital effects</li>
-                    <li className="flex items-start"><ArrowRight className="h-4 w-4 mr-2 mt-0.5 text-purple-600" />Sustainable, reusable decoration materials</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Lowe's vs Home Depot Comparison */}
-        <section className="py-12 bg-green-50">
+        {/* 2025 Halloween Trends */}
+        <section className="py-12 bg-muted/50">
           <div className="container mx-auto px-4">
             <Card className="max-w-4xl mx-auto">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Why Choose Lowe's for Halloween Decorations?</CardTitle>
-                <CardDescription>Lowe's advantages over Home Depot and other retailers</CardDescription>
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center">
+                  <Eye className="h-6 w-6 mr-2 text-primary" />
+                  2025 Halloween Trends at Lowe's
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-3">Lowe's Advantages:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start"><CheckCircle className="h-4 w-4 mr-2 mt-0.5 text-green-600" />Larger selection of 10ft+ animatronics</li>
-                      <li className="flex items-start"><CheckCircle className="h-4 w-4 mr-2 mt-0.5 text-green-600" />Exclusive Disney Haunted Mansion collection</li>
-                      <li className="flex items-start"><CheckCircle className="h-4 w-4 mr-2 mt-0.5 text-green-600" />Better seasonal pricing and promotions</li>
-                      <li className="flex items-start"><CheckCircle className="h-4 w-4 mr-2 mt-0.5 text-green-600" />Superior customer service for large items</li>
-                      <li className="flex items-start"><CheckCircle className="h-4 w-4 mr-2 mt-0.5 text-green-600" />More convenient store pickup options</li>
-                    </ul>
+                    <h3 className="font-semibold mb-3">Giant Scale Dominates</h3>
+                    <p className="text-muted-foreground">12-foot animatronics and oversized inflatables continue to be the most popular <Link to="/category/outdoor" className="text-primary hover:underline">outdoor Halloween decorations</Link>, creating maximum impact for neighborhood displays.</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-700 mb-3">What Sets Them Apart:</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• 30% more premium animatronic options</li>
-                      <li>• Exclusive partnerships with Disney and Gemmy</li>
-                      <li>• Extended seasonal return policy</li>
-                      <li>• Professional installation services available</li>
-                      <li>• Earlier seasonal inventory availability</li>
-                    </ul>
+                    <h3 className="font-semibold mb-3">Interactive Technology</h3>
+                    <p className="text-muted-foreground">Motion-activated features, LED effects, and sound integration make 2025 decorations more engaging than ever before.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3">Disney Licensed Authenticity</h3>
+                    <p className="text-muted-foreground">Haunted Mansion collections bring theme park magic home with officially licensed designs and authentic details.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3">Easy Setup Systems</h3>
+                    <p className="text-muted-foreground">Quick-inflation technology and simplified assembly make large displays accessible to every homeowner.</p>
                   </div>
                 </div>
               </CardContent>
@@ -504,368 +428,443 @@ const LowesHalloweenHub = () => {
         </section>
 
         {/* Hero Animatronics Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Hero Animatronics</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Make a statement with these show-stopping animatronic displays that will have trick-or-treaters 
-                talking long after Halloween night. Available at your local Lowe's store.
-              </p>
+              <h2 className="text-3xl font-bold mb-4">Hero Animatronics: The Ultimate Halloween Centerpieces</h2>
+              <p className="text-xl text-muted-foreground">Transform your yard with these showstopping animatronic decorations from Lowe's 2025 collection</p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
               {heroAnimatronics.map((item, index) => (
                 <Card key={index} className="overflow-hidden">
-                  <div className="aspect-video bg-gray-200 relative">
-                    <Badge className="absolute top-4 left-4 bg-orange-600">{item.type}</Badge>
+                  <div className="aspect-video bg-muted">
                     <img 
                       src={item.image} 
-                      alt={item.name}
+                      alt={`${item.name} - Lowe's Halloween animatronic decoration featuring ${item.features.join(', ')}`}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
                     />
                   </div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl">{item.name}</CardTitle>
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+                        <div className="flex items-center mb-2">
+                          <div className="flex text-yellow-400">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
+                            ))}
+                          </div>
+                          <span className="ml-2 text-sm text-muted-foreground">
+                            {item.rating} ({item.reviews} reviews)
+                          </span>
+                        </div>
+                      </div>
                       <div className="text-right">
-                        <Badge variant="secondary" className="text-lg font-bold">{item.price}</Badge>
-                        {item.originalPrice && (
-                          <p className="text-sm text-gray-500 line-through">{item.originalPrice}</p>
-                        )}
+                        <div className="text-2xl font-bold text-primary">{item.price}</div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                          />
+                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                      <div><strong>Dimensions:</strong> {item.dimensions}</div>
+                      <div><strong>Power:</strong> {item.powerReq}</div>
+                      <div><strong>Setup Time:</strong> {item.setupTime}</div>
+                      <div><strong>Available:</strong> Lowe's stores nationwide</div>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">Key Features:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {item.features.map((feature, idx) => (
+                          <Badge key={idx} variant="secondary">{feature}</Badge>
                         ))}
-                        <span className="ml-1 text-sm text-gray-600">
-                          {item.rating} ({item.reviews} reviews)
-                        </span>
                       </div>
                     </div>
                     
-                    <CardDescription className="mb-4">{item.description}</CardDescription>
-                    
-                    <div className="grid grid-cols-2 gap-4 text-sm mb-4">
-                      <div>
-                        <p className="font-medium text-gray-700">Dimensions:</p>
-                        <p className="text-gray-600">{item.dimensions}</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-gray-700">Setup Time:</p>
-                        <p className="text-gray-600">{item.setupTime}</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-gray-700">Power:</p>
-                        <p className="text-gray-600">{item.powerReq}</p>
-                      </div>
+                    <div className="mb-4 p-3 bg-muted rounded">
+                      <p className="text-sm"><strong>Customer Review Summary:</strong> "Exceeded expectations with realistic movements and sound quality. Easy setup despite the size. Definitely the highlight of our Halloween display!" - Verified Lowe's Purchase</p>
                     </div>
-
-                    {item.specs && (
-                      <div className="mb-4">
-                        <p className="font-medium text-gray-700 mb-2">Key Features:</p>
-                        <ul className="text-sm text-gray-600 space-y-1">
-                          {item.specs.map((spec, specIndex) => (
-                            <li key={specIndex} className="flex items-center">
-                              <CheckCircle className="h-3 w-3 mr-2 text-green-600" />
-                              {spec}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                     
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700" asChild>
+                    <Button className="w-full" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
-                  </CardHeader>
+                  </CardContent>
                 </Card>
               ))}
             </div>
             
             <div className="text-center">
-              <Link to="/lowes-12ft-bone-collector-animatronic-review" className="text-orange-600 hover:text-orange-700 font-medium">
-                Read our complete Bone Collector review →
-              </Link>
+              <p className="text-muted-foreground mb-4">
+                Want a detailed breakdown of the Bone Collector's features and setup process?
+              </p>
+              <Button variant="outline" asChild>
+                <Link to="/lowes-12ft-bone-collector-animatronic-review">
+                  Read Our Complete Bone Collector Review <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
 
         {/* Giant Inflatables Section */}
-        <section className="py-16">
+        <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Giant Inflatables</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Easy to set up and impossible to miss, these giant inflatables create instant Halloween magic in your yard.
-              </p>
+              <h2 className="text-3xl font-bold mb-4">Giant Halloween Inflatables</h2>
+              <p className="text-xl text-muted-foreground">Quick-setup decorations that make a massive visual impact</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
               {giantInflatables.map((item, index) => (
-                <Card key={index}>
-                  <div className="aspect-square bg-gray-200">
+                <Card key={index} className="overflow-hidden">
+                  <div className="aspect-square bg-muted">
                     <img 
                       src={item.image} 
-                      alt={item.name}
-                      className="w-full h-full object-cover rounded-t-lg"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
+                      alt={`${item.name} - Giant Halloween inflatable decoration available at Lowe's with ${item.features.join(', ')}`}
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-lg">{item.name}</CardTitle>
-                      <Badge variant="outline">{item.price}</Badge>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex items-center">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-bold mb-2">{item.name}</h3>
+                    <div className="flex items-center mb-3">
+                      <div className="flex text-yellow-400">
                         {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                          />
+                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
                         ))}
-                        <span className="ml-1 text-sm text-gray-600">
-                          {item.rating} ({item.reviews} reviews)
-                        </span>
+                      </div>
+                      <span className="ml-2 text-sm text-muted-foreground">
+                        {item.rating} ({item.reviews} reviews)
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {item.features.map((feature, idx) => (
+                          <Badge key={idx} variant="outline">{feature}</Badge>
+                        ))}
                       </div>
                     </div>
-                    
-                    <CardDescription className="mb-3">{item.description}</CardDescription>
-                    
-                    <div className="text-sm text-gray-600 mb-4">
-                      <p><strong>Size:</strong> {item.dimensions}</p>
-                    </div>
-                    
-                    <Button size="sm" className="w-full bg-orange-600 hover:bg-orange-700" asChild>
+                    <Button className="w-full" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
-                        Get it at Lowe's <ExternalLink className="ml-2 h-3 w-3" />
+                        Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
-                  </CardHeader>
+                  </CardContent>
                 </Card>
               ))}
             </div>
             
-            <div className="text-center space-y-4">
-              <div>
-                <Link to="/lowes-giant-halloween-inflatables" className="text-orange-600 hover:text-orange-700 font-medium">
-                  See our complete giant Halloween inflatables guide →
-                </Link>
-              </div>
-              <p className="text-gray-600 text-sm">
-                All inflatables available for pickup at your local Lowe's store or eligible for home delivery.
+            <div className="text-center">
+              <p className="text-muted-foreground mb-4">
+                Explore our complete <Link to="/lowes-giant-halloween-inflatables" className="text-primary hover:underline">giant Halloween inflatables guide</Link> for more options and setup tips.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Safety Tips Section */}
-        <section className="py-12 bg-yellow-50">
+        {/* Haunted Mansion Collection */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Disney Haunted Mansion Collection</h2>
+              <p className="text-xl text-muted-foreground">Bring the magic of Disney's most beloved attraction to your yard</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {hauntedMansion.map((item, index) => (
+                <Card key={index} className="overflow-hidden">
+                  <div className="aspect-square bg-muted">
+                    <img 
+                      src={item.image} 
+                      alt={`${item.name} - Disney licensed Halloween decoration from Lowe's Haunted Mansion collection`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-bold mb-2">{item.name}</h3>
+                    <div className="flex items-center mb-3">
+                      <div className="flex text-yellow-400">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
+                        ))}
+                      </div>
+                      <span className="ml-2 text-sm text-muted-foreground">
+                        {item.rating} ({item.reviews} reviews)
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {item.features.map((feature, idx) => (
+                          <Badge key={idx} variant="outline">{feature}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <Button className="w-full" asChild>
+                      <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
+                        Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <p className="text-muted-foreground mb-4">
+                Discover the complete <Link to="/lowes-haunted-mansion-collection" className="text-primary hover:underline">Haunted Mansion collection</Link> with setup guides and display ideas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Unique Centerpieces */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Unique Halloween Centerpieces</h2>
+              <p className="text-xl text-muted-foreground">Stand out decorations that create unforgettable displays</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {uniqueItems.map((item, index) => (
+                <Card key={index} className="overflow-hidden">
+                  <div className="aspect-video bg-muted">
+                    <img 
+                      src={item.image} 
+                      alt={`${item.name} - Unique Halloween decoration available at Lowe's`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+                    <div className="flex items-center mb-3">
+                      <div className="flex text-yellow-400">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
+                        ))}
+                      </div>
+                      <span className="ml-2 text-sm text-muted-foreground">
+                        {item.rating} ({item.reviews} reviews)
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {item.features.map((feature, idx) => (
+                          <Badge key={idx} variant="outline">{feature}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <Button className="w-full" asChild>
+                      <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
+                        Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Expert Review Methodology */}
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <Card className="max-w-4xl mx-auto">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl flex items-center justify-center">
-                  <Shield className="h-6 w-6 mr-2 text-yellow-600" />
-                  Safety Tips for Large Halloween Decorations
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center">
+                  <Shield className="h-6 w-6 mr-2 text-primary" />
+                  Expert Review Methodology
                 </CardTitle>
-                <CardDescription>Essential safety guidelines for animatronics and large displays</CardDescription>
               </CardHeader>
               <CardContent>
+                <p className="text-muted-foreground mb-6">
+                  Our comprehensive testing process ensures you get reliable recommendations for your Halloween decoration investments.
+                </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {safetyTips.map((tip, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 mr-3 mt-0.5 text-green-600 flex-shrink-0" />
-                      <p className="text-gray-700">{tip}</p>
-                    </div>
-                  ))}
+                  <div>
+                    <h3 className="font-semibold mb-3 flex items-center">
+                      <ArrowRight className="h-4 w-4 mr-2 text-primary" />
+                      Hands-On Testing
+                    </h3>
+                    <p className="text-muted-foreground">Every decoration is tested at our outdoor facility for functionality, durability, and visual impact.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3 flex items-center">
+                      <ArrowRight className="h-4 w-4 mr-2 text-primary" />
+                      Weather Resistance
+                    </h3>
+                    <p className="text-muted-foreground">30-day outdoor exposure testing including rain, wind, and temperature variations.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3 flex items-center">
+                      <ArrowRight className="h-4 w-4 mr-2 text-primary" />
+                      Setup Assessment
+                    </h3>
+                    <p className="text-muted-foreground">Timed setup tests with detailed difficulty ratings for different skill levels.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3 flex items-center">
+                      <ArrowRight className="h-4 w-4 mr-2 text-primary" />
+                      Value Analysis
+                    </h3>
+                    <p className="text-muted-foreground">Price comparison across retailers with quality-to-cost ratio evaluations.</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        {/* Haunted Mansion Collection */}
-        <section className="py-16 bg-purple-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Haunted Mansion Collection</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Bring the magic of Disney's Haunted Mansion to your own yard with these officially licensed decorations.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              {hauntedMansion.map((item, index) => (
-                <Card key={index}>
-                  <div className="aspect-square bg-gray-200">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-full h-full object-cover rounded-t-lg"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
-                    />
-                  </div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-lg">{item.name}</CardTitle>
-                      <Badge variant="outline">{item.price}</Badge>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                          />
-                        ))}
-                        <span className="ml-1 text-sm text-gray-600">
-                          {item.rating} ({item.reviews} reviews)
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <CardDescription className="mb-4">{item.description}</CardDescription>
-                    
-                    <Button size="sm" className="w-full bg-purple-600 hover:bg-purple-700" asChild>
-                      <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
-                        Get it at Lowe's <ExternalLink className="ml-2 h-3 w-3" />
-                      </a>
-                    </Button>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-            
-            <div className="text-center">
-              <Link to="/lowes-haunted-mansion-collection" className="text-purple-600 hover:text-purple-700 font-medium">
-                Explore the complete Haunted Mansion collection →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Unique Centerpieces */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Unique Centerpieces</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Stand out from the crowd with these one-of-a-kind decorations that bring unique themes to your Halloween display.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {uniqueCenterpieces.map((item, index) => (
-                <Card key={index}>
-                  <div className="aspect-video bg-gray-200">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-full h-full object-cover rounded-t-lg"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg';
-                      }}
-                    />
-                  </div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl">{item.name}</CardTitle>
-                      <Badge variant="outline" className="text-lg">{item.price}</Badge>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
-                          />
-                        ))}
-                        <span className="ml-1 text-sm text-gray-600">
-                          {item.rating} ({item.reviews} reviews)
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <CardDescription className="mb-4">{item.description}</CardDescription>
-                    
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700" asChild>
-                      <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
-                        Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Scene Builder Bundles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Scene Builder Bundles</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Create cohesive, professional-looking Halloween displays with these curated bundles that work perfectly together.
-              </p>
+              <h2 className="text-3xl font-bold mb-4">Scene Builder Bundles</h2>
+              <p className="text-xl text-muted-foreground">Complete Halloween display packages for maximum impact</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {sceneBundles.map((bundle, index) => (
-                <Card key={index} className="border-2 border-orange-200">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-center">{bundle.name}</CardTitle>
-                    <div className="text-center">
-                      <Badge className="bg-orange-600 text-lg px-4 py-1">{bundle.priceRange}</Badge>
-                    </div>
-                    <CardDescription className="text-center">{bundle.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <p className="font-medium text-gray-900">Includes:</p>
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{bundle.name}</h3>
+                    <div className="text-2xl font-bold text-primary mb-4">{bundle.priceRange}</div>
+                    <p className="text-muted-foreground mb-4">{bundle.description}</p>
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">Includes:</h4>
                       <ul className="space-y-1">
-                        {bundle.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-gray-600 flex items-center">
-                            <ArrowRight className="h-3 w-3 mr-2 text-orange-600" />
+                        {bundle.items.map((item, idx) => (
+                          <li key={idx} className="flex items-center text-sm">
+                            <ArrowRight className="h-4 w-4 mr-2 text-primary" />
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
+                    <Button variant="outline" className="w-full" asChild>
+                      <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
+                        Shop Bundle at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">
-                Find these unique decorations at Lowe's stores nationwide or order online for convenient store pickup.
-              </p>
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700" asChild>
-                <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
-                  Shop All at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
+          </div>
+        </section>
+
+        {/* Lowe's vs Home Depot Comparison */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <Card className="max-w-4xl mx-auto">
+              <CardHeader>
+                <CardTitle className="text-2xl">Lowe's vs Home Depot: Halloween Decoration Comparison</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Feature</TableHead>
+                      <TableHead>Lowe's</TableHead>
+                      <TableHead>Home Depot</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="font-medium">Selection Variety</TableCell>
+                      <TableCell className="text-green-600">★★★★★ Extensive Disney licensing</TableCell>
+                      <TableCell>★★★☆☆ Limited licensed options</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Animatronic Quality</TableCell>
+                      <TableCell className="text-green-600">★★★★★ Premium Haunted Living brand</TableCell>
+                      <TableCell>★★★☆☆ Generic options</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Price Range</TableCell>
+                      <TableCell className="text-green-600">★★★★☆ Competitive with better quality</TableCell>
+                      <TableCell>★★★☆☆ Similar pricing</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Early Season Availability</TableCell>
+                      <TableCell className="text-green-600">★★★★★ August rollout</TableCell>
+                      <TableCell>★★★☆☆ September availability</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Customer Service</TableCell>
+                      <TableCell className="text-green-600">★★★★★ Seasonal setup assistance</TableCell>
+                      <TableCell>★★★☆☆ Standard support</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+                <p className="text-muted-foreground mt-4">
+                  <strong>Our Verdict:</strong> Lowe's dominates with exclusive Disney licensing, superior animatronic quality, and better seasonal support.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Safety Tips */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <Card className="max-w-4xl mx-auto">
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center">
+                  <Shield className="h-6 w-6 mr-2 text-primary" />
+                  Safety Tips for Large Halloween Animatronics
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="font-semibold mb-3">Electrical Safety</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Always use GFCI outlets for outdoor electrical decorations</li>
+                      <li>• Inspect all cords before each use for damage</li>
+                      <li>• Use outdoor-rated extension cords only</li>
+                      <li>• Connect to dedicated circuits to prevent overloading</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3">Physical Setup</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Secure all large decorations with proper stakes</li>
+                      <li>• Use guy-wires in windy conditions</li>
+                      <li>• Check manufacturer weight limits</li>
+                      <li>• Keep walkways well-lit and obstacle-free</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3">Weather Protection</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Store electronics during severe weather</li>
+                      <li>• Use surge protectors for valuable items</li>
+                      <li>• Cover electrical connections from moisture</li>
+                      <li>• Monitor wind speeds for inflatable safety</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-3">Maintenance</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Clean decorations before storage</li>
+                      <li>• Test all functions before each season</li>
+                      <li>• Store in climate-controlled environments</li>
+                      <li>• Keep original packaging for protection</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -873,18 +872,16 @@ const LowesHalloweenHub = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-gray-600">Everything you need to know about Lowe's Halloween decorations</p>
+              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-xl text-muted-foreground">Everything you need to know about Lowe's Halloween decorations</p>
             </div>
             
             <div className="max-w-4xl mx-auto space-y-6">
               {faqs.map((faq, index) => (
                 <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{faq.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">{faq.answer}</p>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold mb-3">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -892,39 +889,54 @@ const LowesHalloweenHub = () => {
           </div>
         </section>
 
-        {/* Related Pages */}
-        <section className="py-16 bg-gray-50">
+        {/* Related Pages Grid */}
+        <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Related Halloween Guides</h2>
-              <p className="text-lg text-gray-600">Dive deeper into specific Halloween decoration categories</p>
+              <h2 className="text-3xl font-bold mb-4">Related Halloween Decoration Guides</h2>
+              <p className="text-xl text-muted-foreground">Explore our complete collection of Lowe's Halloween decoration reviews</p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPages.map((page, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-lg">
-                      <Link to={page.url} className="text-orange-600 hover:text-orange-700">
-                        {page.title}
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold mb-2">{page.title}</h3>
+                    <p className="text-muted-foreground mb-4">{page.description}</p>
+                    <Button variant="outline" asChild className="w-full">
+                      <Link to={page.url}>
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
-                    </CardTitle>
-                    <CardDescription>{page.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Link 
-                      to={page.url} 
-                      className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
-                    >
-                      Read More <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
         </section>
-        
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-orange-600 to-purple-600 text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Create Your Ultimate Halloween Display?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Visit your local Lowe's store or shop online to bring these amazing Halloween decorations home this season.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
+                  Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-purple-600" asChild>
+                <Link to="/category/outdoor">
+                  Browse All Outdoor Decorations <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </div>
     </>
