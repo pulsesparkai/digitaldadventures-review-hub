@@ -19,6 +19,12 @@ import Privacy from "./pages/Privacy";
 import CookiePolicy from "./pages/CookiePolicy";
 import AIContentPolicy from "./pages/AIContentPolicy";
 import NotFound from "./pages/NotFound";
+import LowesHalloweenHub from "./pages/LowesHalloweenHub";
+import BoneCollectorReview from "./pages/BoneCollectorReview";
+import GiantInflatablesRoundup from "./pages/GiantInflatablesRoundup";
+import HauntedMansionCollection from "./pages/HauntedMansionCollection";
+import KrakenReview from "./pages/KrakenReview";
+import BestOutdoorDecorations from "./pages/BestOutdoorDecorations";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +49,12 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/ai-content-policy" element={<AIContentPolicy />} />
+          <Route path="/lowes-halloween-decorations" element={<LowesHalloweenHub />} />
+          <Route path="/lowes-12ft-bone-collector-animatronic-review" element={<BoneCollectorReview />} />
+          <Route path="/lowes-giant-halloween-inflatables" element={<GiantInflatablesRoundup />} />
+          <Route path="/lowes-haunted-mansion-collection" element={<HauntedMansionCollection />} />
+          <Route path="/lowes-kraken-halloween-yard-decoration" element={<KrakenReview />} />
+          <Route path="/lowes-best-outdoor-halloween-decorations-2025" element={<BestOutdoorDecorations />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
