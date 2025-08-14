@@ -54,31 +54,32 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
             Honest Reviews for Smart Families
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
             We recommend products based on research, hands-on experience, industry trends, and advanced AI analysis. 
             Discover the best gear, gadgets, and tools for modern family life.
           </p>
-          <div className="flex justify-center gap-4 mb-12">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <Button size="lg" className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px]">
               Browse Reviews <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]">
               Submit a Product
             </Button>
           </div>
-          <div className="flex justify-center items-center gap-8 text-sm text-gray-500">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <Users className="h-4 w-4" />
               <span>Family-Focused</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4" />
-              <span>Transparent AI Disclosure</span>
+              <span className="hidden sm:inline">Transparent AI Disclosure</span>
+              <span className="sm:hidden">AI Transparent</span>
             </div>
             <div className="flex items-center gap-2">
               <TrendingUp className="h-4 w-4" />
@@ -89,19 +90,19 @@ const Index = () => {
       </section>
 
       {/* Halloween Seasonal Promotion */}
-      <section className="py-16 bg-gradient-to-br from-orange-50 to-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 to-purple-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
               🎃 SEASONAL SPOTLIGHT
             </div>
-            <h2 className="text-3xl font-bold mb-4">Ultimate Halloween Decorations Guide</h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Ultimate Halloween Decorations Guide</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto">
               Transform your home with Lowe's best Halloween decorations for 2025. From 12ft animatronics to Disney collections.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100">
                 <img 
@@ -164,7 +165,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button size="lg" asChild className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px]">
               <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
                 Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
               </a>
@@ -174,17 +175,16 @@ const Index = () => {
       </section>
 
       {/* Categories Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">Shop by Category</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
             {categories.map((category) => (
               <Link key={category.name} to={`/category/${category.name.toLowerCase().replace(' ', '-')}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-4">{category.icon}</div>
-                    <h3 className="font-semibold mb-2">{category.name}</h3>
-                    
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full min-h-[120px] sm:min-h-[140px]">
+                  <CardContent className="p-3 sm:p-4 md:p-6 text-center flex flex-col justify-center h-full">
+                    <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4">{category.icon}</div>
+                    <h3 className="font-semibold text-xs sm:text-sm md:text-base">{category.name}</h3>
                   </CardContent>
                 </Card>
               </Link>
@@ -194,15 +194,15 @@ const Index = () => {
       </section>
 
       {/* Featured Reviews */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-bold">Featured Reviews</h2>
-            <Link to="/reviews" className="text-orange-600 hover:text-orange-700 flex items-center">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12 gap-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Featured Reviews</h2>
+            <Link to="/reviews" className="text-orange-600 hover:text-orange-700 flex items-center text-sm sm:text-base min-h-[44px]">
               View All <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {featuredReviews.map((review) => (
               <Link key={review.link} to={review.link}>
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">

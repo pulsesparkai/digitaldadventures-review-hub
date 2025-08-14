@@ -30,15 +30,15 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png" 
               alt="DigitalDadVentures logo featuring a family icon and modern text – trusted product reviews for families and parents"
               title="Logo of DigitalDadVentures – Honest Reviews for Smart Families"
-              className="h-40 w-auto"
+              className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto"
             />
           </Link>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden"
+            className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -96,12 +96,12 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 border-t">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`hover:text-orange-600 transition-colors ${
+                  className={`hover:text-orange-600 transition-colors min-h-[44px] flex items-center px-2 py-3 rounded ${
                     location.pathname === item.path ? 'text-orange-600' : 'text-gray-700'
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -109,25 +109,27 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t pt-4">
-                <p className="text-sm font-semibold text-gray-500 mb-2">Categories</p>
+              <div className="border-t pt-4 mt-4">
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2">Categories</p>
                 {categories.map((category) => (
                   <Link
                     key={category}
                     to={`/category/${category.toLowerCase().replace(' ', '-')}`}
-                    className="block py-1 text-gray-600 hover:text-orange-600 transition-colors"
+                    className="block py-3 px-2 text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] flex items-center rounded"
                     onClick={() => setIsOpen(false)}
                   >
                     {category}
                   </Link>
                 ))}
               </div>
-              <Button 
-                asChild 
-                className="bg-orange-600 hover:bg-orange-700 w-full"
-              >
-                <Link to="/submit-product">Submit a Product</Link>
-              </Button>
+              <div className="mt-4">
+                <Button 
+                  asChild 
+                  className="bg-orange-600 hover:bg-orange-700 w-full min-h-[48px]"
+                >
+                  <Link to="/submit-product">Submit a Product</Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}

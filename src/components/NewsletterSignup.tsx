@@ -18,30 +18,30 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-orange-50 to-blue-50">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-r from-orange-50 to-blue-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="max-w-2xl mx-auto border-orange-200">
           <CardHeader className="text-center">
             <div className="mx-auto w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
               <Mail className="h-6 w-6 text-orange-600" />
             </div>
-            <CardTitle className="text-2xl mb-2">Join Our Growing Community</CardTitle>
-            <CardDescription className="text-lg">
+            <CardTitle className="text-xl sm:text-2xl mb-2">Join Our Growing Community</CardTitle>
+            <CardDescription className="text-base sm:text-lg">
               Join our growing community of families and parents seeking smarter product recommendations.
             </CardDescription>
           </CardHeader>
           <CardContent>
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Input
                   type="email"
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1"
+                  className="flex-1 h-12 sm:h-14"
                 />
-                <Button type="submit" className="bg-orange-600 hover:bg-orange-700">
+                <Button type="submit" className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]">
                   Subscribe
                 </Button>
               </form>

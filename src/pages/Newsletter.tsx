@@ -65,8 +65,8 @@ const Newsletter = () => {
               <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                 <Check className="h-8 w-8 text-green-600" />
               </div>
-              <h1 className="text-4xl font-bold mb-4">You're All Set!</h1>
-              <p className="text-xl text-gray-600">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">You're All Set!</h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600">
                 Welcome to the DigitalDadVentures newsletter. You'll receive our latest product reviews, 
                 buying guides, and family tech recommendations straight to your inbox.
               </p>
@@ -95,16 +95,16 @@ const Newsletter = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 bg-blue-100 rounded-full">
-              <Mail className="h-12 w-12 text-blue-600" />
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <div className="p-3 sm:p-4 bg-blue-100 rounded-full">
+              <Mail className="h-8 w-8 sm:h-12 sm:w-12 text-blue-600" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold mb-4">Join Our Newsletter</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Join Our Newsletter</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Get the latest product reviews, buying guides, and family tech recommendations 
             delivered straight to your inbox. No spam, just honest recommendations.
           </p>
@@ -150,7 +150,7 @@ const Newsletter = () => {
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
+                <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 min-h-[48px]">
                   Subscribe to Newsletter
                 </Button>
               </form>
