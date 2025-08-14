@@ -675,49 +675,54 @@ const LowesHalloweenHub = () => {
           </div>
         </section>
 
-        {/* Expert Review Methodology */}
+        {/* Research & Analysis Methodology */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <Card className="max-w-4xl mx-auto">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center">
                   <Shield className="h-6 w-6 mr-2 text-primary" />
-                  Expert Review Methodology
+                  Our Research & Analysis Process
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-6">
-                  Our comprehensive testing process ensures you get reliable recommendations for your Halloween decoration investments.
+                  We use a comprehensive research approach combining market data, customer feedback analysis, and product specifications to provide reliable Halloween decoration recommendations.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold mb-3 flex items-center">
                       <ArrowRight className="h-4 w-4 mr-2 text-primary" />
-                      Hands-On Testing
+                      Market Research
                     </h3>
-                    <p className="text-muted-foreground">Every decoration is tested at our outdoor facility for functionality, durability, and visual impact.</p>
+                    <p className="text-muted-foreground">Comprehensive analysis of product specifications, retailer data, and seasonal availability trends.</p>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-3 flex items-center">
                       <ArrowRight className="h-4 w-4 mr-2 text-primary" />
-                      Weather Resistance
+                      Customer Feedback Analysis
                     </h3>
-                    <p className="text-muted-foreground">30-day outdoor exposure testing including rain, wind, and temperature variations.</p>
+                    <p className="text-muted-foreground">AI-powered analysis of verified customer reviews, ratings, and feedback across multiple retail platforms.</p>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-3 flex items-center">
                       <ArrowRight className="h-4 w-4 mr-2 text-primary" />
-                      Setup Assessment
+                      Technical Assessment
                     </h3>
-                    <p className="text-muted-foreground">Timed setup tests with detailed difficulty ratings for different skill levels.</p>
+                    <p className="text-muted-foreground">Detailed evaluation of product specifications, setup requirements, and feature comparisons.</p>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-3 flex items-center">
                       <ArrowRight className="h-4 w-4 mr-2 text-primary" />
                       Value Analysis
                     </h3>
-                    <p className="text-muted-foreground">Price comparison across retailers with quality-to-cost ratio evaluations.</p>
+                    <p className="text-muted-foreground">Price comparison across retailers with feature-to-cost ratio evaluations and seasonal value tracking.</p>
                   </div>
+                </div>
+                <div className="mt-6 p-4 bg-muted rounded-lg">
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Transparency Note:</strong> Our recommendations are based on research, data analysis, and customer feedback compilation. We may test select products when possible, but most evaluations use comprehensive market research and AI-assisted analysis to provide reliable family-focused recommendations.
+                  </p>
                 </div>
               </CardContent>
             </Card>
