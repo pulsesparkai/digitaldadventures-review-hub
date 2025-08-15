@@ -1,17 +1,57 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Star, Search, Filter, FileX, AlertCircle } from 'lucide-react';
+import { Star, Search, Filter } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import ErrorDisplay from '@/components/ErrorDisplay';
+import { useReviews } from '@/hooks/useApi';
+import { SearchFilters } from '@/types';
 
 const Reviews = () => {
-  const reviews: any[] = [];
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech', 'Disney'];
+
+  const filters: SearchFilters = {
+    query: searchTerm,
+    category: selectedCategory === 'all' ? undefined : selectedCategory
+  };
+
+  const { data: reviews = [], loading, error, retry } = useReviews(filters);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8">
+          <LoadingSpinner size="lg" text="Loading reviews..." className="py-12" />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8">
+          <ErrorDisplay 
+            error={error} 
+            onRetry={retry}
+            title="Failed to load reviews"
+            className="max-w-md mx-auto mt-12"
+          />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (reviews.length === 0) {
     return (
@@ -40,6 +80,37 @@ const Reviews = () => {
             Honest, in-depth reviews based on hands-on testing, research, and AI analysis. 
             Find the best products for your family and lifestyle.
           </p>
+        </div>
+
+        {/* Search and Filter */}
+        <div className="mb-8">
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input
+                placeholder="Search reviews..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <div className="flex gap-2">
+              <Filter className="h-5 w-5 text-gray-400 mt-2.5" />
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className={selectedCategory === category ? "bg-orange-600 hover:bg-orange-700" : ""}
+                  >
+                    {category === 'all' ? 'All Categories' : category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Reviews Grid */}
@@ -80,7 +151,7 @@ const Reviews = () => {
                       <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
                     </div>
                     <span className="text-sm text-gray-500">
-                      {new Date(review.date).toLocaleDateString()}
+                      {new Date(review.publishedAt).toLocaleDateString()}
                     </span>
                   </div>
                 </CardContent>
