@@ -15,62 +15,7 @@ const Reviews = () => {
 
   const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech', 'Disney'];
 
-  const reviews = [
-    {
-      slug: 'lowes-halloween-decorations',
-      title: '🎃 Lowe\'s Halloween Decorations: 2025 Ultimate Guide',
-      excerpt: 'Transform your home into the ultimate Halloween destination with the most impressive outdoor decorations from Lowe\'s incredible 2025 collection.',
-      category: 'Outdoor',
-      rating: 4.8,
-      date: '2025-08-14',
-      isAI: false
-    },
-    {
-      slug: 'lowes-12ft-bone-collector-animatronic-review',
-      title: 'Lowe\'s 12ft Bone Collector Review: Worth $449?',
-      excerpt: 'In-depth analysis of Lowe\'s flagship Halloween animatronic. Complete setup guide, features breakdown, and value comparison.',
-      category: 'Outdoor',
-      rating: 4.8,
-      date: '2025-08-14',
-      isAI: false
-    },
-    {
-      slug: 'lowes-giant-halloween-inflatables',
-      title: 'Best Lowe\'s Giant Halloween Inflatables 2025',
-      excerpt: 'Complete buyer\'s guide to Lowe\'s inflatable Halloween decorations. Compare features, prices, and find the best options for your yard.',
-      category: 'Outdoor',
-      rating: 4.6,
-      date: '2025-08-14',
-      isAI: false
-    },
-    {
-      slug: 'lowes-haunted-mansion-collection',
-      title: 'Disney Haunted Mansion Halloween Collection Guide',
-      excerpt: 'Complete guide to Disney\'s Haunted Mansion Halloween decorations available at Lowe\'s. Create authentic Disney magic in your yard.',
-      category: 'Disney',
-      rating: 4.6,
-      date: '2025-08-14',
-      isAI: false
-    },
-    {
-      slug: 'lowes-kraken-halloween-yard-decoration',
-      title: 'Lowe\'s Kraken Halloween Decoration Review',
-      excerpt: 'Detailed review of Lowe\'s unique 3.5ft Kraken decoration. Features, setup guide, and creating a Haunted Harbor theme.',
-      category: 'Outdoor',
-      rating: 4.3,
-      date: '2025-08-14',
-      isAI: false
-    },
-    {
-      slug: 'lowes-best-outdoor-halloween-decorations-2025',
-      title: 'Best Lowe\'s Outdoor Halloween Decorations 2025',
-      excerpt: 'Ultimate buyer\'s guide to Lowe\'s outdoor Halloween decorations. Top picks across all categories with prices, reviews, and setup tips.',
-      category: 'Outdoor',
-      rating: 4.7,
-      date: '2025-08-14',
-      isAI: false
-    }
-  ];
+  const reviews = [];
 
   const filteredReviews = reviews.filter(review => {
     const matchesSearch = review.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -93,48 +38,6 @@ const Reviews = () => {
           </p>
         </div>
 
-        {/* Halloween Seasonal Spotlight */}
-        <div className="mb-12 bg-gradient-to-br from-orange-50 to-purple-50 rounded-lg p-8">
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              🎃 SEASONAL SPOTLIGHT
-            </div>
-            <h2 className="text-2xl font-bold mb-2">Halloween Decorations 2025</h2>
-            <p className="text-gray-600">Our complete guide to the best Halloween decorations from Lowe's</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-4">
-            <Link to="/lowes-halloween-decorations">
-              <Card className="hover:shadow-lg transition-shadow h-full">
-                <CardContent className="p-4 text-center">
-                  <div className="text-3xl mb-2">🏆</div>
-                  <h3 className="font-semibold mb-1">Complete Guide</h3>
-                  <p className="text-sm text-gray-600">Everything Halloween 2025</p>
-                </CardContent>
-              </Card>
-            </Link>
-            
-            <Link to="/lowes-12ft-bone-collector-animatronic-review">
-              <Card className="hover:shadow-lg transition-shadow h-full">
-                <CardContent className="p-4 text-center">
-                  <div className="text-3xl mb-2">💀</div>
-                  <h3 className="font-semibold mb-1">Bone Collector</h3>
-                  <p className="text-sm text-gray-600">$449 Animatronic Review</p>
-                </CardContent>
-              </Card>
-            </Link>
-            
-            <Link to="/lowes-haunted-mansion-collection">
-              <Card className="hover:shadow-lg transition-shadow h-full">
-                <CardContent className="p-4 text-center">
-                  <div className="text-3xl mb-2">🏰</div>
-                  <h3 className="font-semibold mb-1">Disney Collection</h3>
-                  <p className="text-sm text-gray-600">Haunted Mansion Theme</p>
-                </CardContent>
-              </Card>
-            </Link>
-          </div>
-        </div>
 
         {/* Search and Filter */}
         <div className="mb-8">
@@ -214,14 +117,19 @@ const Reviews = () => {
           ))}
         </div>
 
-        {filteredReviews.length === 0 && (
+        {reviews.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600 text-lg mb-4">No reviews available yet.</p>
+            <p className="text-gray-500">Check back soon for comprehensive product reviews and guides!</p>
+          </div>
+        ) : filteredReviews.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg mb-4">No reviews found matching your criteria.</p>
             <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }}>
               Clear Filters
             </Button>
           </div>
-        )}
+        ) : null}
       </div>
 
       <Footer />
