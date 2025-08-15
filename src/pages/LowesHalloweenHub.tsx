@@ -59,7 +59,7 @@ const LowesHalloweenHub = () => {
       name: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable",
       price: "$99.98",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg", 
+      image: "/placeholder.svg",
       features: ["Disney licensed", "Internal LEDs", "Iconic characters", "Weather resistant"],
       description: "Authentic Disney Haunted Mansion characters in inflatable form"
     }
@@ -70,7 +70,7 @@ const LowesHalloweenHub = () => {
       name: "Disney 6-ft The Haunted Mansion Musical Headless Knight Animatronic",
       price: "$329.00",
       affiliateLink: "https://shoplowes.me/45yzBjt",
-      image: "https://mobileimages.lowes.com/productimages/1fa7bb76-92e5-4af9-ba43-037d532b6aa8/67141359.jpeg",
+      image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
       features: ["Plays theme music", "Mouth movement", "Lantern lights", "Disney authentic"],
       description: "Imposing armored figure from Disney's Haunted Mansion with authentic music"
     },
@@ -78,7 +78,7 @@ const LowesHalloweenHub = () => {
       name: "Disney 2-ft Freestanding Talking Lighted Haunted Mansion Madame Leota Tombstone Animatronic",
       price: "$109.00", 
       affiliateLink: "https://shoplowes.me/472zrUd",
-      image: "https://mobileimages.lowes.com/productimages/1d0e5926-2b65-4ad1-96fc-b8d2d3469c2a/48447836.jpg",
+      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
       features: ["Talking phrases", "Eyes flash blue", "Sound activated", "Iconic character"],
       description: "Interactive tombstone featuring Madame Leota's mystical floating head"
     },
@@ -428,25 +428,26 @@ const LowesHalloweenHub = () => {
             
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               {heroAnimatronics.map((item, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden h-full">
                   <div className="aspect-video bg-muted">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
                       alt={`${item.name} - Lowe's Halloween animatronic decoration featuring ${item.features.join(', ')}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-xl font-bold mb-2">{item.name}</h3>
+                        <h3 className="text-xl font-bold mb-2 line-clamp-2">{item.name}</h3>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-primary">{item.price}</div>
                       </div>
                     </div>
                     
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                    <p className="text-muted-foreground mb-4 flex-grow">{item.description}</p>
                     
                     <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                       <div><strong>Dimensions:</strong> {item.dimensions}</div>
@@ -459,13 +460,12 @@ const LowesHalloweenHub = () => {
                       <h4 className="font-semibold mb-2">Key Features:</h4>
                       <div className="flex flex-wrap gap-2">
                         {item.features.map((feature, idx) => (
-                          <Badge key={idx} variant="secondary">{feature}</Badge>
+                          <Badge key={idx} variant="outline" className="text-xs">{feature}</Badge>
                         ))}
                       </div>
                     </div>
                     
-                    
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
@@ -498,26 +498,27 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {giantInflatables.map((item, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden h-full">
                   <div className="aspect-square bg-muted">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
                       alt={`${item.name} - Giant Halloween inflatable decoration available at Lowe's with ${item.features.join(', ')}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
+                    <p className="text-muted-foreground mb-4 flex-grow text-sm">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-2">
                         {item.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline">{feature}</Badge>
+                          <Badge key={idx} variant="outline" className="text-xs">{feature}</Badge>
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
@@ -545,26 +546,27 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {hauntedMansion.map((item, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden h-full">
                   <div className="aspect-square bg-muted">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
                       alt={`${item.name} - Disney licensed Halloween decoration from Lowe's Haunted Mansion collection`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
+                    <p className="text-muted-foreground mb-4 flex-grow text-sm">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-2">
                         {item.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline">{feature}</Badge>
+                          <Badge key={idx} variant="outline" className="text-xs">{feature}</Badge>
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
@@ -592,26 +594,27 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {additionalProducts.map((item, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden h-full">
                   <div className="aspect-video bg-muted">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
                       alt={`${item.name} - Unique Halloween decoration available at Lowe's`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <h3 className="text-xl font-bold mb-2 line-clamp-2">{item.name}</h3>
+                    <p className="text-muted-foreground mb-4 flex-grow">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-2">
                         {item.features.map((feature, idx) => (
-                          <Badge key={idx} variant="outline">{feature}</Badge>
+                          <Badge key={idx} variant="outline" className="text-xs">{feature}</Badge>
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>

@@ -42,13 +42,25 @@ const ProductImage: React.FC<ProductImageProps> = ({
   };
 
   const handleError = () => {
-    if (!hasError) {
-      setHasError(true);
-      const baseUrl = src.split('?')[0];
-      setImgSrc(baseUrl);
-    } else {
-      setImgSrc('/placeholder.svg'); // Use existing placeholder
+    if (retryCount < 2) {
+      // First try: remove size parameters
+      if (src.includes('?size=')) {
+        const baseUrl = src.split('?')[0];
+        setImgSrc(baseUrl);
+        setRetryCount(retryCount + 1);
+        return;
+      }
+      // Second try: try different size parameter
+      if (src.includes('mobileimages.lowes.com')) {
+        const baseUrl = src.split('?')[0];
+        setImgSrc(`${baseUrl}?size=pdhi`);
+        setRetryCount(retryCount + 1);
+        return;
+      }
     }
+    // Final fallback
+    setImgSrc('/placeholder.svg');
+    setHasError(true);
     setIsLoading(false);
   };
 

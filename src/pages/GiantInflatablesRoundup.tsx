@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ExternalLink, ArrowRight, Star, Filter, ChevronRight, Eye, Wind, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ProductImage from '@/components/ProductImage';
 
 const GiantInflatablesRoundup = () => {
   const [sortBy, setSortBy] = useState('featured');
@@ -21,7 +22,7 @@ const GiantInflatablesRoundup = () => {
       price: "$199.00",
       originalPrice: "$249.00",
       affiliateLink: "https://shoplowes.me/3UxnCOe",
-      image: "https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg",
+      image: "https://mobileimages.lowes.com/productimages/e46e38aa-1668-483c-942c-d0c0ff7bde7c/16990718.jpg",
       size: "12ft",
       sizeCategory: "large",
       theme: "scary",
@@ -38,7 +39,7 @@ const GiantInflatablesRoundup = () => {
       price: "$99.98",
       originalPrice: "$129.99",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      image: "https://mobileimages.lowes.com/productimages/5p6q7r8s-9t0u-1v2w-3x4y5z6a7b8c/64649653.jpg", 
+      image: "/placeholder.svg", 
       size: "6ft",
       sizeCategory: "medium",
       theme: "disney",
@@ -55,7 +56,7 @@ const GiantInflatablesRoundup = () => {
       price: "$59.98",
       originalPrice: "$79.99",
       affiliateLink: "https://shoplowes.me/4mHIGNU",
-      image: "https://mobileimages.lowes.com/productimages/4a5b6c7d-8e9f-0g1h-2i3j-4k5l6m7n8o9p/64649652.jpg",
+      image: "https://mobileimages.lowes.com/productimages/de53733a-4fbe-48d0-8782-872af324e6de/70622944.jpeg",
       size: "8ft",
       sizeCategory: "medium",
       theme: "family",
@@ -336,10 +337,11 @@ const GiantInflatablesRoundup = () => {
                     <Badge className="absolute top-4 left-4 z-10 bg-orange-600">{item.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
                       alt={`${item.name} - ${item.size} Halloween inflatable decoration at Lowe's with ${item.features.join(', ')}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
                   <CardContent className="p-6">
