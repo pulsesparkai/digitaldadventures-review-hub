@@ -26,9 +26,7 @@ const BoneCollectorReview = () => {
       "Eerie lights and sinister sounds",
       "Motion, sound, or footpad/button activated",
       "Volume control and external speaker capability"
-    ],
-    rating: 4.8,
-    reviewCount: 234
+    ]
   };
 
   const alternatives = [
@@ -107,11 +105,6 @@ const BoneCollectorReview = () => {
         "name": "Lowe's"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating", 
-      "ratingValue": productData.rating,
-      "reviewCount": productData.reviewCount
-    },
     "review": {
       "@type": "Review",
       "author": {
@@ -178,14 +171,6 @@ const BoneCollectorReview = () => {
                 <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                   Haunted Living 12-ft Bone Collector: Complete Review & Setup Guide
                 </h1>
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 mr-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`h-5 w-5 ${i < 4.5 ? 'fill-current' : ''}`} />
-                    ))}
-                  </div>
-                  <span className="text-lg">4.8/5 ({productData.reviewCount} reviews)</span>
-                </div>
                 <p className="text-xl mb-8">
                   Lowe's flagship Halloween animatronic delivers professional haunted house quality for your front yard. 
                   Our comprehensive analysis covers setup, features, durability, and value.

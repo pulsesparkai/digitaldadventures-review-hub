@@ -22,8 +22,6 @@ const GiantInflatablesRoundup = () => {
       originalPrice: "$249.00",
       affiliateLink: "https://shoplowes.me/3UxnCOe",
       image: "https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg",
-      rating: 4.5,
-      reviews: 156,
       size: "12ft",
       sizeCategory: "large",
       theme: "scary",
@@ -41,8 +39,6 @@ const GiantInflatablesRoundup = () => {
       originalPrice: "$129.99",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
       image: "https://mobileimages.lowes.com/productimages/5p6q7r8s-9t0u-1v2w-3x4y5z6a7b8c/64649653.jpg", 
-      rating: 4.7,
-      reviews: 298,
       size: "6ft",
       sizeCategory: "medium",
       theme: "disney",
@@ -60,8 +56,6 @@ const GiantInflatablesRoundup = () => {
       originalPrice: "$79.99",
       affiliateLink: "https://shoplowes.me/4mHIGNU",
       image: "https://mobileimages.lowes.com/productimages/4a5b6c7d-8e9f-0g1h-2i3j-4k5l6m7n8o9p/64649652.jpg",
-      rating: 4.3,
-      reviews: 134,
       size: "8ft",
       sizeCategory: "medium",
       theme: "family",
@@ -199,7 +193,6 @@ const GiantInflatablesRoundup = () => {
     switch (sortBy) {
       case 'price-low': return parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', ''));
       case 'price-high': return parseFloat(b.price.replace('$', '')) - parseFloat(a.price.replace('$', ''));
-      case 'rating': return b.rating - a.rating;
       case 'size': return parseInt(b.size) - parseInt(a.size);
       default: return 0;
     }
@@ -223,11 +216,6 @@ const GiantInflatablesRoundup = () => {
           "price": item.price.replace('$', ''),
           "priceCurrency": "USD"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": item.rating,
-          "reviewCount": item.reviews
-        }
       }
     }))
   };
@@ -327,7 +315,7 @@ const GiantInflatablesRoundup = () => {
                     <SelectItem value="featured">Featured</SelectItem>
                     <SelectItem value="price-low">Price: Low to High</SelectItem>
                     <SelectItem value="price-high">Price: High to Low</SelectItem>
-                    <SelectItem value="rating">Highest Rated</SelectItem>
+                    
                     <SelectItem value="size">Size: Largest First</SelectItem>
                   </SelectContent>
                 </Select>
@@ -358,14 +346,6 @@ const GiantInflatablesRoundup = () => {
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
-                        <div className="flex items-center mb-2">
-                          <div className="flex text-yellow-400 mr-2">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                            ))}
-                          </div>
-                          <span className="text-sm text-gray-600">{item.rating} ({item.reviews} reviews)</span>
-                        </div>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-orange-600">{item.price}</div>
@@ -419,7 +399,7 @@ const GiantInflatablesRoundup = () => {
                     <TableHead>Product</TableHead>
                     <TableHead>Price</TableHead>
                     <TableHead>Size</TableHead>
-                    <TableHead>Rating</TableHead>
+                    <TableHead>Features</TableHead>
                     <TableHead>Setup Time</TableHead>
                     <TableHead>Best For</TableHead>
                   </TableRow>
@@ -430,7 +410,7 @@ const GiantInflatablesRoundup = () => {
                       <TableCell className="font-medium">{item.name}</TableCell>
                       <TableCell>{item.price}</TableCell>
                       <TableCell>{item.size}</TableCell>
-                      <TableCell>{item.rating}/5 ⭐</TableCell>
+                      <TableCell>{item.features.slice(0,2).join(', ')}</TableCell>
                       <TableCell>{item.setupTime}</TableCell>
                       <TableCell className="text-sm">{item.bestFor}</TableCell>
                     </TableRow>

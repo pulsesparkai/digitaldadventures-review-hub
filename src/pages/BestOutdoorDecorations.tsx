@@ -24,8 +24,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "premium",
       affiliateLink: "https://shoplowes.me/3V5TZUg",
       image: "https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg",
-      rating: 4.8,
-      reviews: 234,
       setupTime: "45-60 min",
       scareLevel: "Maximum",
       bestFor: "Large yards, maximum impact",
@@ -40,8 +38,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "mid",
       affiliateLink: "https://shoplowes.me/3UxnCOe",
       image: "https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg",
-      rating: 4.5,
-      reviews: 156,
       setupTime: "5 min",
       scareLevel: "High",
       bestFor: "Quick setup, impressive height",
@@ -56,8 +52,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "mid",
       affiliateLink: "https://shoplowes.me/45yzBjt", 
       image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
-      rating: 4.6,
-      reviews: 87,
       setupTime: "30 min",
       scareLevel: "Medium",
       bestFor: "Disney fans, themed displays",
@@ -72,8 +66,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "mid", 
       affiliateLink: "https://shoplowes.me/417a5AN",
       image: "https://mobileimages.lowes.com/productimages/9i0j1k2l-3m4n-5o6p-7q8r9s0t1u2v/64649657.jpg",
-      rating: 4.3,
-      reviews: 89,
       setupTime: "20 min",
       scareLevel: "Medium",
       bestFor: "Unique themes, sea monster displays",
@@ -88,8 +80,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "budget",
       affiliateLink: "https://shoplowes.me/4mHIGNU",
       image: "https://mobileimages.lowes.com/productimages/4a5b6c7d-8e9f-0g1h-2i3j-4k5l6m7n8o9p/64649652.jpg",
-      rating: 4.3,
-      reviews: 134,
       setupTime: "3 min", 
       scareLevel: "Family",
       bestFor: "Family-friendly, budget displays",
@@ -104,8 +94,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "budget",
       affiliateLink: "https://shoplowes.me/47tOTIT",
       image: "https://mobileimages.lowes.com/productimages/8e3b5c97-1f0d-4f0f-8c0e-82a4b2d5f8f9/64649650.jpg",
-      rating: 4.6,
-      reviews: 189,
       setupTime: "15 min",
       scareLevel: "High",
       bestFor: "Budget-conscious, large impact",
@@ -120,8 +108,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "budget", 
       affiliateLink: "https://shoplowes.me/472zrUd",
       image: "https://mobileimages.lowes.com/productimages/7r8s9t0u-1v2w-3x4y-5z6a7b8c9d0e/64649655.jpg",
-      rating: 4.8,
-      reviews: 143,
       setupTime: "5 min",
       scareLevel: "Medium",
       bestFor: "Disney fans, compact spaces",
@@ -136,8 +122,6 @@ const BestOutdoorDecorations = () => {
       budgetTier: "budget",
       affiliateLink: "https://shoplowes.me/45MjsZb",
       image: "https://mobileimages.lowes.com/productimages/0v1w2x3y-4z5a-6b7c-8d9e0f1g2h3i/64649658.jpg",
-      rating: 4.4,
-      reviews: 67,
       setupTime: "10 min",
       scareLevel: "Family", 
       bestFor: "Tech lovers, projection effects",
@@ -450,14 +434,6 @@ const BestOutdoorDecorations = () => {
                   <CardContent className="p-4">
                     <h3 className="font-bold text-sm mb-2 line-clamp-2">{product.name}</h3>
                     <div className="text-lg font-bold text-orange-600 mb-2">${product.price}</div>
-                    <div className="flex items-center mb-2">
-                      <div className="flex text-yellow-400 mr-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-3 w-3 ${i < Math.floor(product.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="text-xs text-gray-600">{product.rating}</span>
-                    </div>
                     <p className="text-xs text-gray-600 mb-3">{product.bestFor}</p>
                     <Button size="sm" className="w-full text-xs" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
@@ -522,14 +498,6 @@ const BestOutdoorDecorations = () => {
                     <div className="flex justify-between items-center mb-2">
                       <div className="text-2xl font-bold text-orange-600">${product.price}</div>
                       <Badge variant="outline">{product.category}</Badge>
-                    </div>
-                    <div className="flex items-center mb-3">
-                      <div className="flex text-yellow-400 mr-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-600">{product.rating} ({product.reviews})</span>
                     </div>
                     <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
                       <div><strong>Setup:</strong> {product.setupTime}</div>
@@ -707,7 +675,7 @@ const BestOutdoorDecorations = () => {
                     <TableHead>Price</TableHead>
                     <TableHead>Category</TableHead>
                     <TableHead>Setup</TableHead>
-                    <TableHead>Rating</TableHead>
+                    <TableHead>Availability</TableHead>
                     <TableHead>Best For</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -722,7 +690,7 @@ const BestOutdoorDecorations = () => {
                       <TableCell>${product.price}</TableCell>
                       <TableCell>{product.category}</TableCell>
                       <TableCell>{product.setupTime}</TableCell>
-                      <TableCell>{product.rating}/5 ⭐</TableCell>
+                      <TableCell>Available</TableCell>
                       <TableCell className="text-sm">{product.bestFor}</TableCell>
                     </TableRow>
                   ))}

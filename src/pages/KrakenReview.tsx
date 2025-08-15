@@ -28,8 +28,6 @@ const KrakenReview = () => {
       "LED lighting creates dramatic shadows and atmosphere",
       "Weather-resistant construction for outdoor use"
     ],
-    rating: 4.3,
-    reviewCount: 89,
     uniqueFeatures: [
       "Only sea monster option in Lowe's Halloween collection",
       "Creates 'Haunted Harbor' pirate theme opportunity", 
@@ -229,11 +227,6 @@ const KrakenReview = () => {
         "name": "Lowe's"
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating", 
-      "ratingValue": productData.rating,
-      "reviewCount": productData.reviewCount
-    },
     "review": {
       "@type": "Review",
       "author": {
@@ -304,14 +297,6 @@ const KrakenReview = () => {
                 <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                   Haunted Living 3.5-ft LED Kraken: Make Waves in Your Halloween Display
                 </h1>
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 mr-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`h-5 w-5 ${i < 4 ? 'fill-current' : ''}`} />
-                    ))}
-                  </div>
-                  <span className="text-lg">4.3/5 ({productData.reviewCount} reviews)</span>
-                </div>
                 <p className="text-xl mb-8">
                   Break away from traditional Halloween decorations with this impressive LED sea monster. 
                   Perfect for creating unique "Haunted Harbor" themes or adding an unexpected twist to classic displays.

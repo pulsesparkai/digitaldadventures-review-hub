@@ -18,8 +18,6 @@ const HauntedMansionCollection = () => {
       originalPrice: "$399.99",
       affiliateLink: "https://shoplowes.me/45yzBjt",
       image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
-      rating: 4.6,
-      reviews: 87,
       category: "signature",
       features: ["Plays 'Grim Grinning Ghosts'", "Mouth movement synced to music", "Lantern lights up and moves", "Holding talking head"],
       dimensions: "6 ft H x 2 ft W x 2 ft D",
@@ -35,8 +33,6 @@ const HauntedMansionCollection = () => {
       originalPrice: "$139.99", 
       affiliateLink: "https://shoplowes.me/472zrUd",
       image: "https://mobileimages.lowes.com/productimages/7r8s9t0u-1v2w-3x4y-5z6a7b8c9d0e/64649655.jpg",
-      rating: 4.8,
-      reviews: 143,
       category: "signature",
       features: ["Animated Madame Leota speaks", "Eyes flash blue", "Mouth moves with phrases", "Sound activated"],
       dimensions: "31 in H x 21.7 in W x 3.3 in D",
@@ -52,8 +48,6 @@ const HauntedMansionCollection = () => {
       originalPrice: "$299.99",
       affiliateLink: "https://shoplowes.me/4lpioir",
       image: "https://mobileimages.lowes.com/productimages/8f9g0h1i-2j3k-4l5m-6n7o8p9q0r1s/64649656.jpg",
-      rating: 4.4,
-      reviews: 92,
       category: "signature", 
       features: ["Motion and sound activated", "Moves lantern back and forth", "Plays theme music and crow sounds", "Collapsible for storage"],
       dimensions: "6 ft H",
@@ -214,11 +208,6 @@ const HauntedMansionCollection = () => {
         "price": item.price.replace('$', ''),
         "priceCurrency": "USD"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": item.rating,
-        "reviewCount": item.reviews
-      }
     }))
   };
 
@@ -314,14 +303,6 @@ const HauntedMansionCollection = () => {
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex-1">
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
-                        <div className="flex items-center mb-2">
-                          <div className="flex text-yellow-400 mr-2">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                            ))}
-                          </div>
-                          <span className="text-sm text-gray-600">{item.rating} ({item.reviews} reviews)</span>
-                        </div>
                       </div>
                       <div className="text-right ml-4">
                         <div className="text-2xl font-bold text-purple-600">{item.price}</div>

@@ -20,8 +20,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/3V5TZUg",
       image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
       features: ["Glowing LED eyes", "Moving head & mouth", "Motion activated", "Volume control"],
-      rating: 4.8,
-      reviews: 234,
       description: "The ultimate Halloween centerpiece with terrifying bone details and realistic movements",
       dimensions: "12' H x 6' W x 4' D",
       powerReq: "Standard 120V outlet",
@@ -33,8 +31,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/47tOTIT",
       image: "https://mobileimages.lowes.com/productimages/a5360f9c-35ec-4a48-bc75-430b9e28e4cd/67929429.jpeg",
       features: ["Poseable elbows", "Matte finish", "Collapsible", "Weather resistant"],
-      rating: 4.6,
-      reviews: 189,
       description: "Budget-friendly giant skeleton with poseable joints for custom scares",
       dimensions: "10' H x 3' W x 2' D",
       powerReq: "No power required",
@@ -49,8 +45,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/3UxnCOe",
       image: "https://mobileimages.lowes.com/productimages/e46e38aa-1668-483c-942c-d0c0ff7bde7c/16990718.jpg",
       features: ["Pre-lit LEDs", "90-second setup", "Weather resistant", "Storage bag included"],
-      rating: 4.5,
-      reviews: 156,
       description: "Towering inflatable Grim Reaper with impressive LED lighting effects"
     },
     {
@@ -59,8 +53,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/4mJGlSE",
       image: "https://mobileimages.lowes.com/productimages/de53733a-4fbe-48d0-8782-872af324e6de/70622944.jpeg",
       features: ["LED soft glow", "Family-friendly", "Archway design", "Stakes included"],
-      rating: 4.3,
-      reviews: 134,
       description: "Create a magical entrance with this illuminated pumpkin archway"
     },
     {
@@ -69,8 +61,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/4fy9FsU",
       image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg", 
       features: ["Disney licensed", "Internal LEDs", "Iconic characters", "Weather resistant"],
-      rating: 4.7,
-      reviews: 298,
       description: "Authentic Disney Haunted Mansion characters in inflatable form"
     }
   ];
@@ -82,8 +72,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/45yzBjt",
       image: "https://mobileimages.lowes.com/productimages/1fa7bb76-92e5-4af9-ba43-037d532b6aa8/67141359.jpeg",
       features: ["Plays theme music", "Mouth movement", "Lantern lights", "Disney authentic"],
-      rating: 4.6,
-      reviews: 87,
       description: "Imposing armored figure from Disney's Haunted Mansion with authentic music"
     },
     {
@@ -92,8 +80,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/472zrUd",
       image: "https://mobileimages.lowes.com/productimages/1d0e5926-2b65-4ad1-96fc-b8d2d3469c2a/48447836.jpg",
       features: ["Talking phrases", "Eyes flash blue", "Sound activated", "Iconic character"],
-      rating: 4.8,
-      reviews: 143,
       description: "Interactive tombstone featuring Madame Leota's mystical floating head"
     },
     {
@@ -102,8 +88,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/4lpioir", 
       image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
       features: ["Motion activated", "Lantern movement", "Theme music", "Collapsible"],
-      rating: 4.4,
-      reviews: 92,
       description: "Life-size Caretaker figure with authentic Haunted Mansion details"
     }
   ];
@@ -115,8 +99,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/417a5AN",
       image: "https://mobileimages.lowes.com/productimages/178de7ab-27e8-4d2b-aa1e-835d342b4a69/72605862.jpeg",
       features: ["LED tentacles", "Weather resistant", "Unique sea monster theme", "Easy assembly"],
-      rating: 4.3,
-      reviews: 76,
       description: "Massive sea monster with glowing tentacles creates unique haunted harbor theme"
     },
     {
@@ -125,8 +107,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/45MjsZb",
       image: "https://mobileimages.lowes.com/productimages/b5d4c596-4c63-4fe2-8929-0199f9aaf237/67169330.jpeg",
       features: ["Digital projection", "Multiple themes", "Indoor/outdoor", "Easy setup"],
-      rating: 4.1,
-      reviews: 89,
       description: "Transform any surface with spooky digital Halloween projections"
     },
     {
@@ -135,8 +115,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/3UxocLU",
       image: "https://mobileimages.lowes.com/productimages/862ee579-37c5-4968-be15-fa4c39ff019f/70622833.jpeg",
       features: ["10-piece set", "Stakes included", "Weather resistant", "Various designs"],
-      rating: 4.0,
-      reviews: 145,
       description: "Complete graveyard scene with 10 different tombstone designs and stakes"
     },
     {
@@ -145,8 +123,6 @@ const LowesHalloweenHub = () => {
       affiliateLink: "https://shoplowes.me/4mGgzi2",
       image: "https://mobileimages.lowes.com/productimages/5e7ae984-c425-466c-9afc-646658321250/64556412.jpg",
       features: ["1200W power", "Professional grade", "Remote control", "Continuous output"],
-      rating: 4.5,
-      reviews: 203,
       description: "Professional-grade fog machine for creating authentic spooky atmosphere"
     }
   ];
@@ -332,13 +308,6 @@ const LowesHalloweenHub = () => {
           "@type": "Organization",
           "name": "Lowe's"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": item.rating,
-        "reviewCount": item.reviews,
-        "bestRating": 5,
-        "worstRating": 1
       }
     }))
   ];
@@ -471,16 +440,6 @@ const LowesHalloweenHub = () => {
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                        <div className="flex items-center mb-2">
-                          <div className="flex text-yellow-400">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                            ))}
-                          </div>
-                          <span className="ml-2 text-sm text-muted-foreground">
-                            {item.rating} ({item.reviews} reviews)
-                          </span>
-                        </div>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-primary">{item.price}</div>
@@ -505,9 +464,6 @@ const LowesHalloweenHub = () => {
                       </div>
                     </div>
                     
-                    <div className="mb-4 p-3 bg-muted rounded">
-                      <p className="text-sm"><strong>Customer Review Summary:</strong> "Exceeded expectations with realistic movements and sound quality. Easy setup despite the size. Definitely the highlight of our Halloween display!" - Verified Lowe's Purchase</p>
-                    </div>
                     
                     <Button className="w-full" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
@@ -552,16 +508,6 @@ const LowesHalloweenHub = () => {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-                    <div className="flex items-center mb-3">
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="ml-2 text-sm text-muted-foreground">
-                        {item.rating} ({item.reviews} reviews)
-                      </span>
-                    </div>
                     <p className="text-muted-foreground mb-4">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
@@ -609,16 +555,6 @@ const LowesHalloweenHub = () => {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-                    <div className="flex items-center mb-3">
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="ml-2 text-sm text-muted-foreground">
-                        {item.rating} ({item.reviews} reviews)
-                      </span>
-                    </div>
                     <p className="text-muted-foreground mb-4">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
@@ -666,16 +602,6 @@ const LowesHalloweenHub = () => {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-                    <div className="flex items-center mb-3">
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(item.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="ml-2 text-sm text-muted-foreground">
-                        {item.rating} ({item.reviews} reviews)
-                      </span>
-                    </div>
                     <p className="text-muted-foreground mb-4">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
                     <div className="mb-4">
@@ -960,14 +886,6 @@ const LowesHalloweenHub = () => {
                   <CardContent className="p-4">
                     <h3 className="font-bold text-sm mb-2 line-clamp-2">{product.name}</h3>
                     <div className="text-lg font-bold text-orange-600 mb-2">{product.price}</div>
-                    <div className="flex items-center mb-3">
-                      <div className="flex text-yellow-400 mr-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-3 w-3 ${i < Math.floor(product.rating) ? 'fill-current' : ''}`} />
-                        ))}
-                      </div>
-                      <span className="text-xs text-gray-600">{product.rating}</span>
-                    </div>
                     <Button size="sm" className="w-full" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-1 h-3 w-3" />
