@@ -8,6 +8,7 @@ import { Star, ArrowRight, TrendingUp, Users, Shield, ExternalLink } from 'lucid
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import ProductImage from '@/components/ProductImage';
 
 const Index = () => {
   const categories = [
@@ -26,7 +27,8 @@ const Index = () => {
       category: "Seasonal",
       rating: 4.8,
       link: "/lowes-halloween-decorations",
-      image: "https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg",
+      // REAL Lowe's URL - this is the actual working image
+      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
       badge: "🔥 TRENDING"
     },
     {
@@ -35,7 +37,8 @@ const Index = () => {
       category: "Halloween", 
       rating: 4.8,
       link: "/lowes-12ft-bone-collector-animatronic-review",
-      image: "https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg",
+      // Using the same real URL for now - replace with actual Bone Collector URL when found
+      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
       badge: "IN-DEPTH"
     },
     {
@@ -44,7 +47,8 @@ const Index = () => {
       category: "Disney",
       rating: 4.6, 
       link: "/lowes-haunted-mansion-collection",
-      image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
+      // Using the same real URL for now - replace with actual Haunted Mansion URL when found
+      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
       badge: "OFFICIAL"
     }
   ];
@@ -104,11 +108,12 @@ const Index = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                <img 
-                  src="https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg"
-                  alt="Lowe's Halloween Decorations Guide"
-                  className="w-full h-full object-cover"
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  alt="Lowe's Halloween Decorations Guide - Complete 2025 collection"
+                  size="large"
+                  priority={true}
                 />
               </div>
               <CardContent className="p-6">
@@ -124,11 +129,12 @@ const Index = () => {
             </Card>
             
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                <img 
-                  src="https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg"
-                  alt="Disney Haunted Mansion Halloween Collection"
-                  className="w-full h-full object-cover"
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  alt="Disney Haunted Mansion Halloween Collection - Official Disney theming"
+                  size="large"
+                  priority={true}
                 />
               </div>
               <CardContent className="p-6">
@@ -144,11 +150,12 @@ const Index = () => {
             </Card>
             
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gray-100">
-                <img 
-                  src="https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg"
-                  alt="Best Halloween Decorations 2025"
-                  className="w-full h-full object-cover"
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  alt="Best Halloween Decorations 2025 - Top picks across all categories"
+                  size="large"
+                  priority={true}
                 />
               </div>
               <CardContent className="p-6">
@@ -206,11 +213,13 @@ const Index = () => {
             {featuredReviews.map((review) => (
               <Link key={review.link} to={review.link}>
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="aspect-video bg-gray-200 rounded-t-lg">
-                    <img 
-                      src={review.image} 
-                      alt={review.title}
-                      className="w-full h-full object-cover rounded-t-lg"
+                  <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
+                    <ProductImage
+                      src={review.image}
+                      alt={`${review.title} - Halloween decoration review`}
+                      className="rounded-t-lg"
+                      size="medium"
+                      priority={false}
                     />
                   </div>
                   <CardHeader>
