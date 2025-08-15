@@ -289,7 +289,7 @@ const HauntedMansionCollection = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Signature Collection Pieces</h2>
             <div className="grid lg:grid-cols-3 gap-8">
               {collectionItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden relative h-full">
+                <Card key={item.id} className="overflow-hidden relative flex flex-col h-full">
                   {item.badge && (
                     <Badge className="absolute top-4 left-4 z-10 bg-purple-600">{item.badge}</Badge>
                   )}
@@ -301,7 +301,7 @@ const HauntedMansionCollection = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex-1">
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
@@ -349,8 +349,8 @@ const HauntedMansionCollection = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Complete the Haunted Mansion Scene</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {complementaryItems.map((item, index) => (
-                <Card key={index} className="h-full">
-                  <CardContent className="p-6 text-center flex flex-col h-full">
+                <Card key={index} className="flex flex-col h-full">
+                  <CardContent className="p-6 text-center flex flex-col flex-grow">
                     <h3 className="font-bold mb-2">{item.name}</h3>
                     <div className="text-xl font-bold text-purple-600 mb-3">{item.price}</div>
                     <p className="text-sm text-gray-600 mb-4 flex-grow">{item.description}</p>

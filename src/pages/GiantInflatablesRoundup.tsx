@@ -332,7 +332,7 @@ const GiantInflatablesRoundup = () => {
             
             <div className="grid lg:grid-cols-3 gap-8">
               {sortedInflatables.map((item) => (
-                <Card key={item.id} className="overflow-hidden relative h-full">
+                <Card key={item.id} className="overflow-hidden relative flex flex-col h-full">
                   {item.badge && (
                     <Badge className="absolute top-4 left-4 z-10 bg-orange-600">{item.badge}</Badge>
                   )}
@@ -344,7 +344,7 @@ const GiantInflatablesRoundup = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>

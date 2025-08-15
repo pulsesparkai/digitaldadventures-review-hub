@@ -205,7 +205,7 @@ const Category = () => {
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {halloweenContent.map((item, index) => (
-                    <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow h-full">
+                    <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                       <div className="aspect-video">
                         <ProductImage
                           src={item.image}
@@ -214,11 +214,11 @@ const Category = () => {
                           className="rounded-t-lg"
                         />
                       </div>
-                      <CardContent className="p-6 flex flex-col h-full">
+                      <CardContent className="p-6 flex flex-col flex-grow">
                         <Badge className="mb-3 bg-orange-600">{item.badge}</Badge>
                         <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                         <p className="text-gray-600 mb-4 text-sm flex-grow">{item.description}</p>
-                        <Button asChild className="w-full mt-auto" variant="outline">
+                        <Button asChild className="w-full bg-orange-600 hover:bg-orange-700 text-white" variant="default">
                           <Link to={item.link}>
                             Read Guide <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>

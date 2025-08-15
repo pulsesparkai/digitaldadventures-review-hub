@@ -428,7 +428,7 @@ const LowesHalloweenHub = () => {
             
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               {heroAnimatronics.map((item, index) => (
-                <Card key={index} className="overflow-hidden h-full">
+                <Card key={index} className="overflow-hidden flex flex-col h-full">
                   <div className="aspect-video bg-muted">
                     <ProductImage 
                       src={item.image} 
@@ -437,7 +437,7 @@ const LowesHalloweenHub = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="text-xl font-bold mb-2 line-clamp-2">{item.name}</h3>
@@ -498,7 +498,7 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {giantInflatables.map((item, index) => (
-                <Card key={index} className="overflow-hidden h-full">
+                <Card key={index} className="overflow-hidden flex flex-col h-full">
                   <div className="aspect-square bg-muted">
                     <ProductImage 
                       src={item.image} 
@@ -507,7 +507,7 @@ const LowesHalloweenHub = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
                     <p className="text-muted-foreground mb-4 flex-grow text-sm">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
@@ -546,7 +546,7 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {hauntedMansion.map((item, index) => (
-                <Card key={index} className="overflow-hidden h-full">
+                <Card key={index} className="overflow-hidden flex flex-col h-full">
                   <div className="aspect-square bg-muted">
                     <ProductImage 
                       src={item.image} 
@@ -555,7 +555,7 @@ const LowesHalloweenHub = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
                     <p className="text-muted-foreground mb-4 flex-grow text-sm">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
@@ -594,7 +594,7 @@ const LowesHalloweenHub = () => {
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {additionalProducts.map((item, index) => (
-                <Card key={index} className="overflow-hidden h-full">
+                <Card key={index} className="overflow-hidden flex flex-col h-full">
                   <div className="aspect-video bg-muted">
                     <ProductImage 
                       src={item.image} 
@@ -603,7 +603,7 @@ const LowesHalloweenHub = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-2 line-clamp-2">{item.name}</h3>
                     <p className="text-muted-foreground mb-4 flex-grow">{item.description}</p>
                     <div className="text-xl font-bold text-primary mb-4">{item.price}</div>
