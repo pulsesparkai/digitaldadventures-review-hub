@@ -18,7 +18,7 @@ const HauntedMansionCollection = () => {
       price: "$329.00",
       originalPrice: "$399.99",
       affiliateLink: "https://shoplowes.me/45yzBjt",
-      image: "/placeholder.svg",
+      image: "https://mobileimages.lowes.com/productimages/1fa7bb76-92e5-4af9-ba43-037d532b6aa8/67141359.jpeg",
       category: "signature",
       features: ["Plays 'Grim Grinning Ghosts'", "Mouth movement synced to music", "Lantern lights up and moves", "Holding talking head"],
       dimensions: "6 ft H x 2 ft W x 2 ft D",

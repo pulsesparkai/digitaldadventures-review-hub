@@ -59,7 +59,7 @@ const LowesHalloweenHub = () => {
       name: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable",
       price: "$99.98",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      image: "/placeholder.svg",
+      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
       features: ["Disney licensed", "Internal LEDs", "Iconic characters", "Weather resistant"],
       description: "Authentic Disney Haunted Mansion characters in inflatable form"
     }
@@ -70,7 +70,7 @@ const LowesHalloweenHub = () => {
       name: "Disney 6-ft The Haunted Mansion Musical Headless Knight Animatronic",
       price: "$329.00",
       affiliateLink: "https://shoplowes.me/45yzBjt",
-      image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
+      image: "https://mobileimages.lowes.com/productimages/1fa7bb76-92e5-4af9-ba43-037d532b6aa8/67141359.jpeg",
       features: ["Plays theme music", "Mouth movement", "Lantern lights", "Disney authentic"],
       description: "Imposing armored figure from Disney's Haunted Mansion with authentic music"
     },
@@ -78,7 +78,7 @@ const LowesHalloweenHub = () => {
       name: "Disney 2-ft Freestanding Talking Lighted Haunted Mansion Madame Leota Tombstone Animatronic",
       price: "$109.00", 
       affiliateLink: "https://shoplowes.me/472zrUd",
-      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
+      image: "https://mobileimages.lowes.com/productimages/1d0e5926-2b65-4ad1-96fc-b8d2d3469c2a/48447836.jpg",
       features: ["Talking phrases", "Eyes flash blue", "Sound activated", "Iconic character"],
       description: "Interactive tombstone featuring Madame Leota's mystical floating head"
     },
