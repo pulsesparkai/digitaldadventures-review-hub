@@ -7,9 +7,10 @@ import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ExternalLink, ArrowRight, Star, Calendar, DollarSign, ChevronRight, Trophy, Zap, Users, Shield } from 'lucide-react';
+import { ExternalLink, ArrowRight, Calendar, DollarSign, ChevronRight, Trophy, Zap, Users, Shield } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ProductImage from '@/components/ProductImage';
 
 const BestOutdoorDecorations = () => {
   const [budgetFilter, setBudgetFilter] = useState('all');
@@ -425,10 +426,11 @@ const BestOutdoorDecorations = () => {
                     <Badge className="absolute top-3 left-3 z-10 bg-orange-600 text-xs">{product.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
-                    <img 
+                    <ProductImage 
                       src={product.image} 
                       alt={`${product.name} - ${product.bestFor}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
                   <CardContent className="p-4">
@@ -487,10 +489,11 @@ const BestOutdoorDecorations = () => {
                     <Badge className="absolute top-3 left-3 z-10 bg-orange-600">{product.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
-                    <img 
+                    <ProductImage 
                       src={product.image} 
                       alt={`${product.name} - ${product.bestFor}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
+                      size="medium"
                     />
                   </div>
                   <CardContent className="p-6">
