@@ -545,12 +545,12 @@ const KrakenReview = () => {
               Create a Halloween display that nobody in your neighborhood will forget!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-100" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
                 <a href={productData.affiliateLink} target="_blank" rel="noopener noreferrer">
                   Get the Kraken at Lowe's - {productData.price} <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600" asChild>
+              <Button size="lg" variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-primary" asChild>
                 <Link to="/lowes-halloween-decorations">
                   Explore More Halloween Ideas <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

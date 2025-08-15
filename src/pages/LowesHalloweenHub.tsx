@@ -914,7 +914,7 @@ const LowesHalloweenHub = () => {
                   Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-purple-600" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white bg-white/10 hover:bg-white hover:text-primary" asChild>
                 <Link to="/category/outdoor">
                   Browse All Outdoor Decorations <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

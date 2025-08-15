@@ -731,12 +731,12 @@ const BestOutdoorDecorations = () => {
               These decorations are available now at 1,700+ Lowe's stores nationwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100" asChild>
                 <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
                   Shop All Halloween Decorations <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600" asChild>
+              <Button size="lg" variant="outline" className="border-white text-white bg-white/10 hover:bg-white hover:text-primary" asChild>
                 <Link to="/lowes-halloween-decorations">
                   View Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
