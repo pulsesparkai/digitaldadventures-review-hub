@@ -203,23 +203,23 @@ const Category = () => {
                   </Button>
                 </div>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {halloweenContent.map((item, index) => (
-                    <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
-                      <div className="aspect-video">
+                    <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full bg-white border border-gray-200">
+                      <div className="aspect-video relative">
                         <ProductImage
                           src={item.image}
                           alt={item.title}
                           size="medium"
-                          className="rounded-t-lg"
+                          className="rounded-t-lg w-full h-full object-cover"
                         />
                       </div>
-                      <CardContent className="p-6 flex flex-col flex-grow">
-                        <Badge className="mb-3 bg-primary text-primary-foreground">{item.badge}</Badge>
-                        <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                        <p className="text-gray-600 mb-4 text-sm flex-grow">{item.description}</p>
-                        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" variant="default">
-                          <Link to={item.link}>
+                      <CardContent className="p-4 md:p-6 flex flex-col flex-grow space-y-3">
+                        <Badge className="self-start bg-orange-600 text-white text-xs font-semibold px-2 py-1 rounded">{item.badge}</Badge>
+                        <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{item.title}</h3>
+                        <p className="text-gray-600 text-sm md:text-base flex-grow line-clamp-3">{item.description}</p>
+                        <Button asChild className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors" variant="default">
+                          <Link to={item.link} className="flex items-center justify-center">
                             Read Guide <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
                         </Button>
