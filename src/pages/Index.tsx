@@ -9,6 +9,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import ProductImage from '@/components/ProductImage';
+import SEO from '@/components/SEO';
+import { generateWebsiteStructuredData, generateOrganizationStructuredData } from '@/utils/structuredData';
 
 const Index = () => {
   const categories = [
@@ -23,8 +25,22 @@ const Index = () => {
   // Empty array for now - reviews will be populated from CMS/database
   const featuredReviews: any[] = [];
 
+  const currentUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const structuredData = [
+    generateWebsiteStructuredData('Family Product Reviews & Recommendations', currentUrl),
+    generateOrganizationStructuredData('Family Product Reviews', currentUrl)
+  ];
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Family Product Reviews & Recommendations"
+        description="Discover the best products for your family through honest reviews, research, and AI analysis. Find top-rated kitchen, fitness, tech, and home improvement products."
+        canonicalUrl={currentUrl}
+        ogType="website"
+        structuredData={structuredData}
+        keywords="family products, product reviews, honest reviews, kitchen appliances, fitness equipment, home improvement, tech gadgets"
+      />
       <Navbar />
       
       {/* Hero Section */}

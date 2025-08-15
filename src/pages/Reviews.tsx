@@ -9,8 +9,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorDisplay from '@/components/ErrorDisplay';
+import SEO from '@/components/SEO';
 import { useReviews } from '@/hooks/useApi';
 import { SearchFilters } from '@/types';
+import { generateCollectionPageStructuredData } from '@/utils/structuredData';
 
 const Reviews = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,9 +26,27 @@ const Reviews = () => {
 
   const { data: reviews = [], loading, error, retry } = useReviews(filters);
 
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const structuredData = reviews.length > 0 ? [
+    generateCollectionPageStructuredData({
+      name: 'Product Reviews',
+      description: 'Comprehensive product reviews and recommendations for families',
+      url: currentUrl,
+      items: reviews.map(review => ({
+        name: review.title,
+        url: `${window.location.origin}/review/${review.slug}`
+      }))
+    })
+  ] : [];
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white">
+        <SEO
+          title="Product Reviews - Loading"
+          description="Loading comprehensive product reviews and recommendations for families"
+          noIndex={true}
+        />
         <Navbar />
         <div className="container mx-auto px-4 py-8">
           <LoadingSpinner size="lg" text="Loading reviews..." className="py-12" />
@@ -39,6 +59,11 @@ const Reviews = () => {
   if (error) {
     return (
       <div className="min-h-screen bg-white">
+        <SEO
+          title="Product Reviews - Error"
+          description="Error loading product reviews"
+          noIndex={true}
+        />
         <Navbar />
         <div className="container mx-auto px-4 py-8">
           <ErrorDisplay 
@@ -56,6 +81,12 @@ const Reviews = () => {
   if (reviews.length === 0) {
     return (
       <div className="min-h-screen bg-white">
+        <SEO
+          title="Product Reviews"
+          description="Comprehensive product reviews and recommendations for families. Discover the best products through research, hands-on testing, and analysis."
+          canonicalUrl={currentUrl}
+          structuredData={structuredData}
+        />
         <Navbar />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center py-12">
@@ -70,6 +101,12 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Product Reviews"
+        description="Comprehensive product reviews and recommendations for families. Discover the best products through research, hands-on testing, and analysis."
+        canonicalUrl={currentUrl}
+        structuredData={structuredData}
+      />
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">

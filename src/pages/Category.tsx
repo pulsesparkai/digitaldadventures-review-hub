@@ -1,13 +1,14 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProductImage from '@/components/ProductImage';
+import SEO from '@/components/SEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, ExternalLink, Home, ChevronRight } from 'lucide-react';
+import { generateBreadcrumbStructuredData, generateCollectionPageStructuredData } from '@/utils/structuredData';
 
 const Category = () => {
   const { category } = useParams();
@@ -93,57 +94,75 @@ const Category = () => {
   ];
   
   const currentCategory = categoryMap[category as keyof typeof categoryMap];
+  
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const breadcrumbItems = [
+    { name: 'Home', url: window.location?.origin || '' },
+    { name: 'Categories', url: `${window.location?.origin}/categories` },
+    { name: currentCategory?.title || 'Category', url: currentUrl }
+  ];
+  
+  const structuredData = [
+    generateBreadcrumbStructuredData(breadcrumbItems),
+    ...(currentCategory ? [generateCollectionPageStructuredData({
+      name: `${currentCategory.title} Products`,
+      description: currentCategory.description,
+      url: currentUrl,
+      items: category === 'outdoor' ? halloweenContent.map(item => ({
+        name: item.title,
+        url: `${window.location?.origin}${item.link}`
+      })) : []
+    })] : [])
+  ];
+
   const isOutdoorCategory = category === 'outdoor';
   
   // Handle invalid categories
   if (!currentCategory) {
     return (
-      <>
-        <Helmet>
-          <title>Category Not Found - DigitalDadVentures</title>
-          <meta name="description" content="The requested category was not found. Explore our available product categories." />
-          <meta name="robots" content="noindex, follow" />
-        </Helmet>
-        <div className="min-h-screen bg-white">
-          <Navbar />
-          <div className="container mx-auto px-4 py-20 text-center">
-            <h1 className="text-4xl font-bold mb-4">Category Not Found</h1>
-            <p className="text-xl text-gray-600 mb-8">
-              The category "{category}" doesn't exist. Browse our available categories below.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-8">
-              {Object.entries(categoryMap).map(([key, cat]) => (
-                <Link key={key} to={`/category/${key}`}>
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                    <CardContent className="p-4 text-center">
-                      <div className="text-3xl mb-2">{cat.icon}</div>
-                      <h3 className="font-semibold text-sm">{cat.title}</h3>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-            <Button asChild>
-              <Link to="/">Return to Home</Link>
-            </Button>
+      <div className="min-h-screen bg-white">
+        <SEO
+          title="Category Not Found"
+          description="The requested category was not found. Explore our available product categories."
+          noIndex={true}
+        />
+        <Navbar />
+        <div className="container mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl font-bold mb-4">Category Not Found</h1>
+          <p className="text-xl text-gray-600 mb-8">
+            The category "{category}" doesn't exist. Browse our available categories below.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-8">
+            {Object.entries(categoryMap).map(([key, cat]) => (
+              <Link key={key} to={`/category/${key}`}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                  <CardContent className="p-4 text-center">
+                    <div className="text-3xl mb-2">{cat.icon}</div>
+                    <h3 className="font-semibold text-sm">{cat.title}</h3>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
-          <Footer />
+          <Button asChild>
+            <Link to="/">Return to Home</Link>
+          </Button>
         </div>
-      </>
+        <Footer />
+      </div>
     );
   }
   
   return (
-    <>
-      <Helmet>
-        <title>{currentCategory.title} Reviews - DigitalDadVentures</title>
-        <meta name="description" content={`${currentCategory.description}. Honest reviews for smart families.`} />
-        <meta name="keywords" content={`${currentCategory.title.toLowerCase()}, reviews, buying guide, family products`} />
-        <link rel="canonical" href={`https://digitaldadventures.com/category/${category}`} />
-      </Helmet>
-
-      <div className="min-h-screen bg-white">
-        <Navbar />
+    <div className="min-h-screen bg-white">
+      <SEO
+        title={`${currentCategory.title} Products & Reviews`}
+        description={`${currentCategory.description}. Find the best ${currentCategory.title.toLowerCase()} products through comprehensive reviews and analysis.`}
+        canonicalUrl={currentUrl}
+        structuredData={structuredData}
+        keywords={`${currentCategory.title.toLowerCase()}, ${currentCategory.title.toLowerCase()} reviews, best ${currentCategory.title.toLowerCase()}, ${currentCategory.title.toLowerCase()} products`}
+      />
+      <Navbar />
         
         {/* Breadcrumb Navigation */}
         <nav className="bg-gray-50 py-3">
@@ -243,8 +262,7 @@ const Category = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    );
 };
 
 export default Category;
