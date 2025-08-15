@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLink, ArrowRight, Star, Castle, Music, ChevronRight, Eye, Lightbulb, Users } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ProductImage from '@/components/ProductImage';
 
 const HauntedMansionCollection = () => {
   const collectionItems = [
@@ -17,7 +18,7 @@ const HauntedMansionCollection = () => {
       price: "$329.00",
       originalPrice: "$399.99",
       affiliateLink: "https://shoplowes.me/45yzBjt",
-      image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
+      image: "/placeholder.svg",
       category: "signature",
       features: ["Plays 'Grim Grinning Ghosts'", "Mouth movement synced to music", "Lantern lights up and moves", "Holding talking head"],
       dimensions: "6 ft H x 2 ft W x 2 ft D",
@@ -32,7 +33,7 @@ const HauntedMansionCollection = () => {
       price: "$109.00",
       originalPrice: "$139.99", 
       affiliateLink: "https://shoplowes.me/472zrUd",
-      image: "https://mobileimages.lowes.com/productimages/7r8s9t0u-1v2w-3x4y-5z6a7b8c9d0e/64649655.jpg",
+      image: "https://mobileimages.lowes.com/productimages/1d0e5926-2b65-4ad1-96fc-b8d2d3469c2a/48447836.jpg",
       category: "signature",
       features: ["Animated Madame Leota speaks", "Eyes flash blue", "Mouth moves with phrases", "Sound activated"],
       dimensions: "31 in H x 21.7 in W x 3.3 in D",
@@ -47,7 +48,7 @@ const HauntedMansionCollection = () => {
       price: "$249.00",
       originalPrice: "$299.99",
       affiliateLink: "https://shoplowes.me/4lpioir",
-      image: "https://mobileimages.lowes.com/productimages/8f9g0h1i-2j3k-4l5m-6n7o8p9q0r1s/64649656.jpg",
+      image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
       category: "signature", 
       features: ["Motion and sound activated", "Moves lantern back and forth", "Plays theme music and crow sounds", "Collapsible for storage"],
       dimensions: "6 ft H",
@@ -293,10 +294,11 @@ const HauntedMansionCollection = () => {
                     <Badge className="absolute top-4 left-4 z-10 bg-purple-600">{item.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
-                    <img 
+                    <ProductImage 
                       src={item.image} 
-                      alt={`${item.name} - Official Disney Haunted Mansion Halloween decoration available at Lowe's with ${item.features.join(', ')}`}
+                      alt={`${item.name} - Disney Halloween decoration`}
                       className="w-full h-full object-cover"
+                      size="medium"
                     />
                   </div>
                   <CardContent className="p-6">
