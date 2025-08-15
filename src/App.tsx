@@ -26,6 +26,7 @@ import GiantInflatablesRoundup from "./pages/GiantInflatablesRoundup";
 import HauntedMansionCollection from "./pages/HauntedMansionCollection";
 import KrakenReview from "./pages/KrakenReview";
 import BestOutdoorDecorations from "./pages/BestOutdoorDecorations";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/review/:slug" element={<ProductReview />} />
