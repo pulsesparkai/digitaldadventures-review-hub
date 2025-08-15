@@ -54,11 +54,15 @@ const Index = () => {
             Discover the best gear, gadgets, and tools for modern family life.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 max-w-md sm:max-w-none mx-auto">
-            <Button size="lg" className="w-full sm:w-auto min-h-[48px] touch-target">
-              Browse Reviews <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild size="lg" className="w-full sm:w-auto min-h-[48px] touch-target">
+              <Link to="/category/outdoor">
+                Halloween Guide <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] touch-target">
-              Submit a Product
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] touch-target">
+              <Link to="/submit-product">
+                Submit a Product
+              </Link>
             </Button>
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500">
