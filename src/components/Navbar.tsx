@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Facebook, Youtube, Music } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,6 +41,37 @@ const Navbar = () => {
               className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto"
             />
           </Link>
+
+          {/* Social Media Icons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a 
+              href="https://m.facebook.com/61578172692503/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-orange-600 transition-colors"
+              aria-label="Follow us on Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@digitaldadventures?_t=ZT-8yuX4WRdlId&_r=1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-orange-600 transition-colors"
+              aria-label="Follow us on TikTok"
+            >
+              <Music className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://youtube.com/@digitaldadventures?si=uevcLxue4D6UX6rO" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-orange-600 transition-colors"
+              aria-label="Subscribe to our YouTube channel"
+            >
+              <Youtube className="h-5 w-5" />
+            </a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
@@ -130,6 +161,40 @@ const Navbar = () => {
                 >
                   <Link to="/submit-product">Submit a Product</Link>
                 </Button>
+              </div>
+              
+              {/* Mobile Social Media Icons */}
+              <div className="mt-4 pt-4 border-t">
+                <p className="text-sm font-semibold text-gray-500 mb-3 px-2">Follow Us</p>
+                <div className="flex justify-center space-x-6">
+                  <a 
+                    href="https://m.facebook.com/61578172692503/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Follow us on Facebook"
+                  >
+                    <Facebook className="h-6 w-6" />
+                  </a>
+                  <a 
+                    href="https://www.tiktok.com/@digitaldadventures?_t=ZT-8yuX4WRdlId&_r=1" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Follow us on TikTok"
+                  >
+                    <Music className="h-6 w-6" />
+                  </a>
+                  <a 
+                    href="https://youtube.com/@digitaldadventures?si=uevcLxue4D6UX6rO" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Subscribe to our YouTube channel"
+                  >
+                    <Youtube className="h-6 w-6" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
