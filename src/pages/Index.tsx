@@ -149,7 +149,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg"
+                  src="/placeholder.svg"
                   alt="Best Halloween Decorations 2025 - Top picks across all categories"
                   size="large"
                   priority={true}

@@ -34,20 +34,29 @@ const ProductImage: React.FC<ProductImageProps> = ({
   
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   const handleLoad = () => {
     setIsLoading(false);
+    setHasError(false);
   };
 
   const handleError = () => {
-    if (!hasError) {
-      setHasError(true);
-      // Try fallback without size parameter
+    if (retryCount === 0 && (src.includes('mobileimages.lowes.com') || src.includes('images.lowes.com'))) {
+      // First retry: try without size parameter for Lowe's images
+      setRetryCount(1);
       const baseUrl = src.split('?')[0];
       setImgSrc(baseUrl);
+    } else if (retryCount === 1 && (src.includes('mobileimages.lowes.com') || src.includes('images.lowes.com'))) {
+      // Second retry: try different Lowe's CDN
+      setRetryCount(2);
+      const baseUrl = src.split('?')[0];
+      const imageId = baseUrl.split('/').pop();
+      setImgSrc(`https://images.lowes.com/product/converted/product/converted/${imageId}`);
     } else {
       // Final fallback to placeholder
-      setImgSrc('/images/halloween-placeholder.jpg');
+      setHasError(true);
+      setImgSrc('/placeholder.svg');
     }
     setIsLoading(false);
   };
@@ -70,7 +79,7 @@ const ProductImage: React.FC<ProductImageProps> = ({
       />
       
       {/* Subtle attribution overlay */}
-      {src.includes('lowes.com') && !hasError && (
+      {(src.includes('lowes.com') || imgSrc.includes('lowes.com')) && !hasError && (
         <div className="absolute bottom-2 right-2 text-xs text-white bg-black/40 backdrop-blur-sm px-2 py-1 rounded-md opacity-75 hover:opacity-100 transition-opacity">
           Lowe's
         </div>
