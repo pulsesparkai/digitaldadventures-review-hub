@@ -289,7 +289,7 @@ const HauntedMansionCollection = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Signature Collection Pieces</h2>
             <div className="grid lg:grid-cols-3 gap-8">
               {collectionItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden relative">
+                <Card key={item.id} className="overflow-hidden relative h-full">
                   {item.badge && (
                     <Badge className="absolute top-4 left-4 z-10 bg-purple-600">{item.badge}</Badge>
                   )}
@@ -301,7 +301,7 @@ const HauntedMansionCollection = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex-1">
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
@@ -314,7 +314,7 @@ const HauntedMansionCollection = () => {
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 mb-4 text-sm">{item.description}</p>
+                    <p className="text-gray-600 mb-4 text-sm flex-grow">{item.description}</p>
                     
                     <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                       <div><strong>Dimensions:</strong> {item.dimensions}</div>
@@ -331,7 +331,7 @@ const HauntedMansionCollection = () => {
                       </div>
                     </div>
                     
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
@@ -349,12 +349,12 @@ const HauntedMansionCollection = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Complete the Haunted Mansion Scene</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {complementaryItems.map((item, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6 text-center">
+                <Card key={index} className="h-full">
+                  <CardContent className="p-6 text-center flex flex-col h-full">
                     <h3 className="font-bold mb-2">{item.name}</h3>
                     <div className="text-xl font-bold text-purple-600 mb-3">{item.price}</div>
-                    <p className="text-sm text-gray-600 mb-4">{item.description}</p>
-                    <Button variant="outline" size="sm" asChild>
+                    <p className="text-sm text-gray-600 mb-4 flex-grow">{item.description}</p>
+                    <Button variant="outline" size="sm" className="mt-auto" asChild>
                       <a href={item.link} target="_blank" rel="noopener noreferrer">
                         Add to Collection <ExternalLink className="ml-1 h-3 w-3" />
                       </a>

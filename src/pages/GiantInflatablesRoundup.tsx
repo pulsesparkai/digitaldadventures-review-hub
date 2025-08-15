@@ -332,7 +332,7 @@ const GiantInflatablesRoundup = () => {
             
             <div className="grid lg:grid-cols-3 gap-8">
               {sortedInflatables.map((item) => (
-                <Card key={item.id} className="overflow-hidden relative">
+                <Card key={item.id} className="overflow-hidden relative h-full">
                   {item.badge && (
                     <Badge className="absolute top-4 left-4 z-10 bg-orange-600">{item.badge}</Badge>
                   )}
@@ -344,7 +344,7 @@ const GiantInflatablesRoundup = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
@@ -357,7 +357,7 @@ const GiantInflatablesRoundup = () => {
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 mb-4 text-sm">{item.description}</p>
+                    <p className="text-gray-600 mb-4 text-sm flex-grow">{item.description}</p>
                     
                     <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                       <div><strong>Size:</strong> {item.size}</div>
@@ -378,7 +378,7 @@ const GiantInflatablesRoundup = () => {
                       <strong>Best For:</strong> {item.bestFor}
                     </div>
                     
-                    <Button className="w-full" asChild>
+                    <Button className="w-full mt-auto" asChild>
                       <a href={item.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
