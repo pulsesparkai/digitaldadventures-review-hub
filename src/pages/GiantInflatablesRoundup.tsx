@@ -39,7 +39,7 @@ const GiantInflatablesRoundup = () => {
       price: "$99.98",
       originalPrice: "$129.99",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      image: "/placeholder.svg", 
+      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg", 
       size: "6ft",
       sizeCategory: "medium",
       theme: "disney",
