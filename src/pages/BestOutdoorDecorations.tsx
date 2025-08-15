@@ -484,7 +484,7 @@ const BestOutdoorDecorations = () => {
 
             <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
               {filteredProducts.map((product) => (
-                <Card key={product.id} className="relative overflow-hidden h-full">
+                <Card key={product.id} className="relative overflow-hidden flex flex-col h-full">
                   {product.badge && (
                     <Badge className="absolute top-3 left-3 z-10 bg-orange-600">{product.badge}</Badge>
                   )}
@@ -496,7 +496,7 @@ const BestOutdoorDecorations = () => {
                       size="medium"
                     />
                   </div>
-                  <CardContent className="p-6 flex flex-col h-full">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="font-bold mb-2 line-clamp-2">{product.name}</h3>
                     <div className="flex justify-between items-center mb-2">
                       <div className="text-2xl font-bold text-orange-600">${product.price}</div>
@@ -514,7 +514,7 @@ const BestOutdoorDecorations = () => {
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full mt-auto bg-orange-600 hover:bg-orange-700 text-white" asChild>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
