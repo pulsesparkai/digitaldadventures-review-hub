@@ -27,9 +27,11 @@ const Index = () => {
       category: "Seasonal",
       rating: 4.8,
       link: "/lowes-halloween-decorations",
-      // REAL Lowe's URL - this is the actual working image
-      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
-      badge: "🔥 TRENDING"
+      // Real Bone Collector image
+      image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
+      badge: "🔥 TRENDING",
+      affiliateLink: "https://shoplowes.me/3V5TZUg",
+      productName: "Haunted Living 12-ft Talking LED Bone Collector Animatronic"
     },
     {
       title: "12ft Bone Collector Review",
@@ -37,9 +39,11 @@ const Index = () => {
       category: "Halloween", 
       rating: 4.8,
       link: "/lowes-12ft-bone-collector-animatronic-review",
-      // Using the same real URL for now - replace with actual Bone Collector URL when found
-      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
-      badge: "IN-DEPTH"
+      // Real Bone Collector image
+      image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
+      badge: "IN-DEPTH",
+      affiliateLink: "https://shoplowes.me/3V5TZUg",
+      productName: "Haunted Living 12-ft Talking LED Bone Collector Animatronic"
     },
     {
       title: "Disney Haunted Mansion Collection",
@@ -47,9 +51,11 @@ const Index = () => {
       category: "Disney",
       rating: 4.6, 
       link: "/lowes-haunted-mansion-collection",
-      // Using the same real URL for now - replace with actual Haunted Mansion URL when found
-      image: "https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png",
-      badge: "OFFICIAL"
+      // Real Disney Hitchhiking Ghosts image
+      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
+      badge: "OFFICIAL",
+      affiliateLink: "https://shoplowes.me/4fy9FsU",
+      productName: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable"
     }
   ];
 
@@ -110,7 +116,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  src="https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg"
                   alt="Lowe's Halloween Decorations Guide - Complete 2025 collection"
                   size="large"
                   priority={true}
@@ -131,7 +137,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  src="https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg"
                   alt="Disney Haunted Mansion Halloween Collection - Official Disney theming"
                   size="large"
                   priority={true}
@@ -152,7 +158,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="https://mobileimages.lowes.com/productimages/ffb5a8d3-cf54-4f9e-bc83-c45590f99c60/72642407.png"
+                  src="https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg"
                   alt="Best Halloween Decorations 2025 - Top picks across all categories"
                   size="large"
                   priority={true}

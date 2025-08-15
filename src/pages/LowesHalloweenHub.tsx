@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLink, ArrowRight, Star, Shield, Zap, Home, ChevronRight, Eye, Skull } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ProductShowcase from '@/components/ProductShowcase';
 
 const LowesHalloweenHub = () => {
   // Real Product Data Arrays
@@ -919,6 +920,32 @@ const LowesHalloweenHub = () => {
             </div>
           </div>
         </section>
+
+        {/* Product Showcase */}
+        <ProductShowcase 
+          products={[
+            {
+              name: "Haunted Living 12-ft Talking LED Bone Collector Animatronic",
+              image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
+              affiliateLink: "https://shoplowes.me/3V5TZUg",
+              price: "$449.00",
+              description: "12-foot talking animatronic with LED eyes and motion sensors"
+            },
+            {
+              name: "Haunted Living 3.5-ft LED Kraken Monster Yard Decoration",
+              image: "https://mobileimages.lowes.com/productimages/178de7ab-27e8-4d2b-aa1e-835d342b4a69/72605862.jpeg",
+              affiliateLink: "https://shoplowes.me/417a5AN",
+              description: "Giant tentacled sea monster with LED lighting effects"
+            },
+            {
+              name: "Disney 6-ft The Haunted Mansion Life-Size Caretaker",
+              image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
+              affiliateLink: "https://shoplowes.me/4lpioir",
+              description: "Official Disney Haunted Mansion animatronic figure"
+            }
+          ]}
+          title="Featured Halloween Animatronics"
+        />
 
         {/* Final CTA Section */}
         <section className="py-16 bg-gradient-to-r from-orange-600 to-purple-600 text-white">

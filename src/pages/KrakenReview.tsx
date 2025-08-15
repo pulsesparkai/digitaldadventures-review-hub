@@ -8,6 +8,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLink, ArrowRight, Star, Anchor, Waves, ChevronRight, Lightbulb, MapPin, Shield } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LowesAffiliateCTA from '@/components/LowesAffiliateCTA';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import ProductImage from '@/components/ProductImage';
 
 const KrakenReview = () => {
   const productData = {
@@ -284,6 +287,11 @@ const KrakenReview = () => {
           </ol>
         </nav>
 
+        {/* Affiliate Disclosure */}
+        <div className="container mx-auto px-4">
+          <AffiliateDisclosure className="mb-8" />
+        </div>
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-900 to-teal-900 text-white py-16">
           <div className="container mx-auto px-4">
@@ -321,21 +329,25 @@ const KrakenReview = () => {
                 </div>
               </div>
               <div className="lg:text-right">
-                <img 
-                  src={productData.image} 
+                <ProductImage
+                  src="https://mobileimages.lowes.com/productimages/178de7ab-27e8-4d2b-aa1e-835d342b4a69/72605862.jpeg"
                   alt="Lowe's 3.5ft LED Kraken Halloween decoration with glowing eyes and 4 poseable tentacles creating a haunted harbor sea monster theme"
                   className="w-full max-w-md mx-auto lg:ml-auto rounded-lg shadow-2xl"
+                  size="large"
+                  priority={true}
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mx-4 my-8">
-          <p className="text-sm text-amber-800">
-            <strong>Affiliate Disclosure:</strong> This post contains affiliate links. We may earn a commission at no extra cost to you when you purchase through our links.
-          </p>
+        {/* Affiliate CTA */}
+        <div className="container mx-auto px-4 my-8">
+          <LowesAffiliateCTA
+            productName="Haunted Living 3.5-ft LED Kraken Monster Yard Decoration"
+            affiliateUrl="https://shoplowes.me/417a5AN"
+            className="my-8"
+          />
         </div>
 
         {/* Why the Kraken Stands Out */}

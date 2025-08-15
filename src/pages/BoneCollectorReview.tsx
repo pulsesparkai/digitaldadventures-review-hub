@@ -8,6 +8,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ExternalLink, ArrowRight, Star, Shield, Zap, Home, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import LowesAffiliateCTA from '@/components/LowesAffiliateCTA';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import ProductImage from '@/components/ProductImage';
 
 const BoneCollectorReview = () => {
   const productData = {
@@ -162,6 +165,11 @@ const BoneCollectorReview = () => {
           </ol>
         </nav>
 
+        {/* Affiliate Disclosure */}
+        <div className="container mx-auto px-4">
+          <AffiliateDisclosure className="mb-8" />
+        </div>
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-gray-900 to-orange-900 text-white py-16">
           <div className="container mx-auto px-4">
@@ -192,21 +200,26 @@ const BoneCollectorReview = () => {
                 </div>
               </div>
               <div className="lg:text-right">
-                <img 
-                  src={productData.image} 
+                <ProductImage
+                  src="https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg"
                   alt="Lowe's 12ft Bone Collector Halloween animatronic with glowing LED eyes and realistic bone details in haunting outdoor display"
                   className="w-full max-w-md mx-auto lg:ml-auto rounded-lg shadow-2xl"
+                  size="large"
+                  priority={true}
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Affiliate Disclosure */}
-        <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mx-4 my-8">
-          <p className="text-sm text-amber-800">
-            <strong>Affiliate Disclosure:</strong> This post contains affiliate links. We may earn a commission at no extra cost to you when you purchase through our links.
-          </p>
+        {/* Affiliate CTA */}
+        <div className="container mx-auto px-4 my-8">
+          <LowesAffiliateCTA
+            productName="Haunted Living 12-ft Talking LED Bone Collector Animatronic"
+            affiliateUrl="https://shoplowes.me/3V5TZUg"
+            price="$449.00"
+            className="my-8"
+          />
         </div>
 
         {/* Product Specifications */}
