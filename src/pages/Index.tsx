@@ -54,7 +54,7 @@ const Index = () => {
             Discover the best gear, gadgets, and tools for modern family life.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px]">
+            <Button size="lg" className="w-full sm:w-auto min-h-[48px]">
               Browse Reviews <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]">
@@ -158,7 +158,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button size="lg" asChild className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px]">
+            <Button size="lg" asChild className="w-full sm:w-auto min-h-[48px]">
               <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
                 Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
               </a>

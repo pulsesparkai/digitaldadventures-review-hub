@@ -79,7 +79,7 @@ const Navbar = () => {
 
             <Button 
               asChild 
-              className="bg-orange-600 hover:bg-orange-700"
+              className="bg-primary hover:bg-primary/90"
             >
               <Link to="/submit-product">Submit a Product</Link>
             </Button>
@@ -126,7 +126,7 @@ const Navbar = () => {
               <div className="mt-4">
                 <Button 
                   asChild 
-                  className="bg-orange-600 hover:bg-orange-700 w-full min-h-[48px]"
+                  className="bg-primary hover:bg-primary/90 w-full min-h-[48px]"
                 >
                   <Link to="/submit-product">Submit a Product</Link>
                 </Button>

@@ -250,11 +250,11 @@ const GiantInflatablesRoundup = () => {
         {/* Breadcrumb */}
         <nav className="container mx-auto px-4 py-4">
           <ol className="flex items-center space-x-2 text-sm text-gray-500">
-            <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
+            <li><Link to="/" className="hover:text-primary">Home</Link></li>
             <ChevronRight className="h-4 w-4" />
-            <li><Link to="/category/outdoor" className="hover:text-orange-600">Outdoor</Link></li>
+            <li><Link to="/category/outdoor" className="hover:text-primary">Outdoor</Link></li>
             <ChevronRight className="h-4 w-4" />
-            <li><Link to="/lowes-halloween-decorations" className="hover:text-orange-600">Lowe's Halloween</Link></li>
+            <li><Link to="/lowes-halloween-decorations" className="hover:text-primary">Lowe's Halloween</Link></li>
             <ChevronRight className="h-4 w-4" />
             <li className="text-gray-900">Giant Inflatables Guide</li>
           </ol>
@@ -272,7 +272,7 @@ const GiantInflatablesRoundup = () => {
               with detailed comparisons, setup guides, and bundle recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700" asChild>
+              <Button size="lg" asChild>
                 <a href="https://shoplowes.me/3UxnCOe" target="_blank" rel="noopener noreferrer">
                   Shop Giant Inflatables at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
@@ -334,7 +334,7 @@ const GiantInflatablesRoundup = () => {
               {sortedInflatables.map((item) => (
                 <Card key={item.id} className="overflow-hidden relative flex flex-col h-full">
                   {item.badge && (
-                    <Badge className="absolute top-4 left-4 z-10 bg-orange-600">{item.badge}</Badge>
+                    <Badge className="absolute top-4 left-4 z-10 bg-primary text-primary-foreground">{item.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
                     <ProductImage 
@@ -350,7 +350,7 @@ const GiantInflatablesRoundup = () => {
                         <h3 className="text-lg font-bold mb-2 line-clamp-2">{item.name}</h3>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-orange-600">{item.price}</div>
+                        <div className="text-2xl font-bold text-primary">{item.price}</div>
                         {item.originalPrice && (
                           <div className="text-sm text-gray-500 line-through">{item.originalPrice}</div>
                         )}
@@ -457,7 +457,7 @@ const GiantInflatablesRoundup = () => {
                   <Badge className="absolute top-4 right-4 bg-green-600">{bundle.savings}</Badge>
                   <CardHeader>
                     <CardTitle>{bundle.name}</CardTitle>
-                    <div className="text-2xl font-bold text-orange-600">{bundle.price}</div>
+                    <div className="text-2xl font-bold text-primary">{bundle.price}</div>
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4 text-sm">{bundle.description}</p>

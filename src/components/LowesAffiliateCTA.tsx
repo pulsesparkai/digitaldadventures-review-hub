@@ -32,7 +32,7 @@ const LowesAffiliateCTA: React.FC<LowesAffiliateCTAProps> = ({
           <Button 
             asChild
             size="lg"
-            className="bg-orange-600 hover:bg-orange-700 text-white min-h-[48px] flex-1 sm:flex-none"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground min-h-[48px] flex-1 sm:flex-none"
           >
             <a 
               href={affiliateUrl} 

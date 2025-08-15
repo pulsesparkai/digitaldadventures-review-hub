@@ -397,7 +397,7 @@ const BestOutdoorDecorations = () => {
               pricing, setup guides, and scene-building strategies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700" asChild>
+              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
                 <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
                   Shop Top Picks at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
@@ -423,7 +423,7 @@ const BestOutdoorDecorations = () => {
               {allProducts.slice(0, 5).map((product) => (
                 <Card key={product.id} className="relative overflow-hidden h-full">
                   {product.badge && (
-                    <Badge className="absolute top-3 left-3 z-10 bg-orange-600 text-xs">{product.badge}</Badge>
+                    <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-xs">{product.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
                     <ProductImage 
@@ -435,9 +435,9 @@ const BestOutdoorDecorations = () => {
                   </div>
                   <CardContent className="p-4 flex flex-col h-full">
                     <h3 className="font-bold text-sm mb-2 line-clamp-2">{product.name}</h3>
-                    <div className="text-lg font-bold text-orange-600 mb-2">${product.price}</div>
+                    <div className="text-lg font-bold text-primary mb-2">${product.price}</div>
                     <p className="text-xs text-gray-600 mb-3 flex-grow">{product.bestFor}</p>
-                    <Button size="sm" className="w-full text-xs mt-auto bg-orange-600 hover:bg-orange-700 text-white" asChild>
+                    <Button size="sm" className="w-full text-xs mt-auto bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
@@ -486,7 +486,7 @@ const BestOutdoorDecorations = () => {
               {filteredProducts.map((product) => (
                 <Card key={product.id} className="relative overflow-hidden flex flex-col h-full">
                   {product.badge && (
-                    <Badge className="absolute top-3 left-3 z-10 bg-orange-600">{product.badge}</Badge>
+                    <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground">{product.badge}</Badge>
                   )}
                   <div className="aspect-square bg-gray-100">
                     <ProductImage 
@@ -499,7 +499,7 @@ const BestOutdoorDecorations = () => {
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="font-bold mb-2 line-clamp-2">{product.name}</h3>
                     <div className="flex justify-between items-center mb-2">
-                      <div className="text-2xl font-bold text-orange-600">${product.price}</div>
+                      <div className="text-2xl font-bold text-primary">${product.price}</div>
                       <Badge variant="outline">{product.category}</Badge>
                     </div>
                     <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
@@ -514,7 +514,7 @@ const BestOutdoorDecorations = () => {
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white" asChild>
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
@@ -602,7 +602,7 @@ const BestOutdoorDecorations = () => {
                 <Card key={index} className="relative">
                   <CardHeader>
                     <CardTitle>{bundle.name}</CardTitle>
-                    <div className="text-2xl font-bold text-orange-600">{bundle.budget}</div>
+                    <div className="text-2xl font-bold text-primary">{bundle.budget}</div>
                     <CardDescription>{bundle.description}</CardDescription>
                   </CardHeader>
                   <CardContent>

@@ -41,7 +41,7 @@ const NewsletterSignup = () => {
                   required
                   className="flex-1 h-12 sm:h-14"
                 />
-                <Button type="submit" className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]">
+                <Button type="submit" className="bg-primary hover:bg-primary/90 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]">
                   Subscribe
                 </Button>
               </form>

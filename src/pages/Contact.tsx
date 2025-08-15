@@ -117,7 +117,7 @@ const Contact = () => {
                       <Textarea id="message" value={formData.message} onChange={e => handleInputChange('message', e.target.value)} placeholder="Tell us how we can help you..." rows={6} required />
                     </div>
 
-                    <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
+                    <Button type="submit" className="w-full">
                       <Send className="h-4 w-4 mr-2" />
                       Send Message
                     </Button>

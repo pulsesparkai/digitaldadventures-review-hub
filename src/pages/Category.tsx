@@ -196,7 +196,7 @@ const Category = () => {
                   <p className="text-xl text-gray-600 mb-6">
                     Transform your outdoor space with Lowe's best Halloween decorations for 2025
                   </p>
-                  <Button size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+                  <Button size="lg" asChild>
                     <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
                       Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
@@ -215,10 +215,10 @@ const Category = () => {
                         />
                       </div>
                       <CardContent className="p-6 flex flex-col flex-grow">
-                        <Badge className="mb-3 bg-orange-600">{item.badge}</Badge>
+                        <Badge className="mb-3 bg-primary text-primary-foreground">{item.badge}</Badge>
                         <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                         <p className="text-gray-600 mb-4 text-sm flex-grow">{item.description}</p>
-                        <Button asChild className="w-full bg-orange-600 hover:bg-orange-700 text-white" variant="default">
+                        <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" variant="default">
                           <Link to={item.link}>
                             Read Guide <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
