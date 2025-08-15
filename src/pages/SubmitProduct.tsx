@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { PackageSearch, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -26,7 +27,8 @@ const SubmitProduct = () => {
     keyFeatures: '',
     isAffiliate: false,
     sampleAvailable: false,
-    timeline: ''
+    timeline: '',
+    agreedToTerms: false
   });
 
   const categories = [
@@ -40,7 +42,7 @@ const SubmitProduct = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.productName || !formData.contactEmail || !formData.category) {
@@ -52,30 +54,64 @@ const SubmitProduct = () => {
       return;
     }
 
-    // In a real app, this would send to your backend/email service
-    console.log('Product submission:', formData);
-    
-    toast({
-      title: "Submission Received!",
-      description: "Thank you for your product submission. We'll review it and get back to you within 5-7 business days.",
-    });
+    if (!formData.agreedToTerms) {
+      toast({
+        title: "Error",
+        description: "Please agree to our terms and privacy policy",
+        variant: "destructive"
+      });
+      return;
+    }
 
-    // Reset form
-    setFormData({
-      productName: '',
-      brand: '',
-      category: '',
-      productUrl: '',
-      price: '',
-      contactName: '',
-      contactEmail: '',
-      company: '',
-      description: '',
-      keyFeatures: '',
-      isAffiliate: false,
-      sampleAvailable: false,
-      timeline: ''
-    });
+    try {
+      const { error } = await supabase
+        .from('product_submissions')
+        .insert({
+          product_name: formData.productName,
+          product_category: formData.category,
+          product_url: formData.productUrl,
+          product_description: formData.description,
+          retail_price: formData.price ? parseFloat(formData.price.replace(/[^0-9.]/g, '')) : null,
+          contact_name: formData.contactName,
+          contact_email: formData.contactEmail,
+          contact_phone: null,
+          company_name: formData.company,
+          looking_for_review: formData.sampleAvailable,
+          agreed_to_terms: formData.agreedToTerms
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Submission Received!",
+        description: "Thank you for your product submission. We'll review it and get back to you within 5-7 business days.",
+      });
+
+      // Reset form
+      setFormData({
+        productName: '',
+        brand: '',
+        category: '',
+        productUrl: '',
+        price: '',
+        contactName: '',
+        contactEmail: '',
+        company: '',
+        description: '',
+        keyFeatures: '',
+        isAffiliate: false,
+        sampleAvailable: false,
+        timeline: '',
+        agreedToTerms: false
+      });
+    } catch (error) {
+      console.error('Error submitting product:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your product. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -272,6 +308,21 @@ const SubmitProduct = () => {
                           />
                           <Label htmlFor="isAffiliate">
                             Interested in affiliate partnership
+                          </Label>
+                        </div>
+
+                        <div className="flex items-start space-x-2 pt-2 border-t">
+                          <Checkbox
+                            id="agreedToTerms"
+                            checked={formData.agreedToTerms}
+                            onCheckedChange={(checked) => handleInputChange('agreedToTerms', checked as boolean)}
+                            required
+                          />
+                          <Label htmlFor="agreedToTerms" className="text-sm leading-tight">
+                            I agree to the{' '}
+                            <a href="/terms" className="text-orange-600 hover:underline">Terms of Service</a>
+                            {' '}and{' '}
+                            <a href="/privacy" className="text-orange-600 hover:underline">Privacy Policy</a>
                           </Label>
                         </div>
                       </div>

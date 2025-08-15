@@ -3,18 +3,60 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { Mail } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would integrate with your email service
-    console.log('Newsletter signup:', email);
-    setIsSubmitted(true);
-    setEmail('');
+    
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!agreedToTerms) {
+      toast({
+        title: "Error",
+        description: "Please agree to our terms and privacy policy",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscriptions')
+        .insert({
+          email: email,
+          interests: [],
+          agreed_to_terms: agreedToTerms
+        });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      setEmail('');
+      setAgreedToTerms(false);
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue subscribing to the newsletter. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -32,18 +74,34 @@ const NewsletterSignup = () => {
           </CardHeader>
           <CardContent>
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 h-12 sm:h-14"
-                />
-                <Button type="submit" className="bg-primary hover:bg-primary/90 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]">
-                  Subscribe
-                </Button>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 h-12 sm:h-14"
+                  />
+                  <Button type="submit" className="bg-primary hover:bg-primary/90 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]">
+                    Subscribe
+                  </Button>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <Checkbox
+                    id="agreedToTerms"
+                    checked={agreedToTerms}
+                    onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+                    required
+                  />
+                  <Label htmlFor="agreedToTerms" className="text-xs leading-tight">
+                    I agree to the{' '}
+                    <a href="/terms" className="text-orange-600 hover:underline">Terms of Service</a>
+                    {' '}and{' '}
+                    <a href="/privacy" className="text-orange-600 hover:underline">Privacy Policy</a>
+                  </Label>
+                </div>
               </form>
             ) : (
               <div className="text-center">

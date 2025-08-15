@@ -5,8 +5,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Mail, MessageSquare, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 const Contact = () => {
@@ -15,17 +17,19 @@ const Contact = () => {
     email: '',
     subject: '',
     category: '',
-    message: ''
+    message: '',
+    agreedToTerms: false
   });
   const categories = ['General Inquiry', 'Product Review Request', 'Editorial Question', 'AI Content Inquiry', 'Partnership/Collaboration', 'Technical Issue', 'Other'];
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
@@ -34,20 +38,52 @@ const Contact = () => {
       });
       return;
     }
-    console.log('Contact form submission:', formData);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you within 24-48 hours."
-    });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      category: '',
-      message: ''
-    });
+    if (!formData.agreedToTerms) {
+      toast({
+        title: "Error",
+        description: "Please agree to our terms and privacy policy",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          category: formData.category,
+          message: formData.message,
+          agreed_to_terms: formData.agreedToTerms
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. We'll get back to you within 24-48 hours."
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        category: '',
+        message: '',
+        agreedToTerms: false
+      });
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue sending your message. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
   return <div className="min-h-screen bg-white">
       <Navbar />
@@ -115,6 +151,21 @@ const Contact = () => {
                     <div>
                       <Label htmlFor="message">Message *</Label>
                       <Textarea id="message" value={formData.message} onChange={e => handleInputChange('message', e.target.value)} placeholder="Tell us how we can help you..." rows={6} required />
+                    </div>
+
+                    <div className="flex items-start space-x-2">
+                      <Checkbox
+                        id="agreedToTerms"
+                        checked={formData.agreedToTerms}
+                        onCheckedChange={(checked) => handleInputChange('agreedToTerms', checked as boolean)}
+                        required
+                      />
+                      <Label htmlFor="agreedToTerms" className="text-sm leading-tight">
+                        I agree to the{' '}
+                        <a href="/terms" className="text-orange-600 hover:underline">Terms of Service</a>
+                        {' '}and{' '}
+                        <a href="/privacy" className="text-orange-600 hover:underline">Privacy Policy</a>
+                      </Label>
                     </div>
 
                     <Button type="submit" className="w-full">

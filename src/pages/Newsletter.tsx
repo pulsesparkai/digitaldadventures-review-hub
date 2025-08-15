@@ -7,12 +7,14 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Mail, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [interests, setInterests] = useState<string[]>([]);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const categories = [
@@ -32,7 +34,7 @@ const Newsletter = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!email) {
@@ -44,14 +46,40 @@ const Newsletter = () => {
       return;
     }
 
-    console.log('Newsletter subscription:', { email, interests });
-    
-    toast({
-      title: "Subscribed!",
-      description: "Thanks for subscribing to our newsletter. You'll receive our latest reviews and recommendations.",
-    });
+    if (!agreedToTerms) {
+      toast({
+        title: "Error",
+        description: "Please agree to our terms and privacy policy",
+        variant: "destructive"
+      });
+      return;
+    }
 
-    setIsSubscribed(true);
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscriptions')
+        .insert({
+          email: email,
+          interests: interests,
+          agreed_to_terms: agreedToTerms
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Subscribed!",
+        description: "Thanks for subscribing to our newsletter. You'll receive our latest reviews and recommendations.",
+      });
+
+      setIsSubscribed(true);
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue subscribing to the newsletter. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
 
   if (isSubscribed) {
@@ -148,6 +176,21 @@ const Newsletter = () => {
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div className="flex items-start space-x-2">
+                  <Checkbox
+                    id="agreedToTerms"
+                    checked={agreedToTerms}
+                    onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+                    required
+                  />
+                  <Label htmlFor="agreedToTerms" className="text-sm leading-tight">
+                    I agree to the{' '}
+                    <a href="/terms" className="text-orange-600 hover:underline">Terms of Service</a>
+                    {' '}and{' '}
+                    <a href="/privacy" className="text-orange-600 hover:underline">Privacy Policy</a>
+                  </Label>
                 </div>
 
                 <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 min-h-[48px]">

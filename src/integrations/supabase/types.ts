@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_submissions: {
+        Row: {
+          agreed_to_terms: boolean
+          category: string
+          created_at: string
+          email: string
+          id: string
+          ip_address: string | null
+          message: string
+          name: string
+          subject: string
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          category: string
+          created_at?: string
+          email: string
+          id?: string
+          ip_address?: string | null
+          message: string
+          name: string
+          subject: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          category?: string
+          created_at?: string
+          email?: string
+          id?: string
+          ip_address?: string | null
+          message?: string
+          name?: string
+          subject?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       cookie_consents: {
         Row: {
           consent_given: boolean
@@ -44,6 +86,144 @@ export type Database = {
           updated_at?: string | null
           user_agent?: string | null
           visitor_id?: string
+        }
+        Relationships: []
+      }
+      newsletter_subscriptions: {
+        Row: {
+          agreed_to_terms: boolean
+          created_at: string
+          email: string
+          id: string
+          interests: string[] | null
+          ip_address: string | null
+          is_active: boolean | null
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          interests?: string[] | null
+          ip_address?: string | null
+          is_active?: boolean | null
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          interests?: string[] | null
+          ip_address?: string | null
+          is_active?: boolean | null
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      partnership_inquiries: {
+        Row: {
+          agreed_to_terms: boolean
+          company_name: string | null
+          contact_email: string
+          contact_name: string
+          created_at: string
+          id: string
+          ip_address: string | null
+          message: string | null
+          partnership_type: string
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          company_name?: string | null
+          contact_email: string
+          contact_name: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          message?: string | null
+          partnership_type: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          company_name?: string | null
+          contact_email?: string
+          contact_name?: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          message?: string | null
+          partnership_type?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      product_submissions: {
+        Row: {
+          agreed_to_terms: boolean
+          company_name: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone: string | null
+          created_at: string
+          id: string
+          ip_address: string | null
+          looking_for_review: boolean | null
+          product_category: string
+          product_description: string | null
+          product_name: string
+          product_url: string | null
+          purchase_location: string | null
+          retail_price: number | null
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          agreed_to_terms?: boolean
+          company_name?: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          looking_for_review?: boolean | null
+          product_category: string
+          product_description?: string | null
+          product_name: string
+          product_url?: string | null
+          purchase_location?: string | null
+          retail_price?: number | null
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          agreed_to_terms?: boolean
+          company_name?: string | null
+          contact_email?: string
+          contact_name?: string
+          contact_phone?: string | null
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          looking_for_review?: boolean | null
+          product_category?: string
+          product_description?: string | null
+          product_name?: string
+          product_url?: string | null
+          purchase_location?: string | null
+          retail_price?: number | null
+          updated_at?: string
+          user_agent?: string | null
         }
         Relationships: []
       }
