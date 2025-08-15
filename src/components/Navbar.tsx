@@ -62,12 +62,13 @@ const Navbar = () => {
                 <span>Categories</span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-white border shadow-lg">
+              <DropdownMenuContent className="w-48 bg-white border shadow-lg z-50">
                 {categories.map((category) => (
                   <DropdownMenuItem key={category} asChild>
                     <Link 
                       to={`/category/${category.toLowerCase().replace(' ', '-')}`}
-                      className="w-full px-4 py-2 hover:bg-gray-50"
+                      className="w-full px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                      onClick={() => setIsOpen(false)}
                     >
                       {category}
                     </Link>

@@ -9,6 +9,7 @@ import { ExternalLink, ArrowRight, Star, Shield, Zap, Home, ChevronRight, Eye, S
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProductShowcase from '@/components/ProductShowcase';
+import ProductImage from '@/components/ProductImage';
 
 const LowesHalloweenHub = () => {
   // Real Product Data Arrays
@@ -949,10 +950,11 @@ const LowesHalloweenHub = () => {
               {[...heroAnimatronics, ...giantInflatables, ...hauntedMansion, ...additionalProducts].map((product, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video">
-                    <img
+                    <ProductImage
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover rounded-t-lg"
+                      size="medium"
+                      className="rounded-t-lg"
                     />
                   </div>
                   <CardContent className="p-4">
