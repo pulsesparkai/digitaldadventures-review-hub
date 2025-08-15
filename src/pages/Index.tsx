@@ -27,11 +27,8 @@ const Index = () => {
       category: "Seasonal",
       rating: 4.8,
       link: "/lowes-halloween-decorations",
-      // Real Bone Collector image
       image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
-      badge: "🔥 TRENDING",
-      affiliateLink: "https://shoplowes.me/3V5TZUg",
-      productName: "Haunted Living 12-ft Talking LED Bone Collector Animatronic"
+      badge: "🔥 TRENDING"
     },
     {
       title: "12ft Bone Collector Review",
@@ -39,11 +36,8 @@ const Index = () => {
       category: "Halloween", 
       rating: 4.8,
       link: "/lowes-12ft-bone-collector-animatronic-review",
-      // Real Bone Collector image
       image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
-      badge: "IN-DEPTH",
-      affiliateLink: "https://shoplowes.me/3V5TZUg",
-      productName: "Haunted Living 12-ft Talking LED Bone Collector Animatronic"
+      badge: "IN-DEPTH"
     },
     {
       title: "Disney Haunted Mansion Collection",
@@ -51,11 +45,8 @@ const Index = () => {
       category: "Disney",
       rating: 4.6, 
       link: "/lowes-haunted-mansion-collection",
-      // Real Disney Hitchhiking Ghosts image
       image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
-      badge: "OFFICIAL",
-      affiliateLink: "https://shoplowes.me/4fy9FsU",
-      productName: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable"
+      badge: "OFFICIAL"
     }
   ];
 

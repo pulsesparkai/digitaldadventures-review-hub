@@ -17,7 +17,7 @@ const LowesHalloweenHub = () => {
       name: "Haunted Living 12-ft Talking LED Bone Collector Animatronic",
       price: "$449.00",
       affiliateLink: "https://shoplowes.me/3V5TZUg",
-      image: "https://mobileimages.lowes.com/productimages/9b6a0a7e-0b4d-4a6f-b4a5-0c8f3d7f0e4c/64649649.jpg",
+      image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
       features: ["Glowing LED eyes", "Moving head & mouth", "Motion activated", "Volume control"],
       rating: 4.8,
       reviews: 234,
@@ -30,7 +30,7 @@ const LowesHalloweenHub = () => {
       name: "Haunted Living 10-ft Poseable Skeleton Decoration",
       price: "$129.00", 
       affiliateLink: "https://shoplowes.me/47tOTIT",
-      image: "https://mobileimages.lowes.com/productimages/8e3b5c97-1f0d-4f0f-8c0e-82a4b2d5f8f9/64649650.jpg",
+      image: "https://mobileimages.lowes.com/productimages/a5360f9c-35ec-4a48-bc75-430b9e28e4cd/67929429.jpeg",
       features: ["Poseable elbows", "Matte finish", "Collapsible", "Weather resistant"],
       rating: 4.6,
       reviews: 189,
@@ -46,7 +46,7 @@ const LowesHalloweenHub = () => {
       name: "Haunted Hill Farm 12-ft Pre-lit Inflatable Grim Reaper",
       price: "$199.00",
       affiliateLink: "https://shoplowes.me/3UxnCOe",
-      image: "https://mobileimages.lowes.com/productimages/1f2d3e4a-5b6c-4e6f-9d7e-3f4b5d6g7h8i/64649651.jpg",
+      image: "https://mobileimages.lowes.com/productimages/e46e38aa-1668-483c-942c-d0c0ff7bde7c/16990718.jpg",
       features: ["Pre-lit LEDs", "90-second setup", "Weather resistant", "Storage bag included"],
       rating: 4.5,
       reviews: 156,
@@ -55,8 +55,8 @@ const LowesHalloweenHub = () => {
     {
       name: "Joyfy 8-ft LED Archway Pumpkin Halloween Inflatable", 
       price: "$59.98",
-      affiliateLink: "https://shoplowes.me/4mHIGNU",
-      image: "https://mobileimages.lowes.com/productimages/4a5b6c7d-8e9f-0g1h-2i3j-4k5l6m7n8o9p/64649652.jpg",
+      affiliateLink: "https://shoplowes.me/4mJGlSE",
+      image: "https://mobileimages.lowes.com/productimages/de53733a-4fbe-48d0-8782-872af324e6de/70622944.jpeg",
       features: ["LED soft glow", "Family-friendly", "Archway design", "Stakes included"],
       rating: 4.3,
       reviews: 134,
@@ -66,7 +66,7 @@ const LowesHalloweenHub = () => {
       name: "Gemmy 6-ft Lighted Disney The Haunted Mansion Hitchhiking Ghosts Inflatable",
       price: "$99.98",
       affiliateLink: "https://shoplowes.me/4fy9FsU",
-      image: "https://mobileimages.lowes.com/productimages/5p6q7r8s-9t0u-1v2w-3x4y5z6a7b8c/64649653.jpg", 
+      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg", 
       features: ["Disney licensed", "Internal LEDs", "Iconic characters", "Weather resistant"],
       rating: 4.7,
       reviews: 298,
@@ -79,17 +79,17 @@ const LowesHalloweenHub = () => {
       name: "Disney 6-ft The Haunted Mansion Musical Headless Knight Animatronic",
       price: "$329.00",
       affiliateLink: "https://shoplowes.me/45yzBjt",
-      image: "https://mobileimages.lowes.com/productimages/6c7d8e9f-0g1h-2i3j-4k5l-6m7n8o9p0q1r/64649654.jpg",
+      image: "https://mobileimages.lowes.com/productimages/1fa7bb76-92e5-4af9-ba43-037d532b6aa8/67141359.jpeg",
       features: ["Plays theme music", "Mouth movement", "Lantern lights", "Disney authentic"],
       rating: 4.6,
       reviews: 87,
       description: "Imposing armored figure from Disney's Haunted Mansion with authentic music"
     },
     {
-      name: "Disney 2-ft Freestanding Talking Lighted Haunted Mansion Madame Leota Tombstone",
+      name: "Disney 2-ft Freestanding Talking Lighted Haunted Mansion Madame Leota Tombstone Animatronic",
       price: "$109.00", 
       affiliateLink: "https://shoplowes.me/472zrUd",
-      image: "https://mobileimages.lowes.com/productimages/7r8s9t0u-1v2w-3x4y-5z6a7b8c9d0e/64649655.jpg",
+      image: "https://mobileimages.lowes.com/productimages/1d0e5926-2b65-4ad1-96fc-b8d2d3469c2a/48447836.jpg",
       features: ["Talking phrases", "Eyes flash blue", "Sound activated", "Iconic character"],
       rating: 4.8,
       reviews: 143,
@@ -99,7 +99,7 @@ const LowesHalloweenHub = () => {
       name: "Disney 6-ft The Haunted Mansion Life-Size Caretaker Motion Activated Animatronic",
       price: "$249.00",
       affiliateLink: "https://shoplowes.me/4lpioir", 
-      image: "https://mobileimages.lowes.com/productimages/8f9g0h1i-2j3k-4l5m-6n7o8p9q0r1s/64649656.jpg",
+      image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
       features: ["Motion activated", "Lantern movement", "Theme music", "Collapsible"],
       rating: 4.4,
       reviews: 92,
@@ -107,26 +107,46 @@ const LowesHalloweenHub = () => {
     }
   ];
 
-  const uniqueItems = [
+  const additionalProducts = [
     {
       name: "Haunted Living 3.5-ft LED Kraken Monster Yard Decoration",
       price: "$199.00",
       affiliateLink: "https://shoplowes.me/417a5AN",
-      image: "https://mobileimages.lowes.com/productimages/9i0j1k2l-3m4n-5o6p-7q8r9s0t1u2v/64649657.jpg",
-      features: ["Light-up eyes", "4 tentacles", "Ground stakes", "LED effects"],
-      rating: 4.5,
-      reviews: 67,
-      description: "Massive tentacled sea monster perfect for underwater Halloween themes"
+      image: "https://mobileimages.lowes.com/productimages/178de7ab-27e8-4d2b-aa1e-835d342b4a69/72605862.jpeg",
+      features: ["LED tentacles", "Weather resistant", "Unique sea monster theme", "Easy assembly"],
+      rating: 4.3,
+      reviews: 76,
+      description: "Massive sea monster with glowing tentacles creates unique haunted harbor theme"
     },
     {
       name: "HoliScapes AtmosFX Jack-O-Lantern Jamboree Halloween Digital Decoration",
       price: "$49.98",
-      affiliateLink: "https://shoplowes.me/45MjsZb", 
-      image: "https://mobileimages.lowes.com/productimages/0v1w2x3y-4z5a-6b7c-8d9e0f1g2h3i/64649658.jpg",
-      features: ["8 different scenes", "Family-friendly", "USB/DVD compatible", "Digital projection"],
-      rating: 4.7,
-      reviews: 234,
-      description: "Transform any surface with spooky digital projection effects"
+      affiliateLink: "https://shoplowes.me/45MjsZb",
+      image: "https://mobileimages.lowes.com/productimages/b5d4c596-4c63-4fe2-8929-0199f9aaf237/67169330.jpeg",
+      features: ["Digital projection", "Multiple themes", "Indoor/outdoor", "Easy setup"],
+      rating: 4.1,
+      reviews: 89,
+      description: "Transform any surface with spooky digital Halloween projections"
+    },
+    {
+      name: "10Pcs Halloween Yard Signs Tombstone Yard w/ Stakes Gravestone Sign Outdoor Lawn Decor",
+      price: "$29.98",
+      affiliateLink: "https://shoplowes.me/3UxocLU",
+      image: "https://mobileimages.lowes.com/productimages/862ee579-37c5-4968-be15-fa4c39ff019f/70622833.jpeg",
+      features: ["10-piece set", "Stakes included", "Weather resistant", "Various designs"],
+      rating: 4.0,
+      reviews: 145,
+      description: "Complete graveyard scene with 10 different tombstone designs and stakes"
+    },
+    {
+      name: "Froggy's Fog Titan 1200 Fog Machine",
+      price: "$89.98",
+      affiliateLink: "https://shoplowes.me/4mGgzi2",
+      image: "https://mobileimages.lowes.com/productimages/5e7ae984-c425-466c-9afc-646658321250/64556412.jpg",
+      features: ["1200W power", "Professional grade", "Remote control", "Continuous output"],
+      rating: 4.5,
+      reviews: 203,
+      description: "Professional-grade fog machine for creating authentic spooky atmosphere"
     }
   ];
 
@@ -634,7 +654,7 @@ const LowesHalloweenHub = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {uniqueItems.map((item, index) => (
+              {additionalProducts.map((item, index) => (
                 <Card key={index} className="overflow-hidden">
                   <div className="aspect-video bg-muted">
                     <img 
@@ -921,31 +941,42 @@ const LowesHalloweenHub = () => {
           </div>
         </section>
 
-        {/* Product Showcase */}
-        <ProductShowcase 
-          products={[
-            {
-              name: "Haunted Living 12-ft Talking LED Bone Collector Animatronic",
-              image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
-              affiliateLink: "https://shoplowes.me/3V5TZUg",
-              price: "$449.00",
-              description: "12-foot talking animatronic with LED eyes and motion sensors"
-            },
-            {
-              name: "Haunted Living 3.5-ft LED Kraken Monster Yard Decoration",
-              image: "https://mobileimages.lowes.com/productimages/178de7ab-27e8-4d2b-aa1e-835d342b4a69/72605862.jpeg",
-              affiliateLink: "https://shoplowes.me/417a5AN",
-              description: "Giant tentacled sea monster with LED lighting effects"
-            },
-            {
-              name: "Disney 6-ft The Haunted Mansion Life-Size Caretaker",
-              image: "https://mobileimages.lowes.com/productimages/d666b32c-a3a2-4131-912a-142d162c9771/63125954.jpg",
-              affiliateLink: "https://shoplowes.me/4lpioir",
-              description: "Official Disney Haunted Mansion animatronic figure"
-            }
-          ]}
-          title="Featured Halloween Animatronics"
-        />
+        {/* Complete Product Collection */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Complete Product Collection</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[...heroAnimatronics, ...giantInflatables, ...hauntedMansion, ...additionalProducts].map((product, index) => (
+                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="aspect-video">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover rounded-t-lg"
+                    />
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-bold text-sm mb-2 line-clamp-2">{product.name}</h3>
+                    <div className="text-lg font-bold text-orange-600 mb-2">{product.price}</div>
+                    <div className="flex items-center mb-3">
+                      <div className="flex text-yellow-400 mr-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`h-3 w-3 ${i < Math.floor(product.rating) ? 'fill-current' : ''}`} />
+                        ))}
+                      </div>
+                      <span className="text-xs text-gray-600">{product.rating}</span>
+                    </div>
+                    <Button size="sm" className="w-full" asChild>
+                      <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
+                        Get it at Lowe's <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Final CTA Section */}
         <section className="py-16 bg-gradient-to-r from-orange-600 to-purple-600 text-white">
