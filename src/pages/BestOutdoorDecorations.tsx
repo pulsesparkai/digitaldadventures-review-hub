@@ -437,7 +437,7 @@ const BestOutdoorDecorations = () => {
                     <h3 className="font-bold text-sm mb-2 line-clamp-2">{product.name}</h3>
                     <div className="text-lg font-bold text-orange-600 mb-2">${product.price}</div>
                     <p className="text-xs text-gray-600 mb-3 flex-grow">{product.bestFor}</p>
-                    <Button size="sm" className="w-full text-xs mt-auto" asChild>
+                    <Button size="sm" className="w-full text-xs mt-auto bg-orange-600 hover:bg-orange-700 text-white" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-1 h-3 w-3" />
                       </a>
@@ -514,7 +514,7 @@ const BestOutdoorDecorations = () => {
                         ))}
                       </div>
                     </div>
-                    <Button className="w-full mt-auto" asChild>
+                    <Button className="w-full mt-auto bg-orange-600 hover:bg-orange-700 text-white" asChild>
                       <a href={product.affiliateLink} target="_blank" rel="noopener noreferrer">
                         Get it at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
