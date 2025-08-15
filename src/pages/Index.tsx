@@ -53,11 +53,11 @@ const Index = () => {
             We recommend products based on research, hands-on experience, industry trends, and advanced AI analysis. 
             Discover the best gear, gadgets, and tools for modern family life.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <Button size="lg" className="w-full sm:w-auto min-h-[48px]">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 max-w-md sm:max-w-none mx-auto">
+            <Button size="lg" className="w-full sm:w-auto min-h-[48px] touch-target">
               Browse Reviews <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px]">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] touch-target">
               Submit a Product
             </Button>
           </div>
@@ -158,9 +158,11 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button size="lg" asChild className="w-full sm:w-auto min-h-[48px]">
+            <Button size="lg" asChild className="w-full sm:w-auto min-h-[48px] touch-target">
               <a href="https://shoplowes.me/3V5TZUg" target="_blank" rel="noopener noreferrer">
-                Shop Halloween at Lowe's <ExternalLink className="ml-2 h-4 w-4" />
+                <span className="hidden sm:inline">Shop Halloween at Lowe's</span>
+                <span className="sm:hidden">Shop at Lowe's</span>
+                <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -174,10 +176,11 @@ const Index = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
             {categories.map((category) => (
               <Link key={category.name} to={`/category/${category.name.toLowerCase().replace(' ', '-')}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full min-h-[120px] sm:min-h-[140px]">
-                  <CardContent className="p-3 sm:p-4 md:p-6 text-center flex flex-col justify-center h-full">
-                    <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-4">{category.icon}</div>
-                    <h3 className="font-semibold text-xs sm:text-sm md:text-base">{category.name}</h3>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full min-h-[100px] sm:min-h-[120px] md:min-h-[140px] touch-target">
+                  <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 text-center flex flex-col justify-center h-full">
+                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 sm:mb-2 md:mb-4">{category.icon}</div>
+                    <h3 className="font-semibold text-xs sm:text-sm md:text-base line-clamp-2">{category.name}</h3>
+                    <Badge className={`mt-1 sm:mt-2 text-xs ${category.color} border-0`}>Explore</Badge>
                   </CardContent>
                 </Card>
               </Link>
