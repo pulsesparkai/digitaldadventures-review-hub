@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Facebook, Youtube, Music } from 'lucide-react';
+import { Menu, X, ChevronDown, Play, Youtube } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -51,7 +51,9 @@ const Navbar = () => {
               className="text-gray-600 hover:text-orange-600 transition-colors"
               aria-label="Follow us on Facebook"
             >
-              <Facebook className="h-5 w-5" />
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
             </a>
             <a 
               href="https://www.tiktok.com/@digitaldadventures?_t=ZT-8yuX4WRdlId&_r=1" 
@@ -60,7 +62,9 @@ const Navbar = () => {
               className="text-gray-600 hover:text-orange-600 transition-colors"
               aria-label="Follow us on TikTok"
             >
-              <Music className="h-5 w-5" />
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.302-1.982-1.302-3.245V1h-3.59v14.099c0 2.486-2.014 4.5-4.5 4.5s-4.5-2.014-4.5-4.5 2.014-4.5 4.5-4.5c.394 0 .777.051 1.139.148V7.089a7.598 7.598 0 0 0-1.139-.088c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8V8.562a9.846 9.846 0 0 0 4.321 1.038V6.111c-.602 0-1.177-.128-1.711-.349z"/>
+              </svg>
             </a>
             <a 
               href="https://youtube.com/@digitaldadventures?si=uevcLxue4D6UX6rO" 
@@ -174,7 +178,9 @@ const Navbar = () => {
                     className="text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                     aria-label="Follow us on Facebook"
                   >
-                    <Facebook className="h-6 w-6" />
+                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
                   </a>
                   <a 
                     href="https://www.tiktok.com/@digitaldadventures?_t=ZT-8yuX4WRdlId&_r=1" 
@@ -183,7 +189,9 @@ const Navbar = () => {
                     className="text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                     aria-label="Follow us on TikTok"
                   >
-                    <Music className="h-6 w-6" />
+                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.302-1.982-1.302-3.245V1h-3.59v14.099c0 2.486-2.014 4.5-4.5 4.5s-4.5-2.014-4.5-4.5 2.014-4.5 4.5-4.5c.394 0 .777.051 1.139.148V7.089a7.598 7.598 0 0 0-1.139-.088c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8V8.562a9.846 9.846 0 0 0 4.321 1.038V6.111c-.602 0-1.177-.128-1.711-.349z"/>
+                    </svg>
                   </a>
                   <a 
                     href="https://youtube.com/@digitaldadventures?si=uevcLxue4D6UX6rO" 
