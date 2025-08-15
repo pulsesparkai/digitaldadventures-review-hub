@@ -11,20 +11,9 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const Reviews = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech', 'Disney'];
-
   const reviews: any[] = [];
 
-  const filteredReviews = reviews.filter(review => {
-    const matchesSearch = review.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         review.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || review.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  if (filteredReviews.length === 0) {
+  if (reviews.length === 0) {
     return (
       <div className="min-h-screen bg-white">
         <Navbar />
@@ -53,40 +42,9 @@ const Reviews = () => {
           </p>
         </div>
 
-        {/* Search and Filter */}
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row gap-4 mb-6">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input
-                placeholder="Search reviews..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-            <div className="flex gap-2">
-              <Filter className="h-5 w-5 text-gray-400 mt-2.5" />
-              <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category)}
-                    className={selectedCategory === category ? "bg-orange-600 hover:bg-orange-700" : ""}
-                  >
-                    {category === 'all' ? 'All Categories' : category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Reviews Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredReviews.map((review) => (
+          {reviews.map((review) => (
             <Link key={review.slug} to={`/review/${review.slug}`}>
               <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <div className="aspect-video bg-gray-200 rounded-t-lg"></div>
