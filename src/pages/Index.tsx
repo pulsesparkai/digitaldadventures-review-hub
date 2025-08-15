@@ -20,35 +20,8 @@ const Index = () => {
     { name: 'Family Tech', icon: '📱', color: 'bg-purple-100 text-purple-800' },
   ];
 
-  const featuredReviews = [
-    {
-      title: "🎃 Lowe's Halloween Decorations 2025",
-      description: "Ultimate guide to the best outdoor Halloween decorations", 
-      category: "Seasonal",
-      rating: 4.8,
-      link: "/lowes-halloween-decorations",
-      image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
-      badge: "🔥 TRENDING"
-    },
-    {
-      title: "12ft Bone Collector Review",
-      description: "Worth the $449? Complete analysis of Lowe's flagship animatronic",
-      category: "Halloween", 
-      rating: 4.8,
-      link: "/lowes-12ft-bone-collector-animatronic-review",
-      image: "https://mobileimages.lowes.com/productimages/f0ed1bd3-5a72-480f-a909-35256aa2247d/72605872.jpeg",
-      badge: "IN-DEPTH"
-    },
-    {
-      title: "Disney Haunted Mansion Collection",
-      description: "Create authentic Disney magic in your yard",
-      category: "Disney",
-      rating: 4.6, 
-      link: "/lowes-haunted-mansion-collection",
-      image: "https://mobileimages.lowes.com/productimages/c3f26281-2bf0-4f86-9cdf-22cefef84649/49420451.jpg",
-      badge: "OFFICIAL"
-    }
-  ];
+  // Empty array for now - reviews will be populated from CMS/database
+  const featuredReviews: any[] = [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -206,54 +179,74 @@ const Index = () => {
               View All <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {featuredReviews.map((review) => (
-              <Link key={review.link} to={review.link}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                    <ProductImage
-                      src={review.image}
-                      alt={`${review.title} - Halloween decoration review`}
-                      className="rounded-t-lg"
-                      size="medium"
-                      priority={false}
-                    />
-                  </div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <Badge variant="secondary">{review.category}</Badge>
-                      {review.badge && (
-                        <Badge variant="outline" className="text-xs">
-                          {review.badge}
-                        </Badge>
-                      )}
+          
+          {featuredReviews.length === 0 ? (
+            <div className="text-center py-16">
+              <Star className="mx-auto h-16 w-16 text-gray-300 mb-6" />
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Featured Reviews Coming Soon</h3>
+              <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                We're working on comprehensive product reviews to help you make informed decisions. 
+                Be the first to know when new reviews are published!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild>
+                  <Link to="/submit-product">Request a Product Review</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/newsletter">Get Notified of New Reviews</Link>
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              {featuredReviews.map((review) => (
+                <Link key={review.link} to={review.link}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                    <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
+                      <ProductImage
+                        src={review.image}
+                        alt={`${review.title} - Product review`}
+                        className="rounded-t-lg"
+                        size="medium"
+                        priority={false}
+                      />
                     </div>
-                    <CardTitle className="hover:text-orange-600 transition-colors">
-                      {review.title}
-                    </CardTitle>
-                    <CardDescription>{review.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center">
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < Math.floor(review.rating)
-                                ? 'fill-yellow-400 text-yellow-400'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <Badge variant="secondary">{review.category}</Badge>
+                        {review.badge && (
+                          <Badge variant="outline" className="text-xs">
+                            {review.badge}
+                          </Badge>
+                        )}
                       </div>
-                      <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+                      <CardTitle className="hover:text-orange-600 transition-colors">
+                        {review.title}
+                      </CardTitle>
+                      <CardDescription>{review.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center">
+                        <div className="flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`h-4 w-4 ${
+                                i < Math.floor(review.rating)
+                                  ? 'fill-yellow-400 text-yellow-400'
+                                  : 'text-gray-300'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
