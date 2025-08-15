@@ -13,20 +13,9 @@ import Footer from '@/components/Footer';
 const Reviews = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
   const categories = ['all', 'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech', 'Disney'];
 
   const reviews: any[] = [];
-
-  // Simulate loading state
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const filteredReviews = reviews.filter(review => {
     const matchesSearch = review.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -34,6 +23,21 @@ const Reviews = () => {
     const matchesCategory = selectedCategory === 'all' || review.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  if (filteredReviews.length === 0) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center py-12">
+            <h3 className="text-xl font-semibold mb-2">No Reviews Available</h3>
+            <p className="text-gray-600">Check back soon for honest product reviews!</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -48,7 +52,6 @@ const Reviews = () => {
             Find the best products for your family and lifestyle.
           </p>
         </div>
-
 
         {/* Search and Filter */}
         <div className="mb-8">
@@ -82,121 +85,51 @@ const Reviews = () => {
         </div>
 
         {/* Reviews Grid */}
-        {isLoading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <Card key={i} className="overflow-hidden">
-                <Skeleton className="aspect-video w-full" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredReviews.map((review) => (
+            <Link key={review.slug} to={`/review/${review.slug}`}>
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <div className="aspect-video bg-gray-200 rounded-t-lg"></div>
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <Skeleton className="h-6 w-20" />
-                    <Skeleton className="h-5 w-16" />
+                    <Badge variant="secondary">{review.category}</Badge>
+                    {review.isAI && (
+                      <Badge variant="outline" className="text-xs">
+                        AI Analysis
+                      </Badge>
+                    )}
                   </div>
-                  <Skeleton className="h-6 w-3/4 mb-2" />
-                  <Skeleton className="h-4 w-full" />
-                  <Skeleton className="h-4 w-2/3" />
+                  <CardTitle className="hover:text-orange-600 transition-colors">
+                    {review.title}
+                  </CardTitle>
+                  <CardDescription>{review.excerpt}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-1">
+                    <div className="flex items-center">
+                      <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <Skeleton key={i} className="h-4 w-4 rounded-sm" />
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < Math.floor(review.rating)
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
                         ))}
                       </div>
-                      <Skeleton className="h-4 w-8" />
+                      <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
                     </div>
-                    <Skeleton className="h-4 w-20" />
+                    <span className="text-sm text-gray-500">
+                      {new Date(review.date).toLocaleDateString()}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        ) : error ? (
-          <div className="text-center py-12">
-            <AlertCircle className="mx-auto h-12 w-12 text-red-500 mb-4" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Error Loading Reviews</h3>
-            <p className="text-gray-600 mb-4">{error}</p>
-            <Button onClick={() => { setError(null); setIsLoading(true); }}>
-              Try Again
-            </Button>
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredReviews.map((review) => (
-              <Link key={review.slug} to={`/review/${review.slug}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="aspect-video bg-gray-200 rounded-t-lg"></div>
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <Badge variant="secondary">{review.category}</Badge>
-                      {review.isAI && (
-                        <Badge variant="outline" className="text-xs">
-                          AI Analysis
-                        </Badge>
-                      )}
-                    </div>
-                    <CardTitle className="hover:text-orange-600 transition-colors">
-                      {review.title}
-                    </CardTitle>
-                    <CardDescription>{review.excerpt}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-4 w-4 ${
-                                i < Math.floor(review.rating)
-                                  ? 'fill-yellow-400 text-yellow-400'
-                                  : 'text-gray-300'
-                              }`}
-                            />
-                          ))}
-                        </div>
-                        <span className="ml-2 text-sm text-gray-600">{review.rating}</span>
-                      </div>
-                      <span className="text-sm text-gray-500">
-                        {new Date(review.date).toLocaleDateString()}
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        {!isLoading && !error && reviews.length === 0 && (
-          <div className="text-center py-16">
-            <FileX className="mx-auto h-16 w-16 text-gray-400 mb-6" />
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">No Reviews Available Yet</h3>
-            <p className="text-gray-600 text-lg mb-6 max-w-md mx-auto">
-              We're working hard to bring you comprehensive product reviews. Check back soon!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild>
-                <Link to="/submit-product">Submit a Product for Review</Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link to="/newsletter">Get Notified of New Reviews</Link>
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {!isLoading && !error && reviews.length > 0 && filteredReviews.length === 0 && (
-          <div className="text-center py-12">
-            <Search className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Reviews Found</h3>
-            <p className="text-gray-600 mb-4">Try adjusting your search terms or filters.</p>
-            <Button onClick={() => { setSearchTerm(''); setSelectedCategory('all'); }}>
-              Clear Filters
-            </Button>
-          </div>
-        )}
+            </Link>
+          ))}
+        </div>
       </div>
 
       <Footer />
