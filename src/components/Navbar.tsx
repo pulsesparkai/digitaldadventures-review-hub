@@ -38,7 +38,7 @@ const Navbar = () => {
               src="/lovable-uploads/e490cc97-3f4e-4f7f-8a9a-ad4eb457a78b.png" 
               alt="DigitalDadVentures logo featuring a family icon and modern text – trusted product reviews for families and parents"
               title="Logo of DigitalDadVentures – Honest Reviews for Smart Families"
-              className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40 w-auto"
+              className="h-32 sm:h-40 md:h-48 lg:h-64 xl:h-80 w-auto"
             />
           </Link>
 
