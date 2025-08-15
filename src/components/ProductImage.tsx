@@ -34,7 +34,6 @@ const ProductImage: React.FC<ProductImageProps> = ({
   
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [retryCount, setRetryCount] = useState(0);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -42,20 +41,12 @@ const ProductImage: React.FC<ProductImageProps> = ({
   };
 
   const handleError = () => {
-    if (retryCount === 0 && (src.includes('mobileimages.lowes.com') || src.includes('images.lowes.com'))) {
-      // First retry: try without size parameter for Lowe's images
-      setRetryCount(1);
+    if (!hasError) {
+      setHasError(true);
       const baseUrl = src.split('?')[0];
       setImgSrc(baseUrl);
-    } else if (retryCount === 1 && (src.includes('mobileimages.lowes.com') || src.includes('images.lowes.com'))) {
-      // Second retry: try different Lowe's CDN
-      setRetryCount(2);
-      const baseUrl = src.split('?')[0];
-      const imageId = baseUrl.split('/').pop();
-      setImgSrc(`https://images.lowes.com/product/converted/product/converted/${imageId}`);
     } else {
-      // Final fallback to placeholder
-      setHasError(true);
+      // Use existing placeholder that actually exists
       setImgSrc('/placeholder.svg');
     }
     setIsLoading(false);
