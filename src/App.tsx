@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import ProductReview from "./pages/ProductReview";
@@ -28,6 +29,7 @@ import GiantInflatablesRoundup from "./pages/GiantInflatablesRoundup";
 import HauntedMansionCollection from "./pages/HauntedMansionCollection";
 import KrakenReview from "./pages/KrakenReview";
 import BestOutdoorDecorations from "./pages/BestOutdoorDecorations";
+import Accessibility from "./pages/Accessibility";
 
 const queryClient = new QueryClient();
 
@@ -58,10 +60,12 @@ const App = () => (
             <Route path="/lowes-haunted-mansion-collection" element={<HauntedMansionCollection />} />
             <Route path="/lowes-kraken-halloween-yard-decoration" element={<KrakenReview />} />
             <Route path="/lowes-best-outdoor-halloween-decorations-2025" element={<BestOutdoorDecorations />} />
+            <Route path="/accessibility" element={<Accessibility />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsentBanner />
+          <AccessibilityWidget />
         </BrowserRouter>
         <Toaster />
         <Sonner />

@@ -21,9 +21,14 @@ export class CookieConsentService {
   static getLocalConsentStatus(): CookieConsentData | null {
     try {
       const stored = localStorage.getItem(this.CONSENT_STATUS_KEY);
-      return stored ? JSON.parse(stored) : null;
+      if (!stored) {
+        // For new visitors from search engines or external links, ensure banner shows
+        return null;
+      }
+      return JSON.parse(stored);
     } catch (error) {
       console.error('Failed to parse local consent data:', error);
+      // Return null to show banner for any storage errors
       return null;
     }
   }

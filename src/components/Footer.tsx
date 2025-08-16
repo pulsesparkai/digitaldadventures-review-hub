@@ -82,6 +82,7 @@ const Footer = () => {
               </li>
               <li><Link to="/cookie-policy" className="hover:text-white transition-colors block py-1 min-h-[32px] flex items-center">Cookie Policy</Link></li>
               <li><Link to="/ai-content-policy" className="hover:text-white transition-colors block py-1 min-h-[32px] flex items-center">AI Content Policy</Link></li>
+              <li><Link to="/accessibility" className="hover:text-white transition-colors block py-1 min-h-[32px] flex items-center">Accessibility</Link></li>
             </ul>
           </div>
         </div>
