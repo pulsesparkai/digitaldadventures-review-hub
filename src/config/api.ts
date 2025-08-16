@@ -6,7 +6,7 @@
 // ==========================================
 
 // Main API Base URL - Replace with your actual API
-export const API_BASE_URL = 'https://api.your-domain.com/v1';
+export const API_BASE_URL = 'https://api.digitaldadventures.com/v1';
 
 // ==========================================
 // EXTERNAL API CONFIGURATIONS

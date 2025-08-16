@@ -46,9 +46,9 @@
  */
 
 export default {
-  siteUrl: 'https://your-domain.com', // Replace with actual domain
+  siteUrl: 'https://digitaldadventures.com',
   siteName: 'Family Product Reviews & Recommendations',
   siteDescription: 'Discover the best products for your family through honest reviews, research, and AI analysis.',
   defaultOGImage: '/images/og-default.jpg',
-  twitterHandle: '@yourtwitterhandle', // Replace with actual Twitter handle
+  twitterHandle: '@digitaldadventures',
 };

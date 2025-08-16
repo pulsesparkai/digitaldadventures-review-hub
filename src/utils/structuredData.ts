@@ -22,7 +22,9 @@ export const generateOrganizationStructuredData = (name: string, url: string) =>
   "name": name,
   "url": url,
   "sameAs": [
-    // Add social media profiles when available
+    "https://www.facebook.com/61578172692503",
+    "https://www.tiktok.com/@digitaldadventures",
+    "https://youtube.com/@digitaldadventures"
   ]
 });
 
@@ -111,4 +113,79 @@ export const generateCollectionPageStructuredData = (collection: {
       "url": item.url
     }))
   }
+});
+
+// FAQ Schema for product pages with Q&A
+export const generateFAQStructuredData = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
+// Review Schema for individual product reviews
+export const generateReviewStructuredData = (review: {
+  itemName: string;
+  reviewBody: string;
+  ratingValue: number;
+  author: string;
+  datePublished: string;
+  worstRating?: number;
+  bestRating?: number;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": review.itemName
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": review.ratingValue,
+    "worstRating": review.worstRating || 1,
+    "bestRating": review.bestRating || 5
+  },
+  "reviewBody": review.reviewBody,
+  "author": {
+    "@type": "Person",
+    "name": review.author
+  },
+  "datePublished": review.datePublished
+});
+
+// HowTo Schema for guide content
+export const generateHowToStructuredData = (howTo: {
+  name: string;
+  description: string;
+  image?: string;
+  totalTime?: string;
+  estimatedCost?: string;
+  steps: Array<{ name: string; text: string; image?: string }>;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": howTo.name,
+  "description": howTo.description,
+  ...(howTo.image && { "image": howTo.image }),
+  ...(howTo.totalTime && { "totalTime": howTo.totalTime }),
+  ...(howTo.estimatedCost && { 
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": howTo.estimatedCost
+    }
+  }),
+  "step": howTo.steps.map((step, index) => ({
+    "@type": "HowToStep",
+    "position": index + 1,
+    "name": step.name,
+    "text": step.text,
+    ...(step.image && { "image": step.image })
+  }))
 });

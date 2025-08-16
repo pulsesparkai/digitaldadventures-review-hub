@@ -361,6 +361,25 @@ const BestOutdoorDecorations = () => {
         <meta name="description" content="Ultimate guide to Lowe's outdoor Halloween decorations for 2025. Top picks across all categories with prices, reviews, and setup tips." />
         <meta name="keywords" content="best lowe's halloween decorations 2025, outdoor halloween decorations, halloween buying guide, lowe's halloween animatronics, halloween decoration reviews" />
         <link rel="canonical" href="https://digitaldadventures.com/lowes-best-outdoor-halloween-decorations-2025" />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+        <meta name="theme-color" content="#ea580c" />
+        <meta property="og:title" content="Best Lowe's Outdoor Halloween Decorations 2025: Complete Buyer's Guide" />
+        <meta property="og:description" content="Ultimate guide to Lowe's outdoor Halloween decorations for 2025. Top picks across all categories with prices, reviews, and setup tips." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://digitaldadventures.com/lowes-best-outdoor-halloween-decorations-2025" />
+        <meta property="og:image" content="https://digitaldadventures.com/images/halloween-placeholder.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="article:published_time" content="2024-10-15T10:00:00Z" />
+        <meta property="article:modified_time" content="2024-12-15T10:00:00Z" />
+        <meta property="article:tag" content="Halloween Decorations" />
+        <meta property="article:tag" content="Lowe's" />
+        <meta property="article:tag" content="Outdoor Decorations" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@digitaldadventures" />
+        <meta name="twitter:title" content="Best Lowe's Outdoor Halloween Decorations 2025: Complete Buyer's Guide" />
+        <meta name="twitter:description" content="Ultimate guide to Lowe's outdoor Halloween decorations for 2025. Top picks across all categories with prices, reviews, and setup tips." />
+        <meta name="twitter:image" content="https://digitaldadventures.com/images/halloween-placeholder.jpg" />
       </Helmet>
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }} />
