@@ -36,6 +36,12 @@ import YardCategory from "./pages/YardCategory";
 import DeWaltVsMilwaukee2025 from "./pages/DeWaltVsMilwaukee2025";
 import RingVsNestVsArlo2025 from "./pages/RingVsNestVsArlo2025";
 import BestElectricMowers2025 from "./pages/BestElectricMowers2025";
+import ImpactDrivers from "./pages/ImpactDrivers";
+import EgoVsRyobiLeafBlower from "./pages/EgoVsRyobiLeafBlower";
+import WeekendGarageShelf from "./pages/WeekendGarageShelf";
+import KidSafeBackyardMakeover from "./pages/KidSafeBackyardMakeover";
+import BackyardGadgetsSummer from "./pages/BackyardGadgetsSummer";
+import DIYHomeSecurity from "./pages/DIYHomeSecurity";
 
 
 const queryClient = new QueryClient();
@@ -78,7 +84,14 @@ const App = () => (
             <Route path="/smarthome/ring-vs-nest-vs-arlo-2025" element={<RingVsNestVsArlo2025 />} />
             <Route path="/yard/best-electric-mowers-2025" element={<BestElectricMowers2025 />} />
             
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Missing supporting pages */}
+            <Route path="/tools/impact-drivers" element={<ImpactDrivers />} />
+            <Route path="/yard/ego-vs-ryobi-leaf-blower" element={<EgoVsRyobiLeafBlower />} />
+            <Route path="/projects/weekend-garage-shelf" element={<WeekendGarageShelf />} />
+            <Route path="/projects/kid-safe-backyard-makeover" element={<KidSafeBackyardMakeover />} />
+            <Route path="/outdoor/backyard-gadgets-summer" element={<BackyardGadgetsSummer />} />
+            <Route path="/smarthome/diy-home-security-under-300" element={<DIYHomeSecurity />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsentBanner />
