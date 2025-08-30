@@ -31,6 +31,7 @@ const Navbar = () => {
   const toolsDropdown = [
     { name: 'All Tools', path: '/category/tools' },
     { name: 'Best Cordless Drills 2025', path: '/tools/best-cordless-drills-2025' },
+    { name: 'DeWalt vs Milwaukee Platform Guide', path: '/tools/dewalt-vs-milwaukee-2025' },
     { name: 'Impact Drivers Guide', path: '/tools/impact-drivers' },
   ];
 
@@ -46,6 +47,13 @@ const Navbar = () => {
     { name: 'Mower Buying Guide', path: '/yard/battery-vs-gas-lawn-mowers' },
     { name: 'Best Electric Mowers 2025', path: '/yard/best-electric-mowers-2025' },
     { name: 'Leaf Blower Comparison', path: '/yard/ego-vs-ryobi-leaf-blower' },
+  ];
+  
+  const smartHomeDropdown = [
+    { name: 'All Smart Home', path: '/category/smarthome' },
+    { name: 'Ring vs Nest vs Arlo Guide', path: '/smarthome/ring-vs-nest-vs-arlo-2025' },
+    { name: 'Best Security Cameras', path: '/smarthome/security-cameras' },
+    { name: 'Smart Doorbell Setup', path: '/smarthome/doorbell-installation' },
   ];
 
   return (
@@ -206,6 +214,26 @@ const Navbar = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* Smart Home Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
+                <span>Smart Home</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 bg-white border shadow-lg z-50">
+                {smartHomeDropdown.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link 
+                      to={item.path}
+                      className="w-full px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             {/* Categories Dropdown */}
             <DropdownMenu>
@@ -288,6 +316,18 @@ const Navbar = () => {
                 
                 <p className="text-sm font-semibold text-gray-500 mb-2 px-2 mt-4">Yard & Garden</p>
                 {yardDropdown.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="block py-3 px-2 text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] flex items-center rounded"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2 mt-4">Smart Home</p>
+                {smartHomeDropdown.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
