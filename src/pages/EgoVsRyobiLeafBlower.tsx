@@ -445,7 +445,7 @@ const EgoVsRyobiLeafBlower = () => {
                   </p>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span>Small yard (< 0.25 acre):</span>
+                      <span>Small yard (&lt; 0.25 acre):</span>
                       <span className="font-semibold">Both sufficient</span>
                     </div>
                     <div className="flex justify-between">
@@ -453,7 +453,7 @@ const EgoVsRyobiLeafBlower = () => {
                       <span className="font-semibold text-green-600">EGO preferred</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Large yard (> 0.5 acre):</span>
+                      <span>Large yard (&gt; 0.5 acre):</span>
                       <span className="font-semibold text-green-600">EGO essential</span>
                     </div>
                   </div>
