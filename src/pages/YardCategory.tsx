@@ -15,7 +15,7 @@ const YardCategory = () => {
       title: "Battery vs Gas Lawn Mowers: Which Wins in 2025?",
       description: "Complete comparison including 5-year cost analysis, runtime by yard size, and decision framework for homeowners.",
       path: "/yard/battery-vs-gas-lawn-mowers",
-      image: "/images/product-placeholder.jpg",
+      image: "/images/battery-vs-gas-mowers-2025.jpg",
       badge: "🏆 FEATURED GUIDE",
       badgeColor: "bg-green-600"
     },
@@ -23,7 +23,7 @@ const YardCategory = () => {
       title: "Best Electric Lawn Mowers for 2025",
       description: "Top battery mower picks organized by yard size with runtime analysis and buying recommendations.",
       path: "/yard/best-electric-mowers-2025", 
-      image: "/images/product-placeholder.jpg",
+      image: "/images/best-electric-mowers-2025.jpg",
       badge: "⚡ BUYER'S GUIDE",
       badgeColor: "bg-blue-600"
     },
@@ -31,7 +31,7 @@ const YardCategory = () => {
       title: "EGO vs Ryobi Leaf Blower Comparison",
       description: "Head-to-head comparison of the top battery-powered leaf blowers for yard cleanup.",
       path: "/yard/ego-vs-ryobi-leaf-blower",
-      image: "/images/product-placeholder.jpg", 
+      image: "/images/ego-vs-ryobi-leaf-blower.jpg", 
       badge: "🍂 COMPARISON",
       badgeColor: "bg-orange-600"
     }
@@ -137,7 +137,7 @@ const YardCategory = () => {
                   </div>
                   <div className="p-4">
                     <ProductImage
-                      src="/images/product-placeholder.jpg"
+                      src="/images/battery-vs-gas-mowers-comparison.jpg"
                       alt="Battery vs Gas Lawn Mower Comparison Guide"
                       size="large"
                       className="rounded-lg shadow-lg"

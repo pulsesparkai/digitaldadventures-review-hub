@@ -816,8 +816,8 @@ const SoloStoveVsBreeo = () => {
                     </Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/outdoor/best-outdoor-griddle-2025">
-                      Best Outdoor Griddles <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link to="/yard/best-electric-mowers-2025">
+                      Best Electric Mowers <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>

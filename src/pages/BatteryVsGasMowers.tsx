@@ -779,7 +779,7 @@ const BatteryVsGasMowers = () => {
                     Transform your yard into a family-friendly outdoor space.
                   </p>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/projects/kid-safe-backyard-makeover">
+                    <Link to="/yard/kid-safe-backyard-makeover">
                       Read More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

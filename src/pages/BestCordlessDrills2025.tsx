@@ -78,7 +78,7 @@ const BestCordlessDrills2025 = () => {
       batteryLife: "35-50 min",
       chuckType: "1/2 inch keyless",
       priceRange: "$69-89",
-      affiliate: "https://homedepot.com/ryobi-p1813",
+      affiliate: "https://homedepot.sjv.io/ryobi-p1813",
       badge: "Best Budget",
       motorType: "Brushed",
       maxSpeed: "1,600 RPM",
@@ -800,6 +800,22 @@ const BestCordlessDrills2025 = () => {
                   </p>
                   <Button variant="outline" size="sm" asChild>
                     <Link to="/projects/weekend-garage-shelf">
+                      Read More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg">DeWalt vs Milwaukee Platform Guide</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Complete platform comparison to help you choose the right tool ecosystem.
+                  </p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/tools/dewalt-vs-milwaukee-2025">
                       Read More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

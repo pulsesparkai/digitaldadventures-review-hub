@@ -27,7 +27,7 @@ const RingVsNestVsArlo2025 = () => {
       bestFor: "Amazon ecosystem users, apartment renters",
       keyFeatures: ["Pre-roll recording", "3D motion detection", "Alexa integration"],
       kidFeatures: ["Package detection", "Person alerts", "Custom motion zones"],
-      affiliate: "https://digitaldadventures.com/go/ring-doorbell-pro2"
+      affiliate: "https://amzn.to/3QWE456"
     },
     {
       brand: "Google Nest",
@@ -43,7 +43,7 @@ const RingVsNestVsArlo2025 = () => {
       bestFor: "Google ecosystem users, smart home integration",
       keyFeatures: ["Familiar face detection", "Google Assistant integration", "Activity zones"],
       kidFeatures: ["Family member recognition", "School hours quiet time", "Smart alerts"],
-      affiliate: "https://digitaldadventures.com/go/nest-doorbell"
+      affiliate: "https://amzn.to/3RTY789"
     },
     {
       brand: "Arlo",
@@ -59,7 +59,7 @@ const RingVsNestVsArlo2025 = () => {
       bestFor: "Renters, no wiring required, wide angle coverage",
       keyFeatures: ["No hub required", "Color night vision", "Built-in siren"],
       kidFeatures: ["Package detection", "Visitor recognition", "Quick responses"],
-      affiliate: "https://digitaldadventures.com/go/arlo-doorbell"
+      affiliate: "https://amzn.to/3UIO123"
     }
   ];
 
@@ -185,7 +185,7 @@ const RingVsNestVsArlo2025 = () => {
             
             <div className="relative mb-8">
               <ProductImage 
-                src="/images/ring-nest-arlo-doorbells.jpg"
+                src="/images/ring-nest-arlo-doorbells-2025.jpg"
                 alt="Ring, Google Nest, and Arlo video doorbells installed side by side showing different designs and mounting options for apartment and home use"
                 className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
               />
@@ -413,7 +413,7 @@ const RingVsNestVsArlo2025 = () => {
               <CardTitle>Related Smart Home Guides</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <Link to="/smarthome/best-security-cameras-2025" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
                   <h4 className="font-semibold mb-2">Best Home Security Cameras 2025</h4>
                   <p className="text-sm text-gray-600">Indoor and outdoor security camera recommendations</p>
@@ -422,6 +422,11 @@ const RingVsNestVsArlo2025 = () => {
                 <Link to="/smarthome/apartment-smart-home-setup" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
                   <h4 className="font-semibold mb-2">Smart Home Setup for Renters</h4>
                   <p className="text-sm text-gray-600">Renter-friendly smart home devices and installation tips</p>
+                  <ArrowRight className="h-4 w-4 mt-2 text-primary" />
+                </Link>
+                <Link to="/tools/dewalt-vs-milwaukee-2025" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                  <h4 className="font-semibold mb-2">DeWalt vs Milwaukee Platform Guide</h4>
+                  <p className="text-sm text-gray-600">Tool platform comparison for installation projects</p>
                   <ArrowRight className="h-4 w-4 mt-2 text-primary" />
                 </Link>
               </div>

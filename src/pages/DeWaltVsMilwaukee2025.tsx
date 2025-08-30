@@ -206,7 +206,7 @@ const DeWaltVsMilwaukee2025 = () => {
             
             <div className="relative mb-8">
               <ProductImage 
-                src="/images/dewalt-vs-milwaukee-tools.jpg"
+                src="/images/dewalt-vs-milwaukee-2025.jpg"
                 alt="DeWalt 20V MAX and Milwaukee M18 cordless tools side by side comparison showing drills, batteries, and chargers on workbench"
                 className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
               />
@@ -410,10 +410,15 @@ const DeWaltVsMilwaukee2025 = () => {
               <CardTitle>Related Tool Guides</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <Link to="/tools/best-cordless-drills-2025" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
                   <h4 className="font-semibold mb-2">Best Cordless Drills 2025</h4>
                   <p className="text-sm text-gray-600">Complete drill buying guide with top model recommendations</p>
+                  <ArrowRight className="h-4 w-4 mt-2 text-primary" />
+                </Link>
+                <Link to="/yard/best-electric-mowers-2025" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                  <h4 className="font-semibold mb-2">Best Electric Mowers 2025</h4>
+                  <p className="text-sm text-gray-600">Electric mower comparison with runtime analysis</p>
                   <ArrowRight className="h-4 w-4 mt-2 text-primary" />
                 </Link>
                 <Link to="/projects/weekend-garage-shelf" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">

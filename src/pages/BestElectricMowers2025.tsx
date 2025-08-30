@@ -26,7 +26,7 @@ const BestElectricMowers2025 = () => {
       features: ["Self-propelled", "LED headlights", "Weather resistant"],
       batteryPlatform: "56V ARC Lithium",
       chargeTime: "40 minutes",
-      affiliate: "https://digitaldadventures.com/go/ego-lm2142sp",
+      affiliate: "https://amzn.to/3YZX789",
       badge: "Best Overall",
       bestFor: "Medium to large yards, professional results"
     },
@@ -43,7 +43,7 @@ const BestElectricMowers2025 = () => {
       features: ["3-in-1 design", "Single lever height adjust", "Foldable handle"],
       batteryPlatform: "40V G-MAX",
       chargeTime: "60 minutes",
-      affiliate: "https://digitaldadventures.com/go/greenworks-mo40l410",
+      affiliate: "https://amzn.to/4ABC123",
       badge: "Best Value",
       bestFor: "Budget-conscious homeowners, smaller yards"
     },
@@ -60,7 +60,7 @@ const BestElectricMowers2025 = () => {
       features: ["Brushless motor", "Load sensing technology", "7-position height"],
       batteryPlatform: "40V Expand-It",
       chargeTime: "90 minutes",
-      affiliate: "https://digitaldadventures.com/go/ryobi-ry401110",
+      affiliate: "https://homedepot.sjv.io/DEF456",
       badge: "Best Ecosystem",
       bestFor: "Ryobi tool users, versatile yard work"
     },
@@ -77,7 +77,7 @@ const BestElectricMowers2025 = () => {
       features: ["Self-propelled", "Smart Cut load sensing", "Steel deck"],
       batteryPlatform: "80V MAX",
       chargeTime: "45 minutes",
-      affiliate: "https://digitaldadventures.com/go/kobalt-km2180b",
+      affiliate: "https://lowes.sjv.io/GHI789",
       badge: "Most Power",
       bestFor: "Large yards, thick grass conditions"
     }
@@ -479,10 +479,15 @@ const BestElectricMowers2025 = () => {
               <CardTitle>Related Yard Care Guides</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <Link to="/yard/battery-vs-gas-lawn-mowers" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
                   <h4 className="font-semibold mb-2">Battery vs Gas Mowers: Ultimate Comparison</h4>
                   <p className="text-sm text-gray-600">Detailed analysis of electric vs gas lawn mower pros and cons</p>
+                  <ArrowRight className="h-4 w-4 mt-2 text-primary" />
+                </Link>
+                <Link to="/outdoor/solo-stove-vs-breeo" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                  <h4 className="font-semibold mb-2">Solo Stove vs Breeo Fire Pit Guide</h4>
+                  <p className="text-sm text-gray-600">Fire pit comparison for outdoor entertaining</p>
                   <ArrowRight className="h-4 w-4 mt-2 text-primary" />
                 </Link>
                 <Link to="/yard/lawn-care-maintenance-schedule" className="block p-4 border rounded-lg hover:bg-gray-50 transition-colors">

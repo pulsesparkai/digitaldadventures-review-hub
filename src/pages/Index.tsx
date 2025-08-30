@@ -100,7 +100,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="/images/product-placeholder.jpg"
+                  src="/images/best-cordless-drills-2025.jpg"
                   alt="Best Cordless Drills 2025 - Complete buyer's guide for DIY dads"
                   size="large"
                   priority={true}
@@ -121,7 +121,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="/images/product-placeholder.jpg"
+                  src="/images/battery-vs-gas-mowers-2025.jpg"
                   alt="Battery vs Gas Mowers 2025 - Complete comparison guide for homeowners"
                   size="large"
                   priority={true}
@@ -142,7 +142,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
               <div className="aspect-video bg-gray-100 overflow-hidden">
                 <ProductImage
-                  src="/images/product-placeholder.jpg"
+                  src="/images/solo-stove-vs-breeo-comparison.jpg"
                   alt="Solo Stove vs Breeo fire pit comparison - Ultimate guide for families"
                   size="large"
                   priority={true}
@@ -155,6 +155,70 @@ const Index = () => {
                 <Button asChild className="w-full" variant="outline">
                   <Link to="/outdoor/solo-stove-vs-breeo">
                     Read Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            {/* New Supporting Articles */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/dewalt-vs-milwaukee-2025.jpg"
+                  alt="DeWalt vs Milwaukee tool platform comparison guide"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-blue-600">⚔️ PLATFORM GUIDE</Badge>
+                <h3 className="text-xl font-bold mb-3">DeWalt vs Milwaukee Platform Guide</h3>
+                <p className="text-gray-600 mb-4">Battery ecosystem comparison, warranty analysis, and smart platform selection</p>
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/tools/dewalt-vs-milwaukee-2025">
+                    Compare Platforms <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/best-electric-mowers-2025.jpg"
+                  alt="Best electric lawn mowers 2025 comparison guide"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-emerald-600">⚡ ELECTRIC GUIDE</Badge>
+                <h3 className="text-xl font-bold mb-3">Best Electric Mowers 2025</h3>
+                <p className="text-gray-600 mb-4">EGO, Greenworks, Ryobi, and Kobalt compared with runtime analysis by yard size</p>
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/yard/best-electric-mowers-2025">
+                    View Electric Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/ring-nest-arlo-doorbells-2025.jpg"
+                  alt="Ring vs Nest vs Arlo smart doorbell comparison"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-purple-600">🏠 SMART HOME</Badge>
+                <h3 className="text-xl font-bold mb-3">Ring vs Nest vs Arlo Comparison</h3>
+                <p className="text-gray-600 mb-4">Smart doorbell showdown with installation guides and family-focused features</p>
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/smarthome/ring-vs-nest-vs-arlo-2025">
+                    Compare Doorbells <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardContent>
