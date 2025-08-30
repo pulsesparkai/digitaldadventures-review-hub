@@ -34,18 +34,27 @@ const BatteryVsGasMowers = () => {
     {
       type: "EGO LM2102SP Battery 21\"",
       powerEquivalent: "160cc gas equivalent",
+      cuttingWidth: "21 inches",
+      weight: "62 lbs",
+      batteryType: "56V 5.0Ah Lithium",
+      chargingTime: "45 minutes",
       runtime: {
         quarter: "60+ min (single battery)",
         half: "45 min (needs backup battery)", 
         full: "30 min (dual battery system)"
       },
-      noise: "60 dB",
+      noise: "65 dB",
       maintenance: "$15/year (blade sharpening)",
-      fiveYearCost: "$650-750"
+      fiveYearCost: "$698",
+      initialPrice: "$449"
     },
     {
       type: "Greenworks MO40L410 40V", 
       powerEquivalent: "140cc gas equivalent",
+      cuttingWidth: "20 inches",
+      weight: "56 lbs",
+      batteryType: "40V 4.0Ah Lithium",
+      chargingTime: "60 minutes",
       runtime: {
         quarter: "45 min (single battery)",
         half: "30 min (needs backup)",
@@ -53,31 +62,42 @@ const BatteryVsGasMowers = () => {
       },
       noise: "62 dB",
       maintenance: "$15/year (blade sharpening)", 
-      fiveYearCost: "$500-600"
+      fiveYearCost: "$550",
+      initialPrice: "$299"
     },
     {
       type: "Honda HRX217K5VKA Gas 21\"",
-      powerEquivalent: "190cc Honda engine",
+      powerEquivalent: "190cc Honda GCV190 engine",
+      cuttingWidth: "21 inches",
+      weight: "84 lbs",
+      fuelCapacity: "0.98 gallons",
+      startType: "Electric start available",
       runtime: {
         quarter: "90+ min (continuous)",
         half: "90+ min (continuous)",
         full: "90+ min (continuous)"
       },
       noise: "87 dB",
-      maintenance: "$75-100/year (oil, gas, service)",
-      fiveYearCost: "$750-900"
+      maintenance: "$95/year (oil, gas, service)",
+      fiveYearCost: "$1,059",
+      initialPrice: "$549"
     },
     {
       type: "Toro Recycler 22\" Gas Self-Propelled",
-      powerEquivalent: "163cc Briggs & Stratton", 
+      powerEquivalent: "163cc Briggs & Stratton 725EXi", 
+      cuttingWidth: "22 inches",
+      weight: "78 lbs",
+      fuelCapacity: "1.0 gallons",
+      startType: "ReadyStart (no primer)",
       runtime: {
         quarter: "90+ min (continuous)",
-        half: "90+ min (continuous)",
+        half: "90+ min (continuous)",  
         full: "90+ min (continuous)"
       },
       noise: "89 dB",
-      maintenance: "$85-125/year (oil, gas, service)",
-      fiveYearCost: "$800-1000"
+      maintenance: "$105/year (oil, gas, service)",
+      fiveYearCost: "$925",
+      initialPrice: "$399"
     }
   ];
 

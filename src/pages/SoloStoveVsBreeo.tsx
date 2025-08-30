@@ -34,52 +34,72 @@ const SoloStoveVsBreeo = () => {
     {
       model: "Solo Stove Bonfire 2.0 19.5\"",
       diameter: '19.5"',
+      height: '14"',
       weight: "20 lbs",
       materials: "304 Stainless Steel",
+      wallThickness: "Double-wall construction",
       btuOutput: "~55,000 BTU",
+      burnTime: "2-4 hours per load",
       cookingOptions: "Optional grill grate ($79)",
       accessories: "Basic: grate, stand, shield",
-      price: "$200"
+      price: "$300",
+      warranty: "Lifetime warranty"
     },
     {
       model: "Solo Stove Yukon 2.0 27\"", 
       diameter: '27"',
+      height: '17"',
       weight: "38 lbs",
       materials: "304 Stainless Steel",
+      wallThickness: "Double-wall construction",
       btuOutput: "~85,000 BTU",
+      burnTime: "3-5 hours per load",
       cookingOptions: "Optional grill grate ($99)",
       accessories: "Basic: grate, stand, shield",
-      price: "$400"
+      price: "$500",
+      warranty: "Lifetime warranty"
     },
     {
       model: "Breeo X Series 19\"",
       diameter: '19"',
+      height: '12.75"',
       weight: "58 lbs",
-      materials: "Corten Steel",
+      materials: "Corten Steel (weathering steel)",
+      wallThickness: "Double-wall with air gap",
       btuOutput: "~50,000 BTU",
+      burnTime: "2-3 hours per load",
       cookingOptions: "Built-in cooking ring + accessories",
       accessories: "Extensive cooking ecosystem",
-      price: "$350"
+      price: "$495",
+      warranty: "Limited lifetime warranty"
     },
     {
       model: "Breeo X Series 24\"",
       diameter: '24"',
+      height: '13.75"',
       weight: "68 lbs",
-      materials: "Corten Steel", 
+      materials: "Corten Steel (weathering steel)", 
+      wallThickness: "Double-wall with air gap",
       btuOutput: "~75,000 BTU",
+      burnTime: "3-4 hours per load",
       cookingOptions: "Built-in cooking ring + accessories",
       accessories: "Extensive cooking ecosystem",
-      price: "$450"
+      price: "$795",
+      warranty: "Limited lifetime warranty"
     },
     {
       model: "Breeo Zentro 24\"",
       diameter: '24"',
+      height: '19.5"',
       weight: "75 lbs",
-      materials: "Corten Steel",
+      materials: "Corten Steel (weathering steel)",
+      wallThickness: "Double-wall with smoke shelf",
       btuOutput: "~80,000 BTU",
+      burnTime: "4-6 hours per load",
       cookingOptions: "Advanced system + smoke shelf",
       accessories: "Premium cooking ecosystem",
-      price: "$650"
+      price: "$995",
+      warranty: "Limited lifetime warranty"
     }
   ];
 

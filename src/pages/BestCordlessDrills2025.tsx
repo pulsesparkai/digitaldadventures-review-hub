@@ -17,7 +17,7 @@ const BestCordlessDrills2025 = () => {
       rank: 1,
       name: "DeWalt DCD771C2 20V MAX",
       voltage: "20V",
-      maxTorque: 300,
+      maxTorque: 450,
       weight: 3.4,
       batteryPlatform: "20V MAX",
       warranty: "3 years",
@@ -28,10 +28,16 @@ const BestCordlessDrills2025 = () => {
       priceRange: "$89-119",
       affiliate: "https://amzn.to/dewalt-dcd771c2",
       badge: "Best Overall",
+      motorType: "Brushed",
+      maxSpeed: "1,750 RPM",
+      clutchSettings: "15+1",
       features: ["High-speed transmission", "LED work light", "Belt hook", "Compact design"],
       pros: ["Perfect power for most tasks", "Excellent value", "Reliable DeWalt quality", "Great battery ecosystem"],
       cons: ["Brushed motor (shorter lifespan)", "Basic LED light", "No belt clip"],
-      bestProjects: ["Deck screws up to 3 inches", "Cabinet installation", "Furniture assembly", "Light framing"]
+      bestProjects: ["Deck screws up to 3 inches", "Cabinet installation", "Furniture assembly", "Light framing"],
+      toolOnlyPrice: "$69",
+      kitPrice: "$99",
+      ecosystemSize: "200+ tools"
     },
     {
       rank: 2,
@@ -48,10 +54,16 @@ const BestCordlessDrills2025 = () => {
       priceRange: "$139-169",
       affiliate: "https://amzn.to/milwaukee-2804",
       badge: "Best Heavy-Duty",
+      motorType: "Brushless",
+      maxSpeed: "2,000 RPM",
+      clutchSettings: "18+1",
       features: ["REDLITHIUM battery", "Brushless motor", "REDLINK intelligence", "All-metal chuck"],
       pros: ["Professional-grade power", "Best-in-class runtime", "Superior durability", "Industry-leading warranty"],
       cons: ["Premium price", "Heavier battery packs", "Overkill for light tasks"],
-      bestProjects: ["Deck construction", "Heavy framing", "Mixing concrete", "Large lag bolts"]
+      bestProjects: ["Deck construction", "Heavy framing", "Mixing concrete", "Large lag bolts"],
+      toolOnlyPrice: "$119",
+      kitPrice: "$149",
+      ecosystemSize: "250+ tools"
     },
     {
       rank: 3,
@@ -68,16 +80,22 @@ const BestCordlessDrills2025 = () => {
       priceRange: "$69-89",
       affiliate: "https://homedepot.com/ryobi-p1813",
       badge: "Best Budget",
+      motorType: "Brushed",
+      maxSpeed: "1,600 RPM",
+      clutchSettings: "24+1",
       features: ["24-position clutch", "2-speed gearbox", "LED light", "Magnetic bit holder"],
       pros: ["Incredible value", "200+ tool ecosystem", "Reliable performance", "Lifetime service agreement"],
       cons: ["Brushed motor", "Basic construction", "Shorter battery life"],
-      bestProjects: ["Basic home repairs", "Furniture assembly", "Light carpentry", "Starter projects"]
+      bestProjects: ["Basic home repairs", "Furniture assembly", "Light carpentry", "Starter projects"],
+      toolOnlyPrice: "$49",
+      kitPrice: "$79",
+      ecosystemSize: "300+ tools"
     },
     {
       rank: 4,
       name: "Makita XFD131 18V LXT",
       voltage: "18V",
-      maxTorque: 440,
+      maxTorque: 480,
       weight: 3.3,
       batteryPlatform: "LXT 18V",
       warranty: "3 years",
@@ -88,10 +106,16 @@ const BestCordlessDrills2025 = () => {
       priceRange: "$159-189",
       affiliate: "https://amzn.to/makita-xfd131",
       badge: "Best for Woodworking",
+      motorType: "Brushless",
+      maxSpeed: "1,900 RPM",
+      clutchSettings: "21+1",
       features: ["Variable 2-speed", "All-metal transmission", "Dual LED lights", "Star Protection"],
       pros: ["Exceptional build quality", "Smooth operation", "Perfect balance", "Excellent LED placement"],
       cons: ["Higher price for power level", "Limited clutch settings", "Slower charging"],
-      bestProjects: ["Cabinet making", "Fine carpentry", "Precision drilling", "Delicate materials"]
+      bestProjects: ["Cabinet making", "Fine carpentry", "Precision drilling", "Delicate materials"],
+      toolOnlyPrice: "$139",
+      kitPrice: "$169",
+      ecosystemSize: "280+ tools"
     },
     {
       rank: 5,
