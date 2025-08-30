@@ -30,6 +30,7 @@ import HauntedMansionCollection from "./pages/HauntedMansionCollection";
 import KrakenReview from "./pages/KrakenReview";
 import BestOutdoorDecorations from "./pages/BestOutdoorDecorations";
 import Accessibility from "./pages/Accessibility";
+import ContentGenerator from "./pages/ContentGenerator";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
             <Route path="/lowes-kraken-halloween-yard-decoration" element={<KrakenReview />} />
             <Route path="/lowes-best-outdoor-halloween-decorations-2025" element={<BestOutdoorDecorations />} />
             <Route path="/accessibility" element={<Accessibility />} />
+            <Route path="/content-generator" element={<ContentGenerator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
