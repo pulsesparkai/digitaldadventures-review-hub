@@ -15,7 +15,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const categories = [
-    'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech'
+    'Kitchen', 'Fitness', 'Desk Gear', 'Outdoor', 'Tools', 'Family Tech', 'Yard'
   ];
 
   const navItems = [
@@ -26,6 +26,26 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Work With Us', path: '/work-with-us' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  const toolsDropdown = [
+    { name: 'All Tools', path: '/category/tools' },
+    { name: 'Best Cordless Drills 2025', path: '/tools/best-cordless-drills-2025' },
+    { name: 'Impact Drivers Guide', path: '/tools/impact-drivers' },
+  ];
+
+  const outdoorDropdown = [
+    { name: 'All Outdoor', path: '/category/outdoor' },
+    { name: 'Fire Pit Comparison Guide', path: '/outdoor/solo-stove-vs-breeo' },
+    { name: 'Halloween Decorations', path: '/lowes-halloween-decorations' },
+    { name: 'Backyard Gadgets', path: '/outdoor/backyard-gadgets-summer' },
+  ];
+
+  const yardDropdown = [
+    { name: 'All Yard & Garden', path: '/category/yard' },
+    { name: 'Mower Buying Guide', path: '/yard/battery-vs-gas-lawn-mowers' },
+    { name: 'Best Electric Mowers 2025', path: '/yard/best-electric-mowers-2025' },
+    { name: 'Leaf Blower Comparison', path: '/yard/ego-vs-ryobi-leaf-blower' },
   ];
 
   return (
@@ -114,6 +134,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
+            {/* Navigation Links */}
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -126,14 +147,74 @@ const Navbar = () => {
               </Link>
             ))}
             
+            {/* Tools Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
+                <span>Tools</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white border shadow-lg z-50">
+                {toolsDropdown.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link 
+                      to={item.path}
+                      className="w-full px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Outdoor Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
+                <span>Outdoor</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white border shadow-lg z-50">
+                {outdoorDropdown.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link 
+                      to={item.path}
+                      className="w-full px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Yard & Garden Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
+                <span>Yard & Garden</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 bg-white border shadow-lg z-50">
+                {yardDropdown.map((item) => (
+                  <DropdownMenuItem key={item.name} asChild>
+                    <Link 
+                      to={item.path}
+                      className="w-full px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             {/* Categories Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 transition-colors">
-                <span>Categories</span>
+                <span>More Categories</span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48 bg-white border shadow-lg z-50">
-                {categories.map((category) => (
+                {categories.filter(cat => !['Tools', 'Outdoor', 'Yard'].includes(cat)).map((category) => (
                   <DropdownMenuItem key={category} asChild>
                     <Link 
                       to={`/category/${category.toLowerCase().replace(' ', '-')}`}
@@ -181,8 +262,44 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="border-t pt-4 mt-4">
-                <p className="text-sm font-semibold text-gray-500 mb-2 px-2">Categories</p>
-                {categories.map((category) => (
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2">Tools</p>
+                {toolsDropdown.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="block py-3 px-2 text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] flex items-center rounded"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2 mt-4">Outdoor</p>
+                {outdoorDropdown.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="block py-3 px-2 text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] flex items-center rounded"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2 mt-4">Yard & Garden</p>
+                {yardDropdown.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="block py-3 px-2 text-gray-600 hover:text-orange-600 transition-colors min-h-[44px] flex items-center rounded"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                
+                <p className="text-sm font-semibold text-gray-500 mb-2 px-2 mt-4">More Categories</p>
+                {categories.filter(cat => !['Tools', 'Outdoor', 'Yard'].includes(cat)).map((category) => (
                   <Link
                     key={category}
                     to={`/category/${category.toLowerCase().replace(' ', '-')}`}

@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,6 +29,10 @@ import HauntedMansionCollection from "./pages/HauntedMansionCollection";
 import KrakenReview from "./pages/KrakenReview";
 import BestOutdoorDecorations from "./pages/BestOutdoorDecorations";
 import Accessibility from "./pages/Accessibility";
+import BestCordlessDrills2025 from "./pages/BestCordlessDrills2025";
+import BatteryVsGasMowers from "./pages/BatteryVsGasMowers";
+import SoloStoveVsBreeo from "./pages/SoloStoveVsBreeo";
+import YardCategory from "./pages/YardCategory";
 
 
 const queryClient = new QueryClient();
@@ -50,6 +53,7 @@ const App = () => (
             <Route path="/work-with-us" element={<WorkWithUs />} />
             <Route path="/submit-product" element={<SubmitProduct />} />
             <Route path="/category/:category" element={<Category />} />
+            <Route path="/category/yard" element={<YardCategory />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -62,6 +66,11 @@ const App = () => (
             <Route path="/lowes-kraken-halloween-yard-decoration" element={<KrakenReview />} />
             <Route path="/lowes-best-outdoor-halloween-decorations-2025" element={<BestOutdoorDecorations />} />
             <Route path="/accessibility" element={<Accessibility />} />
+            
+            {/* New high-traffic pages */}
+            <Route path="/tools/best-cordless-drills-2025" element={<BestCordlessDrills2025 />} />
+            <Route path="/yard/battery-vs-gas-lawn-mowers" element={<BatteryVsGasMowers />} />
+            <Route path="/outdoor/solo-stove-vs-breeo" element={<SoloStoveVsBreeo />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -83,6 +83,86 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Featured Guides Section */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
+              📚 FEATURED GUIDES
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Essential Buying Guides for DIY Dads</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto">
+              In-depth comparisons and buying advice for the tools and equipment that matter most to modern dads.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/product-placeholder.jpg"
+                  alt="Best Cordless Drills 2025 - Complete buyer's guide for DIY dads"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-orange-600">🔧 TOOLS</Badge>
+                <h3 className="text-xl font-bold mb-3">Best Cordless Drills for DIY Dads 2025</h3>
+                <p className="text-gray-600 mb-4">Complete comparison of top drills with buying framework and real-world testing results.</p>
+                <Button asChild className="w-full">
+                  <Link to="/tools/best-cordless-drills-2025">
+                    Read Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/product-placeholder.jpg"
+                  alt="Battery vs Gas Mowers 2025 - Complete comparison guide for homeowners"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-green-600">🌱 YARD</Badge>
+                <h3 className="text-xl font-bold mb-3">Battery vs Gas Mowers: Which Wins in 2025?</h3>
+                <p className="text-gray-600 mb-4">5-year cost analysis and runtime comparison to help you choose the right mower type.</p>
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/yard/battery-vs-gas-lawn-mowers">
+                    Read Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
+              <div className="aspect-video bg-gray-100 overflow-hidden">
+                <ProductImage
+                  src="/images/product-placeholder.jpg"
+                  alt="Solo Stove vs Breeo fire pit comparison - Ultimate guide for families"
+                  size="large"
+                  priority={true}
+                />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-red-600">🔥 OUTDOOR</Badge>
+                <h3 className="text-xl font-bold mb-3">Solo Stove vs Breeo: Ultimate Fire Pit Showdown</h3>
+                <p className="text-gray-600 mb-4">Complete comparison of smokeless fire pits including cooking capability and family safety.</p>
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/outdoor/solo-stove-vs-breeo">
+                    Read Guide <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Halloween Seasonal Promotion */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 to-purple-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
